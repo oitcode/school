@@ -21,6 +21,7 @@ Route::get('/teachers', 'FrontpageController@teachers')->name('teachers');
 Route::get('/facilities', 'FrontpageController@facilities')->name('facilities');
 Route::get('/extra_curricular', 'FrontpageController@extraCurriculars')->name('extra-curriculars');
 Route::get('/gallery', 'FrontpageController@gallery')->name('gallery');
+Route::get('/principals_message', 'FrontpageController@principalsMessage')->name('principals-message');
 
 /* Dashboard */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
@@ -31,6 +32,7 @@ Route::get('/dashboard/teacher', 'TeacherController@index')->name('dashboard-tea
 Route::get('/dashboard/facility', 'FacilityController@index')->name('dashboard-facility');
 Route::get('/dashboard/extra_curricular', 'ExtraCurricularController@index')->name('dashboard-extra-curricular');
 Route::get('/dashboard/gallery', 'GalleryController@index')->name('dashboard-gallery');
+Route::get('/dashboard/principals_message', 'PrincipalsMessageController@index')->name('dashboard-principals-message');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');

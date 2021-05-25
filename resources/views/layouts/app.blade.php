@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    OIT
+                    {{ $school->name }}
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('img/logo_1.png') }}" width="30" height="30" alt="">
@@ -46,7 +46,7 @@
                           About Us
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="">Principals Message</a>
+                          <a class="dropdown-item" href="{{ route('principals-message') }}">Principals Message</a>
                           <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
                           <a class="dropdown-item" href="{{ route('teachers') }}">Teachers</a>
                           <a class="dropdown-item" href="">Fees</a>
@@ -120,7 +120,7 @@
             @yield('content')
         </main>
 
-        @if (false)
+        @if (true)
         @include('footer')
         @endif
 

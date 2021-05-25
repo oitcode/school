@@ -11,6 +11,7 @@ use App\Facility;
 use App\ExtraCurricular;
 use App\ExtraCurricularCategory;
 use App\Gallery;
+use App\PrincipalsMessage;
 
 class FrontpageController extends Controller
 {
@@ -91,5 +92,19 @@ class FrontpageController extends Controller
         return view('gallery')
             ->with('school', $school)
             ->with('galleries', $galleries);
+    }
+
+    public function principalsMessage()
+    {
+        $school = School::firstOrFail();
+        $principalsMessage = null;
+
+        if (PrincipalsMessage::count() > 0) {
+            $principalsMessage = PrincipalsMessage::firstOrFail();
+        }
+
+        return view('principals-message')
+            ->with('school', $school)
+            ->with('principalsMessage', $principalsMessage);
     }
 }
