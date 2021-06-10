@@ -12,7 +12,7 @@ npm-debug.log
 yarn-error.log
 
 
-public/css
+#public/css
 public/js
 public/vendor
 

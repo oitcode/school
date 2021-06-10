@@ -1,0 +1,12 @@
+.nb-bg1 {
+    background-image: url("../img/hero-3.jpg");
+}
+
+.o-overlaid {
+    background-image: url("../img/school-1.jpg");
+}
+
+.o-overlay {
+   background-color: black;
+   opacity: 0.7;
+}
