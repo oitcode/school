@@ -12,6 +12,7 @@ use App\ExtraCurricular;
 use App\ExtraCurricularCategory;
 use App\Gallery;
 use App\PrincipalsMessage;
+use App\AboutUs;
 
 class FrontpageController extends Controller
 {
@@ -32,8 +33,15 @@ class FrontpageController extends Controller
     {
         $school = School::firstOrFail();
 
+        $aboutUs = null;
+
+        if (AboutUs::count() > 0) {
+            $aboutUs = AboutUs::firstOrFail();
+        }
+
         return view('aboutus')
-            ->with('school', $school);
+            ->with('school', $school)
+            ->with('aboutUs', $aboutUs);
     }
 
     public function contact()

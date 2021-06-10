@@ -7,6 +7,5 @@
 @stop
 
 @section('content')
-  @livewire('notice-component')
-  @livewire('todo-component')
+  @livewire('aboutus-component')
 @stop

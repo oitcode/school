@@ -27,8 +27,8 @@
 @if ($principalsMessage !== null)
   <div class="container-fluid my-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
+      <div class="row d-flex h-100">
+        <div class="col-md-6 justify-content-center align-self-center">
           {{ $principalsMessage->message }}
         </div>
         <div class="col-md-4">

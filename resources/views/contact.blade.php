@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<div class="container-fluid bg-light p-5">
+<div class="container-fluid p-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -34,20 +34,27 @@
             {{ $school->name }}
           </h2>
           <br />
-          <br />
 
-          <img src="{{ asset('img/location-1.png') }}" width="25" height="25" alt="" class="mr-1">
-          {{ $school->address }}
-          <br />
-          <br />
+          <p class="mb-3">
+            <img src="{{ asset('img/location-1.png') }}" width="25" height="25" alt="" class="mr-1">
+            {{ $school->address }}
+          </p>
 
-          <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
-          {{ $school->phone }}
-          <br />
-          <br />
+          <p class="mb-3">
+            <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
+            {{ $school->phone }}
+          </p>
 
-          <img src="{{ asset('img/email-1.png') }}" width="25" height="25" alt="" class="mr-1">
-          {{ $school->email }}
+          <p class="mb-3">
+            <img src="{{ asset('img/email-1.png') }}" width="25" height="25" alt="" class="mr-1">
+            {{ $school->email }}
+          </p>
+
+          <div class="mt-5">
+            <h3 class="mb-4">Social Media</h3>
+            <img src="{{ asset('img/fb-1.png') }}" width="35" height="35" alt="" class="mr-3">
+            <img src="{{ asset('img/twitter-1.png') }}" width="35" height="35" alt="" class="mr-1">
+          </div>
         </div>
 
         <div class="col-md-6">
@@ -56,24 +63,7 @@
             Send us a message if you have any questions or comments. We will
             get back to you as soon as possible.
           </p>
-          <form>
-            <div class="form-group">
-              <label for="">Email address</label>
-              <input type="email" class="form-control" id="" aria-describedby="emailHelp">
-            </div>
-
-            <div class="form-group">
-              <label for="">Phone</label>
-              <input type="text" class="form-control" id="">
-            </div>
-
-            <div class="form-group">
-              <label for="">Message</label>
-              <textarea class="form-control" id="" rows="3"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          @livewire ('contact-message-create')
         </div>
       </div>
     </div>

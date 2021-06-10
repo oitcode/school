@@ -27,8 +27,63 @@
   </div>
 </div>
 
-<div class="border-top py-3">
+<div class="container-fluid border-top py-5">
   <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-6 justify-content-center align-self-center">
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+      </div>
+      <div class="col-md-4">
+        <img src="{{ asset('img/twitter-1.png') }}" alt="Card image foo" class="img-fluid">
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid border-top py-5 bg-light">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-4">
+        <img src="{{ asset('img/fb-1.png') }}" alt="Card image foo" class="img-fluid">
+      </div>
+      <div class="col-md-6 justify-content-center align-self-center">
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid border-top py-5">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-6 justify-content-center align-self-center">
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
+      </div>
+      <div class="col-md-4">
+        <img src="{{ asset('img/hero-1.jpg') }}" alt="Card image foo" class="img-fluid">
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
   </div>
 </div>
 

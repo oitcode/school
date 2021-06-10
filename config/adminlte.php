@@ -234,6 +234,8 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
+        /*
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
@@ -241,20 +243,58 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        */
 
         /* Added by o_developer */
         ['header' => 'MAIN'],
 
         [
-            'text'    => 'School',
-            'url'  => '/dashboard/school',
-            'icon'    => 'fas fa-fw fa-clipboard',
-        ],
-
-        [
-            'text'    => 'Principals Message',
-            'url'  => '/dashboard/principals_message',
-            'icon'    => 'fas fa-fw fa-clipboard',
+            'text'    => 'Frontpages',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'School',
+                    'url'  => '/dashboard/school',
+                ],
+                [
+                    'text' => 'Principals message',
+                    'url'  => '/dashboard/principals_message',
+                ],
+                [
+                    'text' => 'About us',
+                    'url'  => '/dashboard/aboutus',
+                ],
+                /*
+                [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+                */
+            ],
         ],
 
         [
@@ -288,16 +328,11 @@ return [
         ],
 
         [
-            'text'    => 'Memos',
-            'url'  => '/dashboard/memo',
+            'text'    => 'Contact Messages',
+            'url'  => '/dashboard/contact_message',
             'icon'    => 'fas fa-fw fa-clipboard',
         ],
 
-        [
-            'text'    => 'Todos',
-            'url'  => '/dashboard/todo',
-            'icon'    => 'fas fa-fw fa-clipboard',
-        ],
 
         ['header' => 'account_settings'],
         [
@@ -310,58 +345,21 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
+        ['header' => '-----'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
+            'text'       => 'Todo',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => '/dashboard/todo',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
+            'text'       => 'Memos',
             'icon_color' => 'cyan',
+            'url'        => '/dashboard/memo',
+        ],
+        [
+            'text'       => 'Logout',
+            'icon_color' => 'white',
             'url'        => '#',
         ],
     ],

@@ -1,6 +1,6 @@
 <footer class="border-top">
   <div class="container-fluid bg-light">
-    <div class="container py-3">
+    <div class="container py-4">
       <div class="row">
         <div class="col-md-4">
           <h3 class="h5">

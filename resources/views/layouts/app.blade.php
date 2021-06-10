@@ -116,7 +116,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="bg-white">
             @yield('content')
         </main>
 

@@ -33,6 +33,8 @@ Route::get('/dashboard/facility', 'FacilityController@index')->name('dashboard-f
 Route::get('/dashboard/extra_curricular', 'ExtraCurricularController@index')->name('dashboard-extra-curricular');
 Route::get('/dashboard/gallery', 'GalleryController@index')->name('dashboard-gallery');
 Route::get('/dashboard/principals_message', 'PrincipalsMessageController@index')->name('dashboard-principals-message');
+Route::get('/dashboard/aboutus', 'AboutUsController@index')->name('dashboard-aboutus');
+Route::get('/dashboard/contact_message', 'ContactMessageController@index')->name('dashboard-contact-message');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');

@@ -24,4 +24,43 @@
   </div>
 </div>
 
+<div class="containter-fluid mt-4">
+  <div class="container">
+    <div class="row d-flex h-100">
+      <div class="col-md-6 justify-content-center align-self-center">
+        {{ $aboutUs->paragraph_1 }}
+      </div>
+      <div class="col-md-4">
+        <img src="{{ asset('storage/' . $aboutUs->image_path_1) }}" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="containter-fluid mt-4 bg-light border-top py-5">
+  <div class="container">
+    <div class="row d-flex h-100">
+      <div class="col-md-6 justify-content-center align-self-center">
+        {{ $aboutUs->paragraph_2 }}
+      </div>
+      <div class="col-md-4">
+        <img src="{{ asset('storage/' . $aboutUs->image_path_2) }}" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="containter-fluid mt-4 py-5 border-top">
+  <div class="container">
+    <div class="row d-flex h-100">
+      <div class="col-md-6 justify-content-center align-self-center">
+        {{ $aboutUs->paragraph_3 }}
+      </div>
+      <div class="col-md-4">
+        <img src="{{ asset('storage/' . $aboutUs->image_path_3) }}" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection
