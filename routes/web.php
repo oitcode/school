@@ -40,6 +40,9 @@ Route::get('/dashboard/contact_message', 'ContactMessageController@index')->name
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');
 Route::get('/dashboard/todo', 'TodoController@index')->name('dashboard-todo');
 
+/* Change Password */
+Route::get('/changepassword', 'ChangePasswordController@index')->name('changepassword');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

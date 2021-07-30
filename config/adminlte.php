@@ -342,7 +342,7 @@ return [
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => '/changepassword',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
