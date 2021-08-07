@@ -12,10 +12,15 @@
 
 
   <div class="card-body p-0">
-    @livewire ('memo-list')
 
     @if ($createMode)
       @livewire ('memo-create')
+    @else
+      @livewire ('memo-list')
+    @endif
+
+    @if ($deleteMode)
+      @livewire ('memo-delete-confirm', ['deletingMemo' => $deletingMemo,])
     @endif
   </div>
 </div>

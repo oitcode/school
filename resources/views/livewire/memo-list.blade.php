@@ -23,7 +23,7 @@
             <span class="btn btn-tool btn-sm" wire:click="">
               <i class="fas fa-pencil-alt text-primary mr-3"></i>
             </span>
-            <span class="btn btn-tool btn-sm" wire:click="">
+            <span class="btn btn-tool btn-sm" wire:click="$emit('confirmDeleteMemo', {{ $memo }})">
               <i class="fas fa-trash text-danger"></i>
             </span>
           </td>
