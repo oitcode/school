@@ -258,6 +258,10 @@ return [
                     'url'  => '/dashboard/school',
                 ],
                 [
+                    'text' => 'Main page',
+                    'url'  => '/dashboard/mainpage',
+                ],
+                [
                     'text' => 'Principals message',
                     'url'  => '/dashboard/principals_message',
                 ],

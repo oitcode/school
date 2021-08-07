@@ -27,65 +27,38 @@
   </div>
 </div>
 
-<div class="container-fluid border-top py-5">
-  <div class="container">
-    <div class="row d-flex">
-      <div class="col-md-6 justify-content-center align-self-center">
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-      </div>
-      <div class="col-md-4">
-        <img src="{{ asset('img/twitter-1.png') }}" alt="Card image foo" class="img-fluid">
-      </div>
-      <div class="col-md-2">
+@if (!is_null($mainpageContents) && count($mainpageContents) > 0)
+
+  {{-- To track odd/even content --}}
+  @php
+    $i = 0;
+  @endphp
+
+  @foreach ($mainpageContents as $mainpageContent)
+    <div class="container-fluid border-top py-5 @if ($i % 2 == 1) bg-light @endif">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em !important;">
+            {{ $mainpageContent->body}}
+          </div>
+          <div class="col-md-4">
+            <img src="{{ asset('storage/' . $mainpageContent->image_path) }}" class="img-fluid">
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="container-fluid border-top py-5 bg-light">
-  <div class="container">
-    <div class="row d-flex">
-      <div class="col-md-4">
-        <img src="{{ asset('img/fb-1.png') }}" alt="Card image foo" class="img-fluid">
-      </div>
-      <div class="col-md-6 justify-content-center align-self-center">
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-      </div>
-      <div class="col-md-2">
-      </div>
-    </div>
-  </div>
-</div>
+    @php
+      $i++;
+    @endphp
 
-<div class="container-fluid border-top py-5">
-  <div class="container">
-    <div class="row d-flex">
-      <div class="col-md-6 justify-content-center align-self-center">
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-        Lorem ipsum solor emut dier dan taxidus ipsum connaxol.
-      </div>
-      <div class="col-md-4">
-        <img src="{{ asset('img/hero-1.jpg') }}" alt="Card image foo" class="img-fluid">
-      </div>
-      <div class="col-md-2">
-      </div>
-    </div>
+  @endforeach
+@else
+  <div class="container text-danger">
+    No content.
   </div>
-</div>
-
+@endif
 
 @endsection

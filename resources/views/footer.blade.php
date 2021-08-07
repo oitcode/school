@@ -49,6 +49,15 @@
   <div class="container-fluid border-top border-bottom">
     <div class="container text-center py-3">
       &copy; 2021 {{ $school->name }}
+      &nbsp;&nbsp;
+      |
+      &nbsp;&nbsp;
+      <span class="text-muted">
+        Designed by
+        <a href="https://oit.com.np">
+          OIT
+        </a>
+      </span>
     </div>
   </div>
 

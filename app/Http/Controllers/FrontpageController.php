@@ -13,6 +13,7 @@ use App\ExtraCurricularCategory;
 use App\Gallery;
 use App\PrincipalsMessage;
 use App\AboutUs;
+use App\MainpageContent;
 
 class FrontpageController extends Controller
 {
@@ -24,9 +25,11 @@ class FrontpageController extends Controller
     public function main()
     {
         $school = School::firstOrFail();
+        $mainpageContents = MainpageContent::all();
 
         return view('main')
-            ->with('school', $school);
+            ->with('school', $school)
+            ->with('mainpageContents', $mainpageContents);
     }
 
     public function aboutus()

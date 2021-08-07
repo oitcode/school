@@ -28,13 +28,6 @@
 <div class="container-fluid">
   <div class="container py-3">
 
-    <p class="text-secondary h4 my-4">
-      Lorem ipsum solor emut delcticus omni alpha beta. 
-      Lorem ipsum solor emut delcticus omni alpha beta. 
-      Lorem ipsum solor emut delcticus omni alpha beta. 
-      Lorem ipsum solor emut delcticus omni alpha beta. 
-    </p>
-
     @if ($teachers != null && count($teachers) > 0)
       <div class="row">
         @foreach ($teachers as $teacher)
