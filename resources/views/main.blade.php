@@ -56,8 +56,10 @@
 
   @endforeach
 @else
-  <div class="container text-danger">
-    No content.
+  <div class="container">
+    <h2>
+      COMING SOON!!
+    </h2>
   </div>
 @endif
 
