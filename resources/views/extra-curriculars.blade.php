@@ -57,9 +57,9 @@
         @endforeach
       </div>
     @else
-      <span class="text-danger">
-        No extra curricular to show
-      </span>
+      <div class="container text-danger p-3">
+        No content
+      </div>
     @endif
 
 @endsection

@@ -52,7 +52,7 @@
       </div>
     @else
       <span class="text-danger">
-        No notification to show
+        No content
       </span>
     @endif
   </div>

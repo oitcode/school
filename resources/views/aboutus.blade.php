@@ -24,6 +24,7 @@
   </div>
 </div>
 
+@if ($aboutUs)
 <div class="containter-fluid mt-4">
   <div class="container">
     <div class="row d-flex h-100">
@@ -62,5 +63,10 @@
     </div>
   </div>
 </div>
+@else
+  <div class="container text-danger p-3">
+    No content
+  </div>
+@endif
 
 @endsection

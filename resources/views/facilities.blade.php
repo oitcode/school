@@ -50,7 +50,7 @@
       </div>
     @else
       <span class="text-danger">
-        No facility to show
+        No content
       </span>
     @endif
   </div>

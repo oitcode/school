@@ -38,9 +38,9 @@
     </div>
   </div>
 @else
-  <p class="text-danger m-3">
+  <div class="container text-danger p-3">
     No principals message.
-  </p>
+  </div>
 @endif
 
 @endsection
