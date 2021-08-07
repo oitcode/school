@@ -8,7 +8,7 @@
   </div>
 
   <div class="form-group">
-      <img src="{{ asset('storage/' . $principalsMessage->image_path) }}" class="img-fluid">
+      <img src="{{ asset('storage/' . $principalsMessage->image_path) }}" style="max-height:100px; max-width:100px;">
       <label for="">New Image</label>
       <input type="file" wire:model="image">
       @error('image') <span class="error">{{ $message }}</span> @enderror

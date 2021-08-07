@@ -31,7 +31,7 @@
                     {{ $school->name }}
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('img/logo_1.png') }}" width="30" height="30" alt="">
+                    <img src="{{ asset('storage/' . $school->logo_image_path) }}" width="30" height="30">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

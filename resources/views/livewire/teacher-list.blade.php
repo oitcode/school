@@ -40,8 +40,8 @@
     </tbody>
   </table>
   @else
-    <span class="text-danger">
-      No teacher
+    <div class="p-2 text-muted">
+      No records to display
     </span>
   @endif
 </div>

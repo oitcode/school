@@ -27,7 +27,7 @@
 <div class="containter-fluid mt-4">
   <div class="container">
     <div class="row d-flex h-100">
-      <div class="col-md-8 justify-content-center align-self-center">
+      <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em;">
         {{ $aboutUs->paragraph_1 }}
       </div>
       <div class="col-md-4">
@@ -40,7 +40,7 @@
 <div class="containter-fluid mt-4 bg-light border-top py-5">
   <div class="container">
     <div class="row d-flex h-100">
-      <div class="col-md-8 justify-content-center align-self-center">
+      <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em;">
         {{ $aboutUs->paragraph_2 }}
       </div>
       <div class="col-md-4">
@@ -53,7 +53,7 @@
 <div class="containter-fluid mt-4 py-5 border-top">
   <div class="container">
     <div class="row d-flex h-100">
-      <div class="col-md-8 justify-content-center align-self-center">
+      <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em;">
         {{ $aboutUs->paragraph_3 }}
       </div>
       <div class="col-md-4">

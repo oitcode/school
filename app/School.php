@@ -21,6 +21,6 @@ class School extends Model
     protected $primaryKey = 'school_id';
 
     protected $fillable = [
-        'name', 'phone', 'email', 'address', 'slogan', 'comment',
+        'name', 'logo_image_path', 'phone', 'email', 'address', 'slogan', 'comment',
     ];
 }

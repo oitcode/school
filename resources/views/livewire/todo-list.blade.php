@@ -135,8 +135,8 @@
     </tbody>
   </table>
   @else
-    <span class="text-danger">
-      No todo
-    </span>
+    <div class="p-2 text-muted">
+      No records to display
+    </div>
   @endif
 </div>

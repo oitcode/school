@@ -51,6 +51,7 @@ Route::get('/dashboard/profile', 'ProfileController@index')->name('dashboard');
 Route::get('/notice/{id}', 'FrontpageController@noticeDisplay')->name('notice-display');
 
 /* Authentication routes */
-Auth::routes(['register' => false]);
+Auth::routes();
+//Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');

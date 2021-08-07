@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="row mb-2 p-2 border-bottom">
+      <div class="row mb-2 p-2">
         <div class="col-md-4">
           Role
         </div>

@@ -36,7 +36,7 @@
                 {{ $aboutUs->paragraph_1 }}
               </td>
               <td>
-                <img src="{{ asset('storage/' . $aboutUs->image_path_1) }}" class="img-fluid">
+                <img src="{{ asset('storage/' . $aboutUs->image_path_1) }}" style="max-height:100px; max-width:100px;">
               </td>
             </tr>
 
@@ -49,7 +49,7 @@
                   {{ $aboutUs->paragraph_2 }}
                 </td>
                 <td>
-                  <img src="{{ asset('storage/' . $aboutUs->image_path_2) }}" class="img-fluid">
+                  <img src="{{ asset('storage/' . $aboutUs->image_path_2) }}" style="max-height:100px; max-width:100px;">
                 </td>
               </tr>
             @endif
@@ -63,7 +63,7 @@
                   {{ $aboutUs->paragraph_3 }}
                 </td>
                 <td>
-                  <img src="{{ asset('storage/' . $aboutUs->image_path_3) }}" class="img-fluid">
+                  <img src="{{ asset('storage/' . $aboutUs->image_path_3) }}" style="max-height:100px; max-width:100px;">
                 </td>
               </tr>
             @endif

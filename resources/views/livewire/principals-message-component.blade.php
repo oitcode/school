@@ -35,7 +35,7 @@
           <tr>
             <th>Image</th>
             <td>
-              <img src="{{ asset('storage/' . $principalsMessage->image_path) }}" class="img-fluid">
+              <img src="{{ asset('storage/' . $principalsMessage->image_path) }}" style="max-height:100px; max-width:100px;">
             </td>
           </tr>
         </table>
