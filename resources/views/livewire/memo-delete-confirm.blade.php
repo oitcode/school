@@ -24,10 +24,10 @@
                   </div>
                   <div class="col">
                     <strong>
-                      Name
+                      Title
                     </strong>
                     <br />
-                    {{ $deletingMemo->name }}
+                    {{ \Illuminate\Support\Str::limit($deletingMemo->body, 20, $end=' ...') }}
                   </div>
                 </div>
               </div>
