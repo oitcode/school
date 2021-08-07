@@ -3,26 +3,32 @@
     <div class="container py-4">
       <div class="row">
         <div class="col-md-4">
-          <h3 class="h5">
-            <img src="{{ asset('img/logo_1.png') }}" width="25" height="25" alt="" class="mr-1">
-            {{ $school->name }}
-          </h3>
-          <br />
-          <img src="{{ asset('img/location-1.png') }}" width="25" height="25" alt="" class="mr-1">
-          {{ $school->address }}
-          <br />
-          <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
-          {{ $school->phone }}
-          <br />
-          <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
-          {{ $school->email }}
+
+          <div class="mb-1">
+            <h3 class="h5">
+              <img src="{{ asset('img/logo_1.png') }}" width="25" height="25" alt="" class="mr-1">
+              {{ $school->name }}
+            </h3>
+          </div>
+
+          <div class="mb-1">
+            <img src="{{ asset('img/location-1.png') }}" width="25" height="25" alt="" class="mr-1">
+            {{ $school->address }}
+          </div>
+
+          <div class="mb-1">
+            <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
+            {{ $school->phone }}
+          </div>
+
+          <div class="mb-1">
+            <img src="{{ asset('img/email-1.png') }}" width="25" height="25" alt="" class="mr-1">
+            {{ $school->email }}
+          </div>
         </div>
+
         <div class="col-md-4">
-          Facilities
-          <br />
-          Teachers
-          <br />
-          About Us
+          Careers
           <br />
           Academic Calendar
           <br />

@@ -27,6 +27,14 @@
 
 <div class="container-fluid">
   <div class="container py-3">
+
+    <p class="text-secondary h4 my-4">
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+    </p>
+
     @if ($facilities != null && count($facilities) > 0)
         <div class="row">
         @foreach ($facilities as $facility)
@@ -36,10 +44,12 @@
                 <h3 class="card-title">
                 {{ $facility->name }}
                 </h3>
-                <p class="card-text">
-                  {{ $facility->info }}
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                @if (false)
+                  <p class="card-text">
+                    {{ $facility->info }}
+                  </p>
+                @endif
+                <a href="#" class="">Learn More</a>
               </div>
             </div>
           </div>

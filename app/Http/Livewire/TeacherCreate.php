@@ -35,6 +35,7 @@ class TeacherCreate extends Component
         try {
             $teacher = Teacher::create($validatedData);
             DB::commit();
+            $this->emit('exitCreate');
         } catch (\Exception $e) {
             DB::rollback();
         }

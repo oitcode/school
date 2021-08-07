@@ -12,10 +12,19 @@
 
 
   <div class="card-body p-0">
-    @livewire ('notice-list')
 
     @if ($createMode)
       @livewire ('notice-create')
+    @elseif ($updateMode)
+      @livewire ('notice-update', ['notice' => $updatingNotice,])
+    @elseif ($displayMode)
+      @livewire ('notice-display', ['notice' => $displayingNotice,])
+    @else
+      @livewire ('notice-list')
+    @endif
+
+    @if ($deleteMode)
+      @livewire ('notice-delete-confirm', ['deletingNotice' => $deletingNotice,])
     @endif
   </div>
 </div>

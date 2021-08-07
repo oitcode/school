@@ -55,6 +55,18 @@
             <img src="{{ asset('img/fb-1.png') }}" width="35" height="35" alt="" class="mr-3">
             <img src="{{ asset('img/twitter-1.png') }}" width="35" height="35" alt="" class="mr-1">
           </div>
+
+
+         <div class="mt-5">
+           <h3>
+             Careers
+           </h3>
+           <a href="">
+             See all vacancy
+           </a>
+         </div>
+
+
         </div>
 
         <div class="col-md-6">
@@ -67,16 +79,5 @@
         </div>
       </div>
     </div>
-</div>
-
-<div class="container-fluid bg-light py-4 border-top">
-  <div class="container">
-    <h3>
-      Careers
-    </h3>
-    <a href="">
-      See all vacancy
-    </a>
-  </div>
 </div>
 @endsection

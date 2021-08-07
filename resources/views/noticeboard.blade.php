@@ -28,19 +28,43 @@
 <div class="container-fluid">
   <div class="container py-3">
     @if ($notices != null && count($notices) > 0)
-      @foreach ($notices as $notice)
-        <div class="card mb-3">
-          <div class="card-body">
-            <h3 class="card-title">
-            {{ $notice->title }}
-            </h3>
-            <p class="card-text">
-              {{ $notice->description }}
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      @endforeach
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Notice</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($notices as $notice)
+          <tr>
+            <td>{{ $notice->created_at->toDateString() }}</td>
+            <td>
+              <strong>
+                <a href="{{ route('notice-display', $notice->notice_id) }}">
+                  {{ $notice->title }}
+                </a>
+              </strong>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+      @if (false)
+            @foreach ($notices as $notice)
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h3 class="card-title">
+                  {{ $notice->title }}
+                  </h3>
+                  <p class="card-text">
+                    {{ $notice->description }}
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            @endforeach
+      @endif
     @else
       <span class="text-danger">
         No notification to show

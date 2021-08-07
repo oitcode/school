@@ -37,6 +37,7 @@ class TodoUpdate extends Component
         try {
             $this->todo->update($validatedData);
             DB::commit();
+            $this->emit('exitUpdate');
         } catch (\Exception $e) {
             DB::rollback();
         }

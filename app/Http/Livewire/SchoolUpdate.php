@@ -47,6 +47,8 @@ class SchoolUpdate extends Component
             $this->school->update($validatedData);
 
             DB::commit();
+            session()->flash('message', 'Updated successfully.');
+            $this->emit('exitUpdate');
         } catch (\Exception $e) {
             DB::rollback();
         }

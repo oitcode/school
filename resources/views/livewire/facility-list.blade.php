@@ -28,25 +28,29 @@
         <tbody>
           @foreach($facilities as $facility)
           <tr>
-            <td>
+            <td class="text-secondary">
                  {{ $facility->facility_id }}
             </td>
 
             <td>
-              {{ $facility->name }}
-            </td>
-
-            <td class="text-muted">
-              {{ $facility->facilityCategory->title }}
+              <a href="">
+                {{ $facility->name }}
+              </a>
             </td>
 
             <td>
+              <span class="badge badge-primary badge-pill">
+                {{ $facility->facilityCategory->title }}
+              </span>
+            </td>
+
+            <td class="text-secondary">
               {{ $facility->info }}
             </td>
 
             <td>
-              <span class="btn btn-tool btn-sm">
-                <i class="fas fa-pencil-alt text-primary mr-3" wire:click="$emit('updateFacility', {{ $facility }})"></i>
+              <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateFacility', {{ $facility }})">
+                <i class="fas fa-pencil-alt text-primary"></i>
               </span>
               <span class="btn btn-tool btn-sm" wire:click="$emit('confirmDeleteFacility', {{ $facility }})">
                 <i class="fas fa-trash text-danger"></i>

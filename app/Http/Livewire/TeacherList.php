@@ -10,10 +10,16 @@ class TeacherList extends Component
 {
     public $teachers = null;
 
-    public function render()
+    protected $listeners = [
+        'updateList' => 'render',
+    ];
+
+    public function mount()
     {
         $this->teachers = Teacher::all();
-
+    }
+    public function render()
+    {
         return view('livewire.teacher-list');
     }
 }

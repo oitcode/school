@@ -27,21 +27,31 @@
 
 <div class="container-fluid">
   <div class="container py-3">
+
+    <p class="text-secondary h4 my-4">
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+      Lorem ipsum solor emut delcticus omni alpha beta. 
+    </p>
+
     @if ($teachers != null && count($teachers) > 0)
       <div class="row">
         @foreach ($teachers as $teacher)
           <div class="col-md-4">
             <div class="card mb-3">
               <div class="card-body">
-                <h3 class="card-title">
-                {{ $teacher->name }}
+                <h3 class="card-title mb-3">
+                  {{ $teacher->name }}
                 </h3>
-                <p class="card-text">
-                  {{ $teacher->info }}
+                <p>
+                 <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
+                 {{ $teacher->phone }}
                 </p>
-                <a href="#" class="text-primary mr-3">Contact</a>
-                <a href="#" class="text-info mr-3">Email</a>
-                <a href="#" class="text-success mr-3">More</a>
+                <p>
+                  <img src="{{ asset('img/email-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                  {{ $teacher->email }}
+                </p>
               </div>
             </div>
           </div>

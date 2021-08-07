@@ -49,10 +49,9 @@
                           <a class="dropdown-item" href="{{ route('principals-message') }}">Principals Message</a>
                           <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
                           <a class="dropdown-item" href="{{ route('teachers') }}">Teachers</a>
+                          <a class="dropdown-item" href="{{ route('extra-curriculars') }}">Extra Curricular</a>
+                          <a class="dropdown-item" href="{{ route('facilities') }}">Facilities</a>
                           <a class="dropdown-item" href="">Fees</a>
-                          <a class="dropdown-item" href="">Administration</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="">Onix</a>
                         </div>
                       </li>
 
@@ -61,11 +60,11 @@
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('extra-curriculars') }}">Extra Curricular</a>
+                        <a class="nav-link" href="">Submit Fees</a>
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('facilities') }}">Facilities</a>
+                        <a class="nav-link" href="">Admission Form</a>
                       </li>
 
                       <li class="nav-item">

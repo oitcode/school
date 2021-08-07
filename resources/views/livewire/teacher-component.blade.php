@@ -12,10 +12,18 @@
 
 
   <div class="card-body p-0">
-    @livewire ('teacher-list')
 
-    @if ($createMode)
+    @if ($updateMode)
+      @livewire ('teacher-update', ['teacher' => $updatingTeacher,])
+    @elseif ($createMode)
       @livewire ('teacher-create')
+    @else
+      @livewire ('teacher-list')
     @endif
+
+    @if ($deleteMode)
+      @livewire ('teacher-delete-confirm', ['deletingTeacher' => $deletingTeacher,])
+    @endif
+
   </div>
 </div>

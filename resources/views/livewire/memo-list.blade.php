@@ -11,15 +11,17 @@
     <tbody>
       @foreach ($memos as $memo)
         <tr>
-          <td>
+          <td class="text-secondary">
             {{ $memo->publish_date }}
           </td>
-          <td>
-            {{ $memo->body }}
+          <td class="text-secondary">
+            <a href="">
+              {{ \Illuminate\Support\Str::limit($memo->body, 100, $end=' ...') }}
+            </a>
           </td>
           <td>
-            <span class="btn btn-tool btn-sm">
-              <i class="fas fa-pencil-alt text-primary mr-3" wire:click=""></i>
+            <span class="btn btn-tool btn-sm" wire:click="">
+              <i class="fas fa-pencil-alt text-primary mr-3"></i>
             </span>
             <span class="btn btn-tool btn-sm" wire:click="">
               <i class="fas fa-trash text-danger"></i>

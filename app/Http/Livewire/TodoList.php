@@ -36,7 +36,7 @@ class TodoList extends Component
         $this->todoCount = $this->todos->count();
         $this->todoDisplayCount = $this->todoCount;;
 
-        $this->todos = $this->todos->get();
+        $this->todos = $this->todos->orderBy('created_at', 'DESC')->get();
     }
 
     public function render()

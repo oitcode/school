@@ -12,7 +12,7 @@ class MemoList extends Component
 
     public function render()
     {
-        $this->memos = Memo::all();
+        $this->memos = Memo::orderBy('created_at', 'DESC')->get();
 
         return view('livewire.memo-list');
     }

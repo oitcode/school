@@ -11,13 +11,17 @@ class FacilityComponent extends Component
     public $facilityCategoryCreateMode = false;
     public $createMode = false;
     public $deleteMode = false;
+    public $updateMode = false;
 
     public $deletingFacility = null;
+    public $updatingFacility = null;
 
     protected $listeners = [
         'destroyFacilityCategoryCreate' => 'exitFacilityCategoryCreateMode',
         'destroyFacilityCreate' => 'exitCreateMode',
         'confirmDeleteFacility',
+        'exitUpdate',
+        'updateFacility',
     ];
 
     public function render()
@@ -43,6 +47,29 @@ class FacilityComponent extends Component
     public function exitCreateMode()
     {
         $this->createMode = false;
+    }
+
+    public function enterUpdateMode()
+    {
+        $this->updateMode = true;
+    }
+
+    public function exitUpdateMode()
+    {
+        $this->updatingFacility = null;
+        $this->updateMode = false;
+    }
+
+    public function updateFacility(Facility $facility)
+    {
+        $this->updatingFacility = $facility;
+        $this->enterUpdateMode();
+    }
+
+    public function exitUpdate()
+    {
+        $this->updatingFacility = null;
+        $this->exitUpdateMode();
     }
 
     public function enterDeleteMode()

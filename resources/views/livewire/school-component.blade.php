@@ -10,9 +10,19 @@
     </div>
   </div>
 
+
   <div class="card-body p-0">
+
+    {{-- TODO: Flash message not shown --}}
+
+    @if (session()->has('message'))
+      <div class="alert alert-success">
+        {{ session('message') }}
+      </div>
+    @endif
+
     @if (! $updateMode)
-      <table class="table table-sm  table-hover table-valign-middle">
+      <table class="table table-sm table-hover table-valign-middle text-secondary">
         <tr>
           <th>School Name</th>
           <td>{{ $school->name }}</td>

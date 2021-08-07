@@ -22,6 +22,7 @@ class TodoComponent extends Component
         'exitUpdate' => 'exitUpdateMode',
         'deleteTodo',
         'confirmDeleteTodo',
+        'exitDelete' => 'exitDeleteMode',
     ];
 
     public function render()

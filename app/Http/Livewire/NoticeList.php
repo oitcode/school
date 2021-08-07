@@ -12,6 +12,7 @@ class NoticeList extends Component
 
     protected $listeners = [
         'noticeAdded' => 'render',
+        'updateList' => 'render',
     ];
     public function render()
     {

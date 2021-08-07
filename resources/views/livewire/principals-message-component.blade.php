@@ -17,6 +17,14 @@
   </div>
 
   <div class="card-body p-0">
+
+    {{-- TODO: Bug --}}
+    @if (session()->has('message'))
+     <div class="alert alert-success">
+       {{ session('message') }}
+     </div>
+    @endif
+
     @if (!$createMode && !$updateMode)
       @if ($principalsMessage != null)
         <table class="table table-sm  table-hover table-valign-middle">

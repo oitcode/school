@@ -43,6 +43,13 @@ Route::get('/dashboard/todo', 'TodoController@index')->name('dashboard-todo');
 /* Change Password */
 Route::get('/changepassword', 'ChangePasswordController@index')->name('changepassword');
 
-Auth::routes();
+/* Profile */
+Route::get('/dashboard/profile', 'ProfileController@index')->name('dashboard');
+
+/* Notice display */
+Route::get('/notice/{id}', 'FrontpageController@noticeDisplay')->name('notice-display');
+
+/* Authentication routes */
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');

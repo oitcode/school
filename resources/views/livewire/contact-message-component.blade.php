@@ -3,17 +3,20 @@
     <h3 class="card-title mt-1">
       Contact Messages
     </h3>
-    <div class="card-tools mx-3">
-      <button class="btn btn-sm btn-outline-info px-3" wire:click="enterCreateMode">
-        <i class="fas fa-plus"></i>
-      </button>
-      <button class="btn btn-sm btn-outline-info px-3" wire:click="enterUpdateMode">
-        <i class="fas fa-pencil-alt"></i>
-      </button>
-    </div>
   </div>
 
   <div class="card-body p-0">
-    @livewire ('contact-message-list')
+
+    @if ($updateMode)
+      @livewire ('contact-message-update', ['contactMessage' => $updatingContactMessage,])
+    @elseif ($displayMode)
+      @livewire ('contact-message-display', ['contactMessage' => $displayingContactMessage,])
+    @else
+      @livewire ('contact-message-list')
+    @endif
+
+    @if ($deleteMode)
+      @livewire ('contact-message-delete-confirm', ['deletingContactMessage' => $deletingContactMessage,])
+    @endif
   </div>
 </div>

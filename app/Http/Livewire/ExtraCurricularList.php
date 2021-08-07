@@ -13,6 +13,7 @@ class ExtraCurricularList extends Component
     protected $listeners = [
         'extraCurricularAdded' => 'render',
         'refreshExtraCurricularList' => 'render',
+        'updateList' => 'render',
     ];
     public function render()
     {

@@ -29,8 +29,13 @@
       @livewire('facility-category-component')
     @endif
 
-    @if ($createMode)
+
+    @if ($updateMode)
+      @livewire('facility-update', ['facility' => $updatingFacility,])
+    @elseif ($createMode)
       @livewire('facility-create')
+    @else
+      @livewire('facility-list')
     @endif
 
     @if (false)
@@ -49,7 +54,6 @@
     @endif
 
   
-    @livewire('facility-list')
   
     {{--
     @if ($editMode)

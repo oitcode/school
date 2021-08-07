@@ -26,25 +26,29 @@
         <tbody>
           @foreach($extraCurriculars as $extraCurricular)
           <tr>
-            <td>
+            <td class="text-secondary">
                  {{ $extraCurricular->extra_curricular_id }}
             </td>
 
             <td>
-              {{ $extraCurricular->name }}
-            </td>
-
-            <td class="text-muted">
-              {{ $extraCurricular->extraCurricularCategory->name }}
+              <a href="">
+                {{ $extraCurricular->name }}
+              </a>
             </td>
 
             <td>
+              <span class="badge badge-primary badge-pill">
+                {{ $extraCurricular->extraCurricularCategory->name }}
+              </span>
+            </td>
+
+            <td class="text-secondary">
               {{ $extraCurricular->description }}
             </td>
 
             <td>
-              <span class="btn btn-tool btn-sm">
-                <i class="fas fa-pencil-alt text-primary mr-3" wire:click="$emit('updateExtraCurricular', {{ $extraCurricular }})"></i>
+              <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateExtraCurricular', {{ $extraCurricular }})">
+                <i class="fas fa-pencil-alt text-primary"></i>
               </span>
               <span class="btn btn-tool btn-sm" wire:click="$emit('confirmDeleteExtraCurricular', {{ $extraCurricular }})">
                 <i class="fas fa-trash text-danger"></i>

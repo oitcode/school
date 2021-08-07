@@ -10,6 +10,10 @@ class GalleryList extends Component
 {
     public $galleries = null;
 
+    protected $listeners = [
+        'updateList' => 'render',
+    ];
+
     public function render()
     {
         $this->galleries = Gallery::all();

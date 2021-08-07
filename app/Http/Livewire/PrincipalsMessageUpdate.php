@@ -37,5 +37,8 @@ class PrincipalsMessageUpdate extends Component
         }
 
         $this->principalsMessage->update($validatedData);
+
+        session()->flash('message', 'Updated');
+        $this->emit('exitUpdate');
     }
 }

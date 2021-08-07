@@ -115,4 +115,14 @@ class FrontpageController extends Controller
             ->with('school', $school)
             ->with('principalsMessage', $principalsMessage);
     }
+
+    public function noticeDisplay($id)
+    {
+        $school = School::firstOrFail();
+        $notice = Notice::findOrFail($id);
+
+        return view('notice-display')
+            ->with('school', $school)
+            ->with('notice', $notice);
+    }
 }

@@ -95,21 +95,39 @@
     <tbody>
       @foreach ($todos as $todo)
         <tr>
-          <td>
+          <td class="text-secondary">
             {{ $todo->publish_date }}
           </td>
           <td>
-            {{ $todo->title }}
+            <a href="">
+              {{ $todo->title }}
+            </a>
           </td>
           <td>
-            {{ $todo->status }}
+            @if (strtolower($todo->status) === 'new')
+              <span class="badge badge-success badge-pill">
+                New
+              </span>
+            @elseif (strtolower($todo->status) === 'dropped')
+              <span class="badge badge-warning badge-pill">
+                Dropped
+              </span>
+            @elseif (strtolower($todo->status) === 'done')
+              <span class="badge badge-success badge-pill">
+                Done
+              </span>
+            @else
+              <span class="badge badge-danger badge-pill">
+                {{ $todo->status }}
+              </span>
+            @endif
           </td>
           <td>
-            <span class="btn btn-tool btn-sm" wire:click="$emit('updateTodo', {{ $todo }})">
-              <i class="fas fa-pencil-alt text-primary mr-3"></i>
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateTodo', {{ $todo }})">
+              <i class="fas fa-pencil-alt text-primary"></i>
             </span>
-            <span class="btn btn-tool btn-sm">
-              <i class="fas fa-trash text-danger mr-3" wire:click="$emit('confirmDeleteTodo', {{ $todo }})"></i>
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('confirmDeleteTodo', {{ $todo }})">
+              <i class="fas fa-trash text-danger"></i>
             </span>
           </td>
         </tr>
