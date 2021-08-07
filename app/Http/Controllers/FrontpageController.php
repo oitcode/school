@@ -24,7 +24,21 @@ class FrontpageController extends Controller
      */
     public function main()
     {
-        $school = School::firstOrFail();
+        $school = School::first();
+
+        if (!$school) {
+            return '
+              <div style="text-align: center;">
+                <h1><span style="color:green;">O</span>IT <span style="font-size:0.5em; color:green;">school</span> CM<span style="color:green;">S</span></h1>
+                <h2><span style="color:green;">S</span>chool is for educatio<span style="color:green;">n</span></h2>
+                <h3><span style="color:green;">E</span>ducation is for knowledg<span style="color:green;">e</span></h3>
+                <h4><span style="color:green;">K</span>nowledge makes you wis<span style="color:green;">e</span></h4>
+                <h5><span style="color:green;">H</span>ave a good da<span style="color:green;">y</span></h5>
+                <h5><span style="color:green;">B</span>y<span style="color:green;">e</span></h5>
+              </div>
+            ';
+        }
+
         $mainpageContents = MainpageContent::all();
 
         return view('main')
