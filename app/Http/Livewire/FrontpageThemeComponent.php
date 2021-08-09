@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
+use App\FrontpageTheme;
+
 class FrontpageThemeComponent extends Component
 {
     public $createMode = false;
@@ -16,6 +18,8 @@ class FrontpageThemeComponent extends Component
 
     protected $listeners = [
         'exitCreate' => 'exitCreateMode',
+        'updateFrontpageTheme',
+        'exitUpdate' => 'exitUpdateMode',
     ];
     public function render()
     {
@@ -31,4 +35,22 @@ class FrontpageThemeComponent extends Component
     {
         $this->createMode = false;
     }
+
+    public function enterUpdateMode()
+    {
+        $this->updateMode = true;
+    }
+
+    public function exitUpdateMode()
+    {
+        $this->updatingFrontpageTheme = false;
+        $this->updateMode = false;
+    }
+
+    public function updateFrontpageTheme(FrontpageTheme $frontpageTheme)
+    {
+        $this->updatingFrontpageTheme = $frontpageTheme;
+        $this->enterUpdateMode();
+    }
 }
+
