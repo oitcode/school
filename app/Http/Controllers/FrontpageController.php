@@ -15,6 +15,7 @@ use App\PrincipalsMessage;
 use App\AboutUs;
 use App\MainpageContent;
 use App\SocialMediaLink;
+use App\FrontpageTheme;
 
 class FrontpageController extends Controller
 {
@@ -26,6 +27,7 @@ class FrontpageController extends Controller
     public function main()
     {
         $school = School::first();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
 
         if (!$school) {
@@ -45,6 +47,7 @@ class FrontpageController extends Controller
 
         return view('main')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('mainpageContents', $mainpageContents);
     }
@@ -52,6 +55,7 @@ class FrontpageController extends Controller
     public function aboutus()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
 
         $aboutUs = null;
@@ -62,6 +66,7 @@ class FrontpageController extends Controller
 
         return view('aboutus')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('aboutUs', $aboutUs);
     }
@@ -69,21 +74,25 @@ class FrontpageController extends Controller
     public function contact()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
 
         return view('contact')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks);
     }
 
     public function noticeboard()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $notices = Notice::all();
 
         return view('noticeboard')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('notices', $notices);
     }
@@ -91,11 +100,13 @@ class FrontpageController extends Controller
     public function teachers()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $teachers = Teacher::all();
 
         return view('teachers')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('teachers', $teachers);
     }
@@ -103,11 +114,13 @@ class FrontpageController extends Controller
     public function facilities()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $facilities = Facility::all();
 
         return view('facilities')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('facilities', $facilities);
     }
@@ -115,11 +128,13 @@ class FrontpageController extends Controller
     public function extraCurriculars()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $extraCurricularCategories = ExtraCurricularCategory::all();
 
         return view('extra-curriculars')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('extraCurricularCategories', $extraCurricularCategories);
     }
@@ -127,11 +142,13 @@ class FrontpageController extends Controller
     public function gallery()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $galleries = Gallery::all();
 
         return view('gallery')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('galleries', $galleries);
     }
@@ -139,6 +156,7 @@ class FrontpageController extends Controller
     public function principalsMessage()
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $principalsMessage = null;
 
@@ -148,6 +166,7 @@ class FrontpageController extends Controller
 
         return view('principals-message')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('principalsMessage', $principalsMessage);
     }
@@ -155,11 +174,13 @@ class FrontpageController extends Controller
     public function noticeDisplay($id)
     {
         $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
         $notice = Notice::findOrFail($id);
 
         return view('notice-display')
             ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('notice', $notice);
     }

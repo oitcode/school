@@ -273,6 +273,10 @@ return [
                     'text' => 'Social media',
                     'url'  => '/dashboard/social_media_link',
                 ],
+                [
+                    'text' => 'Theme',
+                    'url'  => '/dashboard/frontpage_theme',
+                ],
                 /*
                 [
                     'text'    => 'level_one',

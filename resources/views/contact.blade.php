@@ -2,7 +2,15 @@
 
 @section('content')
 
-<div class="container-fluid bg-light o-overlaid p-0">
+<div class="container-fluid bg-light p-0" 
+  style="background-image: @if ($frontpageTheme != null)
+                             url({{ asset('storage/' . $frontpageTheme->hero_image_path) }})
+                           @else
+                             url({{ asset('img/hero-image-1.jpg') }})
+                           @endif
+                           ;
+                           background-size: cover;
+                           background-position: center;">
   <div class="o-overlay">
     <div class="container py-4">
       <h1 class="display-4 text-light">Contact Us</h1>

@@ -37,6 +37,7 @@ Route::get('/dashboard/aboutus', 'AboutUsController@index')->name('dashboard-abo
 Route::get('/dashboard/contact_message', 'ContactMessageController@index')->name('dashboard-contact-message');
 Route::get('/dashboard/mainpage', 'MainpageController@index')->name('dashboard-mainpage');
 Route::get('/dashboard/social_media_link', 'SocialMediaLinkController@index')->name('dashboard-social-media-link');
+Route::get('/dashboard/frontpage_theme', 'FrontpageThemeController@index')->name('dashboard-frontpage-theme');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');
