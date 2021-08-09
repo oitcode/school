@@ -56,7 +56,7 @@
 
   @endforeach
 @else
-  <div class="container">
+  <div class="container py-5">
     <h2>
       COMING SOON!!
     </h2>

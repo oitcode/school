@@ -36,6 +36,7 @@ Route::get('/dashboard/principals_message', 'PrincipalsMessageController@index')
 Route::get('/dashboard/aboutus', 'AboutUsController@index')->name('dashboard-aboutus');
 Route::get('/dashboard/contact_message', 'ContactMessageController@index')->name('dashboard-contact-message');
 Route::get('/dashboard/mainpage', 'MainpageController@index')->name('dashboard-mainpage');
+Route::get('/dashboard/social_media_link', 'SocialMediaLinkController@index')->name('dashboard-social-media-link');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');

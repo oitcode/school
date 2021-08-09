@@ -14,6 +14,7 @@ use App\Gallery;
 use App\PrincipalsMessage;
 use App\AboutUs;
 use App\MainpageContent;
+use App\SocialMediaLink;
 
 class FrontpageController extends Controller
 {
@@ -25,6 +26,7 @@ class FrontpageController extends Controller
     public function main()
     {
         $school = School::first();
+        $socialMediaLinks = SocialMediaLink::all();
 
         if (!$school) {
             return '
@@ -43,12 +45,14 @@ class FrontpageController extends Controller
 
         return view('main')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('mainpageContents', $mainpageContents);
     }
 
     public function aboutus()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
 
         $aboutUs = null;
 
@@ -58,70 +62,84 @@ class FrontpageController extends Controller
 
         return view('aboutus')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('aboutUs', $aboutUs);
     }
 
     public function contact()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
 
         return view('contact')
-            ->with('school', $school);
+            ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks);
     }
 
     public function noticeboard()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $notices = Notice::all();
 
         return view('noticeboard')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('notices', $notices);
     }
 
     public function teachers()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $teachers = Teacher::all();
 
         return view('teachers')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('teachers', $teachers);
     }
 
     public function facilities()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $facilities = Facility::all();
 
         return view('facilities')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('facilities', $facilities);
     }
 
     public function extraCurriculars()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $extraCurricularCategories = ExtraCurricularCategory::all();
 
         return view('extra-curriculars')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('extraCurricularCategories', $extraCurricularCategories);
     }
 
     public function gallery()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $galleries = Gallery::all();
 
         return view('gallery')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('galleries', $galleries);
     }
 
     public function principalsMessage()
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $principalsMessage = null;
 
         if (PrincipalsMessage::count() > 0) {
@@ -130,16 +148,19 @@ class FrontpageController extends Controller
 
         return view('principals-message')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('principalsMessage', $principalsMessage);
     }
 
     public function noticeDisplay($id)
     {
         $school = School::firstOrFail();
+        $socialMediaLinks = SocialMediaLink::all();
         $notice = Notice::findOrFail($id);
 
         return view('notice-display')
             ->with('school', $school)
+            ->with('socialMediaLinks', $socialMediaLinks)
             ->with('notice', $notice);
     }
 }

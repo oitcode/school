@@ -4,19 +4,20 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-use App\School;
 use App\SocialMediaLink;
 
-class TopBarComponent extends Component
+class SocialMediaLinkList extends Component
 {
-    public $school;
     public $socialMediaLinks;
+
+    protected $listeners = [
+        'updateList' => 'render',
+    ];
 
     public function render()
     {
-        $this->school = School::firstOrFail();
         $this->socialMediaLinks = SocialMediaLink::all();
 
-        return view('livewire.top-bar-component');
+        return view('livewire.social-media-link-list');
     }
 }

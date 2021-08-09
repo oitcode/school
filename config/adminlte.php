@@ -269,6 +269,10 @@ return [
                     'text' => 'About us',
                     'url'  => '/dashboard/aboutus',
                 ],
+                [
+                    'text' => 'Social media',
+                    'url'  => '/dashboard/social_media_link',
+                ],
                 /*
                 [
                     'text'    => 'level_one',
