@@ -12,6 +12,7 @@
         <thead>
           <tr class="text-secondary border-top">
             <th>#</th>
+            <th>Sender Name</th>
             <th>Sender Email</th>
             <th>Sender Phone</th>
             <th>Message</th>
@@ -26,6 +27,10 @@
           <tr>
             <td class="text-secondary">
                  {{ $loop->iteration }}
+            </td>
+
+            <td class="">
+                 {{ $contactMessage->sender_name }}
             </td>
 
             <td class="text-secondary">

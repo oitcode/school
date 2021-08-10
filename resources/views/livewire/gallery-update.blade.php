@@ -44,8 +44,8 @@
 
     <strong>Add Images</strong>
     <div class="form-group">
-        <input type="file" wire:model="new_images" multiple>
-        @error('new_images') <span class="error">{{ $message }}</span> @enderror
+        <input type="file" class="form-control" wire:model="new_images" multiple>
+        @error('new_images') <span class="text-danger">{{ $message }}</span> @enderror
     </div>
     <br />
 

@@ -8,8 +8,8 @@
 
   <div class="form-group">
       <label for="">Hero image</label>
-      <input type="file" wire:model="hero_image">
-      @error('hero_image') <span class="error">{{ $message }}</span> @enderror
+      <input type="file" class="form-control" wire:model="hero_image">
+      @error('hero_image') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
   <button type="submit" class="btn btn-primary" wire:click="store">Submit</button>

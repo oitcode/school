@@ -49,8 +49,7 @@ class ExtraCurricularCreate extends Component
             DB::commit();
 
             /* Todo: Should this is outside the try block? */
-            $this->emit('extraCurricularAdded');
-            $this->emit('toggleExtraCurricularCreateModal');
+            $this->emit('exitCreate');
         } catch (\Exception $e) {
             DB::rollback();
         }

@@ -32,10 +32,8 @@ class FacilityCategoryComponent extends Component
         ]);
 
         FacilityCategory::create($validatedData);
-        $this->resetInputFields();
 
-        $this->emitUp('facilityCategoryAdded');
-        $this->emit('toggleFacilityCreateCreateModal');
+        $this->emit('exitCategoryCreate');
     }
 
     public function edit($id)

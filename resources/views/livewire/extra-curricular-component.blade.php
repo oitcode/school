@@ -8,7 +8,7 @@
         <i class="fas fa-plus"></i>
       </button>
 
-      <button class="btn btn-sm btn-outline-info px-3" wire:click="enterExtraCurricularCategoryCreateMode">
+      <button class="btn btn-sm btn-outline-info px-3" wire:click="enterCategoryCreateMode">
         <i class="fas fa-folder-plus"></i>
       </button>
 
@@ -25,11 +25,9 @@
 
 
   <div class="card-body p-0">
-    @if ($extraCurricularCategoryCreateMode)
+    @if ($categoryCreateMode)
       @livewire('extra-curricular-category-component')
-    @endif
-
-    @if ($updateMode)
+    @elseif ($updateMode)
       @livewire('extra-curricular-update', ['extraCurricular' => $updatingExtraCurricular,])
     @elseif ($createMode)
       @livewire('extra-curricular-create')

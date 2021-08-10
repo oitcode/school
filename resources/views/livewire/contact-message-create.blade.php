@@ -7,6 +7,12 @@
   @endif
 
   <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control" wire:model.defer="sender_name">
+    @error('sender_name') <span class="text-danger">{{ $message }}</span> @enderror
+  </div>
+
+  <div class="form-group">
     <label for="">Email Address</label>
     <input type="email" class="form-control" wire:model.defer="sender_email">
     @error('sender_email') <span class="text-danger">{{ $message }}</span> @enderror
@@ -14,7 +20,7 @@
 
   <div class="form-group">
     <label for="">Phone</label>
-    <textarea class="form-control" rows="3" wire:model.defer="sender_phone"></textarea>
+    <input type="text" class="form-control" wire:model.defer="sender_phone">
     @error('sender_phone') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 

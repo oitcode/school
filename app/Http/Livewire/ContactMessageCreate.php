@@ -9,6 +9,7 @@ use App\ContactMessage;
 
 class ContactMessageCreate extends Component
 {
+    public $sender_name;
     public $sender_email;
     public $sender_phone;
     public $message;
@@ -23,6 +24,7 @@ class ContactMessageCreate extends Component
         $messageSaved = false;
 
         $validatedData = $this->validate([
+            'sender_name' => 'required',
             'sender_email' => 'required|email',
             'sender_phone' => 'required',
             'message' => 'required',

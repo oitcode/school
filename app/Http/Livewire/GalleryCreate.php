@@ -31,6 +31,7 @@ class GalleryCreate extends Component
             'description' => 'required',
             'comment' => 'nullable',
 
+            /* TODO: Show proper validation message */
             'images.*' => 'image'
         ]);
 
@@ -53,8 +54,7 @@ class GalleryCreate extends Component
             DB::commit();
 
             /* Todo: Should this is outside the try block? */
-            $this->emit('galleryAdded');
-            $this->emit('toggleGalleryCreateModal');
+            $this->emit('exitCreate');
         } catch (\Exception $e) {
             DB::rollback();
         }

@@ -40,8 +40,7 @@ class FacilityCreate extends Component
             DB::commit();
 
             /* Todo: Should this is outside the try block? */
-            $this->emit('facilityAdded');
-            $this->emit('toggleFacilityCreateModal');
+            $this->emit('exitCreate');
         } catch (\Exception $e) {
             DB::rollback();
         }

@@ -18,7 +18,7 @@ class GalleryComponent extends Component
     public $deletingGallery;
 
     protected $listeners = [
-        'destroyGalleryCreate' => 'exitCreateMode',
+        'exitCreate' => 'exitCreateMode',
         'updateGallery',
         'confirmDeleteGallery',
         'deleteGallery',

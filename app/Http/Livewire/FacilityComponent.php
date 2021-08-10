@@ -17,8 +17,8 @@ class FacilityComponent extends Component
     public $updatingFacility = null;
 
     protected $listeners = [
-        'destroyFacilityCategoryCreate' => 'exitFacilityCategoryCreateMode',
-        'destroyFacilityCreate' => 'exitCreateMode',
+        'exitCategoryCreate' => 'exitFacilityCategoryCreateMode',
+        'exitCreate' => 'exitCreateMode',
         'confirmDeleteFacility',
         'exitUpdate',
         'updateFacility',

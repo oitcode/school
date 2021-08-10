@@ -18,7 +18,7 @@ class NoticeComponent extends Component
     public $deletingNotice;
 
     protected $listeners = [
-        'exitCreateMode' => 'exitCreateMode',
+        'exitCreate' => 'exitCreateMode',
         'confirmDeleteNotice',
         'exitDelete' => 'exitDeleteMode',
         'deleteNotice',

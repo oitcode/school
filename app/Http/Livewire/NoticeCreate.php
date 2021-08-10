@@ -38,8 +38,7 @@ class NoticeCreate extends Component
             DB::rollback();
         }
 
-        $this->resetInputFields();
-        $this->emit('noticeAdded');
+        $this->emit('exitCreate');
     }
 
     public function resetInputFields()

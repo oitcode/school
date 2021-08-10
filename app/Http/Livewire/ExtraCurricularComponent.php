@@ -10,6 +10,7 @@ class ExtraCurricularComponent extends Component
 {
     public $extraCurricularCategoryCreateMode = false;
 
+    public $categoryCreateMode = false;
     public $createMode = false;
     public $updateMode = false;
     public $deleteMode = false;
@@ -18,8 +19,8 @@ class ExtraCurricularComponent extends Component
     public $deletingExtraCurricular = null;
 
     protected $listeners = [
-        'destroyExtraCurricularCategoryCreate' => 'exitExtraCurricularCategoryCreateMode',
-        'destroyExtraCurricularCreate' => 'exitCreateMode',
+        'exitCategoryCreate' => 'exitCategoryCreateMode',
+        'exitCreate' => 'exitCreateMode',
         'confirmDeleteExtraCurricular',
         'deleteExtraCurricular',
         'exitDelete' => 'exitDeleteMode',
@@ -42,14 +43,14 @@ class ExtraCurricularComponent extends Component
         $this->createMode = false;
     }
 
-    public function enterExtraCurricularCategoryCreateMode()
+    public function enterCategoryCreateMode()
     {
-        $this->extraCurricularCategoryCreateMode = true;
+        $this->categoryCreateMode = true;
     }
 
-    public function exitExtraCurricularCategoryCreateMode()
+    public function exitCategoryCreateMode()
     {
-        $this->extraCurricularCategoryCreateMode = false;
+        $this->categoryCreateMode = false;
     }
 
     public function confirmDeleteExtraCurricular(ExtraCurricular $extraCurricular)

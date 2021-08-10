@@ -9,8 +9,8 @@
 
   <div class="form-group">
       <label for="">Image</label>
-      <input type="file" wire:model="image">
-      @error('image') <span class="error">{{ $message }}</span> @enderror
+      <input type="file" class="form-control" wire:model="image">
+      @error('image') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
 

@@ -32,10 +32,7 @@ class ExtraCurricularCategoryComponent extends Component
         ]);
 
         ExtraCurricularCategory::create($validatedData);
-        $this->resetInputFields();
-
-        $this->emitUp('extraCurricularCategoryAdded');
-        $this->emit('toggleExtraCurricularCreateCreateModal');
+        $this->emit('exitCategoryCreate');
     }
 
     public function resetInputFields()

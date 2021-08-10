@@ -11,8 +11,8 @@
 
   <div class="form-group">
       <label for="">Image 1</label>
-      <input type="file" wire:model="image1">
-      @error('image1') <span class="error">{{ $message }}</span> @enderror
+      <input type="file" class="form-control" wire:model="image1">
+      @error('image1') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
 
@@ -25,8 +25,8 @@
 
   <div class="form-group">
       <label for="">Image 2</label>
-      <input type="file" wire:model="image2">
-      @error('image2') <span class="error">{{ $message }}</span> @enderror
+      <input type="file" class="form-control" wire:model="image2">
+      @error('image2') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
 
@@ -39,8 +39,8 @@
 
   <div class="form-group">
       <label for="">Image 3</label>
-      <input type="file" wire:model="image3">
-      @error('image3') <span class="error">{{ $message }}</span> @enderror
+      <input type="file" class="form-control" wire:model="image3">
+      @error('image3') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
 

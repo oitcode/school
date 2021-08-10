@@ -16,8 +16,8 @@
 
   <div class="form-group">
     <label for="">Logo</label>
-    <input type="file" wire:model="logo_image">
-    @error('logo_image') <span class="error">{{ $message }}</span> @enderror
+    <input type="file" class="form-control" wire:model="logo_image">
+    @error('logo_image') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
   <div class="form-group">

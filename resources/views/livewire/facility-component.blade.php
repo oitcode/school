@@ -27,39 +27,13 @@
   <div class="card-body p-0">
     @if ($facilityCategoryCreateMode)
       @livewire('facility-category-component')
-    @endif
-
-
-    @if ($updateMode)
+    @elseif ($updateMode)
       @livewire('facility-update', ['facility' => $updatingFacility,])
     @elseif ($createMode)
       @livewire('facility-create')
     @else
       @livewire('facility-list')
     @endif
-
-    @if (false)
-  
-    @if ($displayMode)
-      @livewire('medical-test-detail', ['medicalTest' => $displayedMedicalTest])
-    @endif
-
-    @if ($agentDisplayMode)
-      @livewire('agent-detail', ['agent' => $displayingAgent])
-    @endif
-
-    @if ($updateMode)
-      @livewire('medical-test-update', ['medicalTest' => $updatingMedicalTest])
-    @endif
-    @endif
-
-  
-  
-    {{--
-    @if ($editMode)
-      @livewire('medical-test-edit')
-    @endif
-    --}}
 
   @if ($deleteMode)
     <div class="modal enter" tabindex="-1" role="dialog" data-backdrop="static" id="todoDeleteConfirmModal">
