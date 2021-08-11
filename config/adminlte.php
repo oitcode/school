@@ -311,6 +311,25 @@ return [
         ],
 
         [
+            'text'    => 'Academic session',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Session',
+                    'url'  => '/dashboard/academic_session',
+                ],
+                [
+                    'text' => 'Class',
+                    'url'  => '/dashboard/class',
+                ],
+                [
+                    'text' => 'Student',
+                    'url'  => '/dashboard/student',
+                ],
+            ],
+        ],
+
+        [
             'text'    => 'Notice',
             'url'  => '/dashboard/notice',
             'icon'    => 'fas fa-fw fa-clipboard',

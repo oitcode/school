@@ -38,6 +38,8 @@ Route::get('/dashboard/contact_message', 'ContactMessageController@index')->name
 Route::get('/dashboard/mainpage', 'MainpageController@index')->name('dashboard-mainpage');
 Route::get('/dashboard/social_media_link', 'SocialMediaLinkController@index')->name('dashboard-social-media-link');
 Route::get('/dashboard/frontpage_theme', 'FrontpageThemeController@index')->name('dashboard-frontpage-theme');
+Route::get('/dashboard/academic_session', 'AcademicSessionController@index')->name('dashboard-academic-session');
+Route::get('/dashboard/class', 'OClassController@index')->name('dashboard-o-class');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');
