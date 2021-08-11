@@ -12,9 +12,9 @@
         <thead>
           <tr class="text-secondary border-top">
             <th>#</th>
-            <th>Sender Name</th>
-            <th>Sender Email</th>
-            <th>Sender Phone</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
             <th>Message</th>
             <th>Status</th>
             <th>Action</th>
@@ -43,7 +43,7 @@
 
             <td>
               <a wire:click.prevent="$emit('displayContactMessage', {{ $contactMessage }})" href="">
-                 {{ $contactMessage->message }}
+                {{ \Illuminate\Support\Str::limit($contactMessage->message, 100, $end=' ...') }}
               </a>
             </td>
 

@@ -21,7 +21,7 @@ class ContactMessage extends Model
     protected $primaryKey = 'contact_message_id';
 
     protected $fillable = [
-        'sender_email', 'sender_phone',
+        'sender_name', 'sender_email', 'sender_phone',
         'message', 'status',
         'comment',
     ];
