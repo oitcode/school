@@ -40,11 +40,20 @@
       <div class="row">
         @foreach ($teachers as $teacher)
           <div class="col-md-4">
-            <div class="card mb-3">
+            <div class="card mb-3 shadow-sm">
               <div class="card-body">
-                <h3 class="card-title mb-3">
-                  {{ $teacher->name }}
-                </h3>
+                <div>
+                  <div class="float-left">
+                    <h3 class="card-title mb-3">
+                      {{ $teacher->name }}
+                    </h3>
+                  </div>
+                  <div class="float-right">
+                    <img src="{{ asset('img/phone-1.webp') }}" width="100" height="100" alt="" class="mr-1">
+                  </div>
+                  <div class="clearfix">
+                  </div>
+                </div>
                 <p>
                  <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
                  {{ $teacher->phone }}

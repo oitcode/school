@@ -28,6 +28,7 @@
         </div>
 
         <div class="col-md-4">
+          <h3 class="h4">Useful links</h3>
           Careers
           <br />
           Academic Calendar
@@ -49,9 +50,6 @@
               @endif
             </a>
           @endforeach
-          <p class="mt-3">
-            Careers
-          </p>
         </div>
       </div>
     </div>
@@ -64,7 +62,7 @@
       |
       &nbsp;&nbsp;
       <span class="text-muted">
-        Designed by
+        Developed by
         <a href="https://oit.com.np">
           OIT
         </a>

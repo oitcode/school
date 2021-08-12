@@ -43,19 +43,42 @@
   @endphp
 
   @foreach ($mainpageContents as $mainpageContent)
-    <div class="container-fluid border-top py-5 @if ($i % 2 == 1) bg-light @endif">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em !important;">
-            {{ $mainpageContent->body}}
-          </div>
-          <div class="col-md-4">
-            <img src="{{ asset('storage/' . $mainpageContent->image_path) }}" class="img-fluid">
-          </div>
-          <div class="col-md-2">
+    {{--
+    <div class="container-fluid border-top py-5 @if ($i % 2 == 1) bg-dark text-light @endif" style="font-size: 1.1em;">
+    --}}
+
+    <div class="container-fluid bg-light p-0 border" 
+        style="font-size: 1.2em;
+          @if ($i % 2 == 1 )
+            /* background-image:url({{ asset('img/cool-2.jpg') }}); */
+          @else
+            background-image:url({{ asset('img/cool-4.jpg') }});
+          @endif
+            background-size: cover;
+            background-position: center;
+        ">
+
+
+        <div class="container py-5">
+          <div class="row d-flex">
+            @if ($i % 2 == 0)
+              <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em !important;">
+                {{ $mainpageContent->body}}
+              </div>
+              <div class="col-md-4">
+                <img src="{{ asset('storage/' . $mainpageContent->image_path) }}" class="img-fluid rounded-circle">
+              </div>
+            @else
+              <div class="col-md-4">
+                <img src="{{ asset('storage/' . $mainpageContent->image_path) }}" class="img-fluid rounded-circle">
+              </div>
+              <div class="col-md-8 justify-content-center align-self-center" style="font-size: 1.1em !important;">
+                {{ $mainpageContent->body}}
+              </div>
+            @endif
           </div>
         </div>
-      </div>
+
     </div>
 
     @php
