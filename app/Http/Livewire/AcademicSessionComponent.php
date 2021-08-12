@@ -13,9 +13,13 @@ class AcademicSessionComponent extends Component
     public $updateMode = false;
     public $deleteMode = false;
 
-    public $name;
+    public $displayingAcademicSession;
 
-    public $academicSessions;
+    protected $listeners = [
+        'exitCreate' => 'exitCreateMode',
+        'displayAcademicSession',
+        'exitDisplay' => 'exitDisplayMode',
+    ];
 
     public function render()
     {
@@ -34,13 +38,20 @@ class AcademicSessionComponent extends Component
         $this->createMode = false;
     }
 
-    public function store()
+    public function enterDisplayMode()
     {
-        $validatedData = $this->validate([
-            'name' => 'required',
-        ]);
+        $this->displayMode = true;
+    }
 
-        AcademicSession::create($validatedData);
-        $this->exitCreateMode();
+    public function exitDisplayMode()
+    {
+        $this->displayingAcademicSession = null;
+        $this->displayMode = false;
+    }
+
+    public function displayAcademicSession(AcademicSession $academicSession)
+    {
+        $this->displayingAcademicSession = $academicSession;
+        $this->enterDisplayMode();
     }
 }

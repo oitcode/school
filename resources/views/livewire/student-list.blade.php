@@ -15,7 +15,7 @@
             {{ $loop->iteration }}
           </td>
           <td>
-            <a wire:click.prevent="" href="">
+            <a href="" wire:click.prevent="$emit('displayStudent', {{ $student }})">
               {{ $student->name }}
             </a>
           </td>

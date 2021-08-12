@@ -49,4 +49,13 @@ class OClass extends Model
     {
         return $this->hasMany('App\Student', 'o_class_id', 'o_class_id');
     }
+
+    /*
+     * fees_invoice table.
+     *
+     */
+    public function feesInvoices()
+    {
+        return $this->hasMany('App\FeesInvoice', 'o_class_id', 'o_class_id');
+    }
 }

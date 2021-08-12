@@ -4,24 +4,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class FeesInvoice extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'student';
+    protected $table = 'fees_invoice';
 
     /**
      * The primary key associated with the table.
      *
      * @var string
      */
-    protected $primaryKey = 'student_id';
+    protected $primaryKey = 'fees_invoice_id';
 
     protected $fillable = [
-        'name', 'o_class_id',
+        'student_id', 'o_class_id',
+        'type', 'term',
+        'payment_status',
     ];
 
 
@@ -33,20 +35,20 @@ class Student extends Model
 
 
     /*
+     * student table.
+     *
+     */
+    public function student()
+    {
+        return $this->belongsTo('App\Student', 'student_id', 'student_id');
+    }
+
+    /*
      * o_class table.
      *
      */
     public function oClass()
     {
         return $this->belongsTo('App\OClass', 'o_class_id', 'o_class_id');
-    }
-
-    /*
-     * fees_invoice table.
-     *
-     */
-    public function feesInvoices()
-    {
-        return $this->hasMany('App\FeesInvoice', 'student_id', 'student_id');
     }
 }
