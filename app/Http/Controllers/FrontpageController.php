@@ -16,6 +16,7 @@ use App\AboutUs;
 use App\MainpageContent;
 use App\SocialMediaLink;
 use App\FrontpageTheme;
+use App\Vacancy;
 
 class FrontpageController extends Controller
 {
@@ -190,11 +191,13 @@ class FrontpageController extends Controller
         $school = School::firstOrFail();
         $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
+        $vacancies = Vacancy::all();
 
         return view('careers')
             ->with('school', $school)
             ->with('frontpageTheme', $frontpageTheme)
-            ->with('socialMediaLinks', $socialMediaLinks);
+            ->with('socialMediaLinks', $socialMediaLinks)
+            ->with('vacancies', $vacancies);
     }
 
     public function academicCalendar()

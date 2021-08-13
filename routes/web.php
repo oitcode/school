@@ -43,6 +43,8 @@ Route::get('/dashboard/frontpage_theme', 'FrontpageThemeController@index')->name
 Route::get('/dashboard/academic_session', 'AcademicSessionController@index')->name('dashboard-academic-session');
 Route::get('/dashboard/class', 'OClassController@index')->name('dashboard-o-class');
 Route::get('/dashboard/student', 'StudentController@index')->name('dashboard-student');
+Route::get('/dashboard/careers_resume_submission', 'CareersResumeSubmissionController@index')->name('dashboard-careers-resume-submission');
+Route::get('/dashboard/vacancy', 'VacancyController@index')->name('dashboard-vacancy');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');

@@ -33,7 +33,45 @@
 </div>
 
 <div class="container py-5">
-  Calendar page <span class="text-secondary"> coming soon.</span>
+  Academic session: <span class="text-secondary"> 2078</span>
+
+
+  <h3>July</h3>
+  <div class="border">
+   @php
+     $i = 0;
+   @endphp
+    <table class="table">
+      <thead>
+        <tr class="bg-light">
+          <th>Day</th>
+          <th>Date</th>
+          <th>Event</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for ($i= 0; $i <= 30; $i++)
+                @if ($i % 7 == 0 )
+                  @php
+                  $day = 'Sun';
+                  @endphp
+                @else
+                  @php
+                  $day = 'Mon';
+                  @endphp
+                @endif
+          <tr @if ($day == 'Sun') class="text-danger" style="background: #fee"@endif>
+            <td>{{ $day }}</td>
+            <td>2021-04-21</td>
+            <td class="">First term</td>
+          </tr>
+        @endfor
+      </tbody>
+    </table>
+  </div>
+
+
+
 </div>
 
 

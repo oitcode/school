@@ -43,7 +43,7 @@
 
             <td>
               <a wire:click.prevent="$emit('displayContactMessage', {{ $contactMessage }})" href="">
-                {{ \Illuminate\Support\Str::limit($contactMessage->message, 100, $end=' ...') }}
+                {{ \Illuminate\Support\Str::limit($contactMessage->message, 75, $end=' ...') }}
               </a>
             </td>
 

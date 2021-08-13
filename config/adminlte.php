@@ -270,6 +270,14 @@ return [
                     'url'  => '/dashboard/aboutus',
                 ],
                 [
+                    'text' => 'Facility',
+                    'url'  => '/dashboard/facility',
+                ],
+                [
+                    'text' => 'Extra curricular',
+                    'url'  => '/dashboard/extra_curricular',
+                ],
+                [
                     'text' => 'Social media',
                     'url'  => '/dashboard/social_media_link',
                 ],
@@ -330,6 +338,25 @@ return [
         ],
 
         [
+            'text'    => 'Careers',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Resume',
+                    'url'  => '/dashboard/careers_resume_submission',
+                ],
+                [
+                    'text' => 'Vacancy',
+                    'url'  => '/dashboard/vacancy',
+                ],
+                [
+                    'text' => 'Application',
+                    'url'  => '/dashboard/vacancy_application',
+                ],
+            ],
+        ],
+
+        [
             'text'    => 'Notice',
             'url'  => '/dashboard/notice',
             'icon'    => 'fas fa-fw fa-clipboard',
@@ -338,18 +365,6 @@ return [
         [
             'text'    => 'Teachers',
             'url'  => '/dashboard/teacher',
-            'icon'    => 'fas fa-fw fa-clipboard',
-        ],
-
-        [
-            'text'    => 'Facility',
-            'url'  => '/dashboard/facility',
-            'icon'    => 'fas fa-fw fa-clipboard',
-        ],
-
-        [
-            'text'    => 'Extra Curricular',
-            'url'  => '/dashboard/extra_curricular',
             'icon'    => 'fas fa-fw fa-clipboard',
         ],
 
