@@ -29,11 +29,17 @@
 
         <div class="col-md-4">
           <h3 class="h4">Useful links</h3>
-          Careers
+            <a href="{{ route('careers') }}" class="text-dark">
+            Careers
+            </a>
           <br />
-          Academic Calendar
+            <a href="{{ route('academic-calendar') }}" class="text-dark">
+            Academic Calendar
+            </a>
           <br />
-          Admission Form
+            <a href="" class="text-dark">
+              Admission Form
+            </a>
         </div>
         <div class="col-md-4">
           <h3 class="h4">Connect</h3>

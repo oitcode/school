@@ -22,6 +22,8 @@ Route::get('/facilities', 'FrontpageController@facilities')->name('facilities');
 Route::get('/extra_curricular', 'FrontpageController@extraCurriculars')->name('extra-curriculars');
 Route::get('/gallery', 'FrontpageController@gallery')->name('gallery');
 Route::get('/principals_message', 'FrontpageController@principalsMessage')->name('principals-message');
+Route::get('/careers', 'FrontpageController@careers')->name('careers');
+Route::get('/academic_calendar', 'FrontpageController@academicCalendar')->name('academic-calendar');
 
 /* Dashboard */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

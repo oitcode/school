@@ -60,11 +60,11 @@
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="">Submit Fees</a>
+                        <a class="nav-link" href="{{ route('academic-calendar') }}">Calendar</a>
                       </li>
 
                       <li class="nav-item">
-                        <a class="nav-link" href="">Admission Form</a>
+                        <a class="nav-link" href="{{ route('careers') }}">Careers</a>
                       </li>
 
                       <li class="nav-item">

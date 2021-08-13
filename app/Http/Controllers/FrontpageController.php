@@ -184,4 +184,28 @@ class FrontpageController extends Controller
             ->with('socialMediaLinks', $socialMediaLinks)
             ->with('notice', $notice);
     }
+
+    public function careers()
+    {
+        $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
+        $socialMediaLinks = SocialMediaLink::all();
+
+        return view('careers')
+            ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
+            ->with('socialMediaLinks', $socialMediaLinks);
+    }
+
+    public function academicCalendar()
+    {
+        $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
+        $socialMediaLinks = SocialMediaLink::all();
+
+        return view('academic-calendar')
+            ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
+            ->with('socialMediaLinks', $socialMediaLinks);
+    }
 }
