@@ -35,6 +35,7 @@ class AcademicSessionPublishFeesInvoice extends Component
                 $feesInvoice->save();
             }
         }
-        return;
+
+        $this->emit('exitPublishFee');
     }
 }

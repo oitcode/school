@@ -63,7 +63,7 @@
 
 
   @if ($addStudentMode)
-    @livewire ('student-create', ['o_class_id' => $oClass->o_class_id,])
+    @livewire ('student-create', ['o_class_id' => $oClass->o_class_id, 'native' => false,])
   @endif
 
   @if ($uploadStudentsFileMode)

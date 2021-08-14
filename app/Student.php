@@ -56,6 +56,7 @@ class Student extends Model
      */
     public function guardians()
     {
-        return $this->belongsToMany('App\Guardian', 'guardian_student', 'student_id', 'guardian_id');
+        return $this->belongsToMany('App\Guardian', 'guardian_student', 'student_id', 'guardian_id')
+            ->withPivot('type');
     }
 }

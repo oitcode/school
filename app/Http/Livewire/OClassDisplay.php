@@ -11,6 +11,10 @@ class OClassDisplay extends Component
     public $addStudentMode = false;
     public $uploadStudentsFileMode = false;
 
+    protected $listeners = [
+        'exitCreateStudent' => 'exitAddStudentMode',
+    ];
+
     public function render()
     {
         return view('livewire.o-class-display');

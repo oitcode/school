@@ -16,6 +16,9 @@ class CreateStudentTable extends Migration
         Schema::create('student', function (Blueprint $table) {
             $table->bigIncrements('student_id');
             $table->string('name');
+            $table->string('email')->email()->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
 
             /*
              * Foreign key to o_class table.

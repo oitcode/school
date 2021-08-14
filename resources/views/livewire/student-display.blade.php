@@ -66,7 +66,13 @@
       Address
     </div>
     <div class="col-md-6">
-      TODO
+      @if ($student->address)
+        {{ $student->address }}
+      @else
+        <small class="text-secondary">
+          No Info
+        </small>
+      @endif
     </div>
   </div>
 
@@ -75,9 +81,20 @@
       Guardian
     </div>
     <div class="col-md-6">
-      @foreach ($student->guardians as $guardian)
-        {{ $guardian->name }}
-      @endforeach
+      @if (count($student->guardians) > 0)
+        @foreach ($student->guardians as $guardian)
+          {{ $guardian->name }}
+          <small>
+            <span class="badge badge-pill">
+              {{ $guardian->pivot->type }}
+            </span>
+          </small>
+        @endforeach
+      @else
+        <small class="text-secondary">
+          No Info
+        </small>
+      @endif
     </div>
   </div>
 
@@ -86,7 +103,7 @@
 
     <table class="table table-sm table-hover">
       <thead>
-        <tr>
+        <tr class="text-secondary">
           <th>Session</th>
           <th>Term</th>
           <th>Payment Status</th>
@@ -132,7 +149,7 @@
 
     <table class="table table-sm table-hover">
       <thead>
-        <tr>
+        <tr class="text-secondary">
           <th>Session</th>
           <th>Exam</th>
           <th>Result</th>

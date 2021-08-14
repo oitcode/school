@@ -10,6 +10,10 @@ class AcademicSessionDisplay extends Component
 
     public $publishFeesMode = false;
 
+    protected $listeners = [
+        'exitPublishFee' => 'exitPublishFeesMode',
+    ];
+
     public function render()
     {
         return view('livewire.academic-session-display');
