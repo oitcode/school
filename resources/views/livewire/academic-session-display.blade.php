@@ -1,16 +1,45 @@
-<div class="p-2">
+<div class="p-0">
 
-  <div class="bg-light border-bottom py-2">
-    <a href="" wire:click.prevent="enterPublishFeesMode">
-      Publish fees invoice
-    </a>
+
+  <div class="bg-light border p-2">
+    <div class="float-left mr-3">
+      <button class="btn" wire:click.prevent="enterPublishFeesMode">
+        <i class="fas fa-coins text-secondary mr-2"></i>
+        Publish fees invoice
+      </button>
+    </div>
+
+    <div class="float-left mr-3">
+      <button class="btn">
+        <i class="fas fa-sticky-note text-secondary mr-2"></i>
+        Add note
+      </button>
+    </div>
+
+    <div class="float-left mr-3">
+      <button class="btn">
+        <i class="fas fa-tag text-secondary mr-2"></i>
+        Misc
+      </button>
+    </div>
+
+    <div class="float-right mr-3">
+      <button class="btn text-danger" wire:click="$emit('exitDisplay')">
+        <i class="fas fa-times mr-2"></i>
+        Close
+      </button>
+    </div>
+
+    <div class="clearfix">
+    </div>
   </div>
+
 
   @if ($publishFeesMode)
     @livewire('academic-session-publish-fees-invoice', ['academicSession' => $academicSession,])
   @endif
 
-  <div class="row p-2 border-bottom">
+  <div class="row p-2 border-bottom" style="margin: auto;">
     <div class="col-md-2">
       Academic Session
     </div>
@@ -21,37 +50,15 @@
     </div>
   </div>
 
-  <div class="row p-2 border-bottom">
+  <div class="row p-2 border-bottom" style="margin: auto;">
     <div class="col-md-2">
       Status
     </div>
     <div class="col-md-6">
-      @if (true)
-        <span class="badge badge-success badge-pill">
-          New
-        </span>
-      @elseif (true)
-        <span class="badge badge-warning badge-pill">
-          Progress
-        </span>
-      @else
-        <span class="badge badge-danger badge-pill">
-          TODO
-        </span>
-      @endif
+      <span class="badge badge-success badge-pill">
+        New
+      </span>
     </div>
   </div>
 
-  <div class="row p-2 border-bottom">
-    <div class="col-md-2">
-      Message
-    </div>
-    <div class="col-md-6">
-      TODO
-    </div>
-  </div>
-
-  <div class="m-2">
-    <button type="submit" class="btn btn-danger" wire:click="$emit('exitDisplay')">Close</button>
-  </div>
 </div>

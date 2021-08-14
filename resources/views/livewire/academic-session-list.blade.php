@@ -13,7 +13,7 @@
         @foreach($academicSessions as $academicSession)
         <tr>
           <td>
-            <a href="" wire:click.prevent="$emit('displayAcademicSession', {{ $academicSession }})">
+            <a class="text-dark" href="" wire:click.prevent="$emit('displayAcademicSession', {{ $academicSession }})">
               {{ $academicSession->name }}
             </a>
           </td>

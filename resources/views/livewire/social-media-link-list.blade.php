@@ -2,7 +2,7 @@
   @if ($socialMediaLinks != null && count($socialMediaLinks) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>#</th>
         <th>Name</th>
         <th>Link</th>
@@ -16,11 +16,11 @@
             {{ $loop->iteration }}
           </td>
           <td>
-            <a wire:click.prevent="$emit('displaySocialMediaLink', {{ $socialMediaLink }})" href="">
+            <a class="text-dark" wire:click.prevent="$emit('displaySocialMediaLink', {{ $socialMediaLink }})" href="">
               {{ $socialMediaLink->media_name }}
             </a>
           </td>
-          <td>
+          <td class="text-secondary">
             {{ $socialMediaLink->url }}
           </td>
           <td>

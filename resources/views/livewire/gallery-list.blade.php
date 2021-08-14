@@ -27,7 +27,7 @@
             </td>
 
             <td>
-              <a href="" wire:click.prevent="$emit('displayGallery', {{ $gallery }})">
+              <a class="text-dark" href="" wire:click.prevent="$emit('displayGallery', {{ $gallery }})">
                 {{ $gallery->name }}
               </a>
             </td>

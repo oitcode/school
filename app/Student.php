@@ -49,4 +49,13 @@ class Student extends Model
     {
         return $this->hasMany('App\FeesInvoice', 'student_id', 'student_id');
     }
+
+    /*
+     * guardian table.
+     *
+     */
+    public function guardians()
+    {
+        return $this->belongsToMany('App\Guardian', 'guardian_student', 'student_id', 'guardian_id');
+    }
 }

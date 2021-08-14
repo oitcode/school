@@ -2,7 +2,7 @@
   @if ($notices != null && count($notices) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>Date</th>
         <th>Title</th>
         <th>Status</th>
@@ -16,7 +16,7 @@
             {{ $notice->publish_date }}
           </td>
           <td>
-            <a wire:click.prevent="$emit('displayNotice', {{ $notice }})" href="">
+            <a class="text-dark" wire:click.prevent="$emit('displayNotice', {{ $notice }})" href="">
               {{ $notice->title }}
             </a>
           </td>

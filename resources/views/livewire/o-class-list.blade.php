@@ -2,7 +2,7 @@
   @if ($oClasses != null && count($oClasses) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>Name</th>
         <th>Academic Session</th>
         <th>Action</th>
@@ -12,11 +12,11 @@
       @foreach ($oClasses as $oClass)
         <tr>
           <td>
-            <a wire:click.prevent="$emit('displayOClass', {{ $oClass }})" href="">
+            <a class="text-dark" wire:click.prevent="$emit('displayOClass', {{ $oClass }})" href="">
               {{ $oClass->name }}
             </a>
           </td>
-          <td>
+          <td class="text-secondary">
             {{ $oClass->academicSession->name }}
           </td>
           <td>

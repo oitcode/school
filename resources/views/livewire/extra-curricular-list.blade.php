@@ -31,7 +31,7 @@
             </td>
 
             <td>
-              <a href="">
+              <a class="text-dark" href="">
                 {{ $extraCurricular->name }}
               </a>
             </td>

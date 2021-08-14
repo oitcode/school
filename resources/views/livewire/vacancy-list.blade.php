@@ -3,7 +3,7 @@
   @if ($vacancies != null && count($vacancies) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>#</th>
         <th>Title</th>
         <th>Status</th>
@@ -17,7 +17,7 @@
             {{ $loop->iteration }}
           </td>
           <td>
-            <a href="">
+            <a class="text-dark" href="">
               {{ $vacancy->title }}
             </a>
           </td>

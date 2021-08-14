@@ -2,7 +2,7 @@
   @if ($teachers != null && count($teachers) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>#</th>
         <th>Name</th>
         <th>Email</th>
@@ -17,7 +17,7 @@
             {{ $loop->iteration }}
           </td>
           <td>
-            <a href="">
+            <a class="text-dark" href="">
               {{ $teacher->name }}
             </a>
           </td>

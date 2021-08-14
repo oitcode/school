@@ -2,7 +2,7 @@
   @if ($mainpageContents != null && count($mainpageContents) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>Content</th>
         <th>Image</th>
         <th>Action</th>
@@ -12,7 +12,7 @@
       @foreach ($mainpageContents as $mainpageContent)
         <tr>
           <td>
-            <a wire:click.prevent="$emit('displayMainpageContent', {{ $mainpageContent }})" href="">
+            <a class="text-dark" wire:click.prevent="$emit('displayMainpageContent', {{ $mainpageContent }})" href="">
               {{ \Illuminate\Support\Str::limit($mainpageContent->body, 100, $end=' ...') }}
             </a>
           </td>

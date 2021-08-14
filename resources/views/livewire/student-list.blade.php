@@ -2,7 +2,7 @@
   @if ($students != null && count($students) > 0)
   <table class="table table-sm  table-hover table-valign-middle">
     <thead>
-      <tr>
+      <tr class="text-secondary">
         <th>#</th>
         <th>Name</th>
         <th>Action</th>
@@ -15,7 +15,7 @@
             {{ $loop->iteration }}
           </td>
           <td>
-            <a href="" wire:click.prevent="$emit('displayStudent', {{ $student }})">
+            <a class="text-dark" href="" wire:click.prevent="$emit('displayStudent', {{ $student }})">
               {{ $student->name }}
             </a>
           </td>

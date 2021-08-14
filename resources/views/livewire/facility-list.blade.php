@@ -33,7 +33,7 @@
             </td>
 
             <td>
-              <a href="">
+              <a class="text-dark" href="">
                 {{ $facility->name }}
               </a>
             </td>
