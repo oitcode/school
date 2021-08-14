@@ -2,7 +2,7 @@
 
   <div class="bg-light border p-2">
     <div class="float-left mr-3">
-      <button class="btn">
+      <button class="btn" wire:click="enterAddGuardianMode">
         <i class="fas fa-user text-secondary mr-2"></i>
         Add guardian
       </button>
@@ -40,6 +40,10 @@
     </div>
   </div>
 
+  @if ($addGuardianMode)
+    @livewire ('student-add-guardian', ['student' => $student,])
+  @endif
+
 
   <div>
       <h3 class="h4 mt-3 ml-3">
@@ -71,7 +75,9 @@
       Guardian
     </div>
     <div class="col-md-6">
-      TODO
+      @foreach ($student->guardians as $guardian)
+        {{ $guardian->name }}
+      @endforeach
     </div>
   </div>
 
