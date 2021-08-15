@@ -9,7 +9,7 @@
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn" wire:click.prevent="enterAddStudentMode">
+      <button class="btn" wire:click.prevent="enterUploadStudentsFileMode">
         <i class="fas fa-upload text-secondary mr-2"></i>
         Upload students
       </button>

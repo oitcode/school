@@ -20,10 +20,10 @@
             {{ $oClass->academicSession->name }}
           </td>
           <td>
-            <span class="btn btn-tool btn-sm border rounded-circle mr-2" wire:click="">
+            <span class="btn btn-tool btn-sm mr-2" wire:click="">
               <i class="fas fa-pencil-alt text-primary"></i>
             </span>
-            <span class="btn btn-tool btn-sm border rounded-circle" wire:click="">
+            <span class="btn btn-tool btn-sm" wire:click="">
               <i class="fas fa-trash text-danger"></i>
             </span>
           </td>

@@ -13,6 +13,7 @@ class OClassDisplay extends Component
 
     protected $listeners = [
         'exitCreateStudent' => 'exitAddStudentMode',
+        'exitUploadStudentsFile' => 'exitUploadStudentsFileMode',
     ];
 
     public function render()
