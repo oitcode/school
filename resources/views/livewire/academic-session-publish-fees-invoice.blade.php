@@ -1,6 +1,6 @@
 <div class="p-2">
 
-    <h3>Publish Fees Invoice</h3>
+    <h3 class="h5">Publish Fees Invoice</h3>
 
     <div wire:loading>
       Processing ...
@@ -13,6 +13,6 @@
     </div>
   
     <button type="submit" class="btn btn-primary" wire:click="store">Submit</button>
-    <button type="submit" class="btn btn-danger" wire:click="$emit('exitCreate')">Cancel</button>
+    <button type="submit" class="btn btn-danger" wire:click="$emit('exitPublishFees')">Cancel</button>
 
 </div>

@@ -1,6 +1,6 @@
 <div class="p-2">
 
-    <h3>Create New Academic Session</h3>
+    <h3 class="h5">Create New Academic Session</h3>
   
     <div class="form-group">
       <label for="">Name</label>

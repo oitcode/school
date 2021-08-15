@@ -1,5 +1,5 @@
 <div class="p-3">
-  <h3>Create New Guardian</h3>
+  <h3 class="h5">Create New Guardian</h3>
 
   <div class="form-group">
     <label for="">Name</label>

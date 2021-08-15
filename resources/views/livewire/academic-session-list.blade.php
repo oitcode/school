@@ -3,7 +3,7 @@
   @if (!is_null($academicSessions) && count($academicSessions) > 0)
     <table class="table table-sm  table-hover table-valign-middle">
       <thead>
-        <tr class="text-secondary border-top">
+        <tr class="bg-light text-secondary border-top">
           <th>Session</th>
           <th>Action</th>
         </tr>

@@ -11,7 +11,7 @@ class AcademicSessionDisplay extends Component
     public $publishFeesMode = false;
 
     protected $listeners = [
-        'exitPublishFee' => 'exitPublishFeesMode',
+        'exitPublishFees' => 'exitPublishFeesMode',
     ];
 
     public function render()
