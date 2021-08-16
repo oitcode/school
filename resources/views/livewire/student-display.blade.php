@@ -36,6 +36,13 @@
       </button>
     </div>
 
+    <div class="float-right mr-3">
+      <button class="btn text-primary" wire:click="$refresh">
+        <i class="fas fa-sync mr-2"></i>
+        Refresh
+      </button>
+    </div>
+
     <div class="clearfix">
     </div>
   </div>
@@ -101,6 +108,7 @@
   <div class="my-3">
     <h4 class="h5 m-3">Fees</h4>
 
+    @if (false)
     <table class="table table-sm table-hover">
       <thead>
         <tr class="text-secondary">
@@ -143,10 +151,16 @@
         @endforeach
       </tbody>
     </table>
+    @else
+      <div class="p-2 text-secondary">
+        No records
+      </div>
+    @endif
   </div>
   <div class="my-3">
     <h4 class="h5 m-3">Academic record</h4>
 
+    @if (false)
     <table class="table table-sm table-hover">
       <thead>
         <tr class="text-secondary">
@@ -188,8 +202,12 @@
           </tr>
         @endforeach
       </tbody>
-    <table>
     </table>
+    @else
+      <div class="p-2 text-secondary">
+        No records
+      </div>
+    @endif
   </div>
 
 

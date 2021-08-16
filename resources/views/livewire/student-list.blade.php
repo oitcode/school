@@ -22,6 +22,13 @@
       </button>
     </div>
 
+    <div class="float-right mr-3">
+      <button class="btn text-primary" wire:click="$refresh">
+        <i class="fas fa-sync mr-2"></i>
+        Refresh
+      </button>
+    </div>
+
     <div class="float-right mt-2 mr-3 text-secondary" wire:loading.delay>
         Loading ...
     </div>
@@ -86,7 +93,7 @@
         <div class="form-group">
           <br />
           <button class="btn text-primary mt-2 mr-3" wire:click="search">
-            <i class="fas fa-search mr-1"></i>
+            <i class="fas fa-times mr-1"></i>
             Search
           </button>
         </div>

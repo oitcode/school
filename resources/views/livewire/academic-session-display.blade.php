@@ -9,12 +9,14 @@
       </button>
     </div>
 
+    @if (false)
     <div class="float-left mr-3">
       <button class="btn">
         <i class="fas fa-sticky-note text-secondary mr-2"></i>
         Add note
       </button>
     </div>
+    @endif
 
     <div class="float-left mr-3">
       <button class="btn">
@@ -27,6 +29,13 @@
       <button class="btn text-danger" wire:click="$emit('exitDisplay')">
         <i class="fas fa-times mr-2"></i>
         Close
+      </button>
+    </div>
+
+    <div class="float-right mr-3">
+      <button class="btn text-secondary" wire:click="$refresh">
+        <i class="fas fa-sync mr-2 text-primary"></i>
+        Refresh
       </button>
     </div>
 
