@@ -326,6 +326,12 @@ return [
                     'text' => 'Session',
                     'url'  => '/dashboard/academic_session',
                 ],
+
+                [
+                    'text' => 'Fees',
+                    'url'  => '/dashboard/fees',
+                ],
+
                 [
                     'text' => 'Class',
                     'url'  => '/dashboard/class',
@@ -333,6 +339,17 @@ return [
                 [
                     'text' => 'Student',
                     'url'  => '/dashboard/student',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Admission',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Application',
+                    'url'  => '/dashboard/admission_application',
                 ],
             ],
         ],

@@ -1,6 +1,6 @@
 <div class="p-3">
 
-   @if (session()->has('message'))
+  @if (session()->has('message'))
     <div class="alert alert-success">
       {{ session('message') }}
     </div>

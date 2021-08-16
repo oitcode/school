@@ -40,4 +40,13 @@ class AcademicSession extends Model
     {
         return $this->hasMany('App\OClass', 'academic_session_id', 'academic_session_id');
     }
+
+    /*
+     * admission_application table.
+     *
+     */
+    public function admissionApplications()
+    {
+        return $this->hasMany('App\AdmissionApplication', 'academic_session_id', 'academic_session_id');
+    }
 }

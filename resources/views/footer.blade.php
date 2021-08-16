@@ -37,7 +37,7 @@
             Academic Calendar
             </a>
           <br />
-            <a href="" class="text-dark">
+            <a href="{{ route('admission-form') }}" class="text-dark">
               Admission Form
             </a>
         </div>

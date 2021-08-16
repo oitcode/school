@@ -78,7 +78,7 @@
   @endif
 
   <div class="row" style="margin:auto;">
-    <div class="col-md-6">
+    <div class="col-md-6 border-right">
       <div class="my-2">
         <h3 class="h4 m-3">Students</h3>
 
@@ -87,13 +87,13 @@
             Total
           </div>
           <div class="col-md-4">
-            87
+            {{ count($oClass->students) }}
           </div>
         </div>
 
 
 
-        @if (true)
+        @if (false)
         <div class="my-2">
           <button class="btn btn-sm btn-light ml-2">
             Student list

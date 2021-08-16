@@ -24,6 +24,7 @@ Route::get('/gallery', 'FrontpageController@gallery')->name('gallery');
 Route::get('/principals_message', 'FrontpageController@principalsMessage')->name('principals-message');
 Route::get('/careers', 'FrontpageController@careers')->name('careers');
 Route::get('/academic_calendar', 'FrontpageController@academicCalendar')->name('academic-calendar');
+Route::get('/admission_form', 'FrontpageController@admissionForm')->name('admission-form');
 
 /* Dashboard */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
@@ -45,6 +46,7 @@ Route::get('/dashboard/class', 'OClassController@index')->name('dashboard-o-clas
 Route::get('/dashboard/student', 'StudentController@index')->name('dashboard-student');
 Route::get('/dashboard/careers_resume_submission', 'CareersResumeSubmissionController@index')->name('dashboard-careers-resume-submission');
 Route::get('/dashboard/vacancy', 'VacancyController@index')->name('dashboard-vacancy');
+Route::get('/dashboard/admission_application', 'AdmissionApplicationController@index')->name('dashboard-admission-application');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');

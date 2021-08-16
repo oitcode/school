@@ -31,6 +31,7 @@ class AcademicSessionPublishFeesInvoice extends Component
                 $feesInvoice->type = 'monthly';
                 $feesInvoice->term = $this->term;
                 $feesInvoice->payment_status = 'pending';
+                $feesInvoice->amount = 1500;
 
                 $feesInvoice->save();
             }

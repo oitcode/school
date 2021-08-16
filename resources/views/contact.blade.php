@@ -60,8 +60,19 @@
 
           <div class="mt-5">
             <h3 class="mb-4">Social Media</h3>
-            <img src="{{ asset('img/fb-1.png') }}" width="35" height="35" alt="" class="mr-3">
-            <img src="{{ asset('img/twitter-1.png') }}" width="35" height="35" alt="" class="mr-1">
+            @foreach ($socialMediaLinks as $socialMediaLink)
+              <a href="{{ $socialMediaLink->url }}" target="_blank">
+                @if (strtolower($socialMediaLink->media_name) === 'facebook')
+                  <img src="{{ asset('img/fb-icon-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                @elseif (strtolower($socialMediaLink->media_name) === 'twitter')
+                  <img src="{{ asset('img/twitter-icon-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                @elseif (strtolower($socialMediaLink->media_name) === 'youtube')
+                  <img src="{{ asset('img/youtube-icon-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                @else
+                  {{ $socialMediaLink->media_name }}
+                @endif
+              </a>
+            @endforeach
           </div>
 
 
@@ -69,7 +80,7 @@
            <h3>
              Careers
            </h3>
-           <a href="">
+           <a href="{{ route('careers') }}">
              See all vacancy
            </a>
          </div>

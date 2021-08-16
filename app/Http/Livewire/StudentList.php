@@ -18,6 +18,8 @@ class StudentList extends Component
 
     public $filterDisplay = true;
 
+    public $withClass = null;
+
     /* Search items */
     public $searchData = [
         'studentName' => null,

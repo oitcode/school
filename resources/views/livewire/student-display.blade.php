@@ -59,102 +59,131 @@
   </div>
 
 
-  <div class="row p-2 border-bottom text-secondary" style="margin: auto;">
-    <div class="col-md-2">
-      Class
-    </div>
+  <div class="row">
     <div class="col-md-6">
-      {{ $student->oClass->name }}
-    </div>
-  </div>
+      <div class="row p-2 border-bottom-rm text-secondary" style="margin: auto;">
+        <div class="col-md-2">
+          Class
+        </div>
+        <div class="col-md-6">
+          {{ $student->oClass->name }}
+        </div>
+      </div>
 
-  <div class="row p-2 border-bottom text-secondary" style="margin: auto;">
-    <div class="col-md-2">
-      Address
-    </div>
-    <div class="col-md-6">
-      @if ($student->address)
-        {{ $student->address }}
-      @else
-        <small class="text-secondary">
-          No Info
-        </small>
-      @endif
-    </div>
-  </div>
+      <div class="row p-2 border-bottom-rm text-secondary" style="margin: auto;">
+        <div class="col-md-2">
+          Address
+        </div>
+        <div class="col-md-6">
+          @if ($student->address)
+            {{ $student->address }}
+          @else
+            <small class="text-secondary">
+              No Info
+            </small>
+          @endif
+        </div>
+      </div>
 
-  <div class="row p-2 border-bottom text-secondary" style="margin: auto;">
-    <div class="col-md-2">
-      Guardian
+      <div class="row p-2 border-bottom-rm text-secondary" style="margin: auto;">
+        <div class="col-md-2">
+          Guardian
+        </div>
+        <div class="col-md-6">
+          @if (count($student->guardians) > 0)
+            @foreach ($student->guardians as $guardian)
+              {{ $guardian->name }}
+              <small>
+                <span class="badge badge-pill">
+                  {{ $guardian->pivot->type }}
+                </span>
+              </small>
+            @endforeach
+          @else
+            <small class="text-secondary">
+              No Info
+            </small>
+          @endif
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      @if (count($student->guardians) > 0)
-        @foreach ($student->guardians as $guardian)
-          {{ $guardian->name }}
-          <small>
-            <span class="badge badge-pill">
-              {{ $guardian->pivot->type }}
-            </span>
-          </small>
-        @endforeach
-      @else
-        <small class="text-secondary">
-          No Info
-        </small>
+
+    <div class="col-md-2">
+    </div>
+
+    <div class="col-md-4">
+      @if (false)
+      <img src="{{ asset('img/logo_1.png') }}" width="100" height="100">
       @endif
+
+      <i class="fas fa-user-graduate fa-8x text-secondary"></i>
     </div>
   </div>
 
   <div class="my-3">
     <h4 class="h5 m-3">Fees</h4>
 
-    @if (false)
-    <table class="table table-sm table-hover">
-      <thead>
-        <tr class="text-secondary">
-          <th>Session</th>
-          <th>Term</th>
-          <th>Payment Status</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        @foreach ($student->feesInvoices as $feesInvoice)
-          <tr>
-            <td class="text-secondary">
-              {{ $feesInvoice->oClass->academicSession->name }}
-            </td>
-
-            <td class="text-primary">
-              {{ $feesInvoice->term }}
-            </td>
-            <td>
-              @if (strtolower($feesInvoice->payment_status) === 'pending')
-                <span class="badge badge-danger badge-pill">
-                  Pending
-                </span>
-              @elseif (strtolower($feesInvoice->payment_status) === 'paid')
-                <span class="badge badge-success badge-pill">
-                  Paid
-                </span>
-              @elseif (strtolower($feesInvoice->payment_status) === 'partially_paid')
-                <span class="badge badge-warning badge-pill">
-                  Partially Paid
-                </span>
-              @else
-                <span class="badge badge-secondary badge-pill">
-                  {{ $feesInvoice->payment_status }}
-                </span>
-              @endif
-            </td>
-          </tr>
-        @endforeach
-      </tbody>
-    </table>
+    @if ($displayFeesMode)
+      <button class="btn btn-sm mx-2 mb-2 text-primary" wire:click="exitDisplayFeesMode">
+        Hide
+      </button>
     @else
-      <div class="p-2 text-secondary">
-        No records
-      </div>
+      <button class="btn btn-sm mx-2 mb-2 text-primary" wire:click="enterDisplayFeesMode">
+        Show
+      </button>
+    @endif
+
+    @if ($displayFeesMode)
+      @if (count($student->feesInvoices) > 0)
+      <table class="table table-sm table-hover">
+        <thead>
+          <tr class="text-secondary">
+            <th class="border-0-rm">Term</th>
+            <th class="border-0-rm">Amount</th>
+            <th class="border-0-rm">Payment Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @foreach ($student->feesInvoices as $feesInvoice)
+            <tr>
+
+              <td class="text-dark border-0">
+                {{ $feesInvoice->term }}
+              </td>
+
+              <td class="text-dark border-0">
+                {{ $feesInvoice->amount }}
+              </td>
+
+              <td class="border-0">
+                @if (strtolower($feesInvoice->payment_status) === 'pending')
+                  <span class="badge badge-light badge-pill">
+                    Pending
+                  </span>
+                @elseif (strtolower($feesInvoice->payment_status) === 'paid')
+                  <span class="badge badge-success badge-pill">
+                    Paid
+                  </span>
+                @elseif (strtolower($feesInvoice->payment_status) === 'partially_paid')
+                  <span class="badge badge-warning badge-pill">
+                    Partially Paid
+                  </span>
+                @else
+                  <span class="badge badge-secondary badge-pill">
+                    {{ $feesInvoice->payment_status }}
+                  </span>
+                @endif
+              </td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+      @else
+        <div class="p-2 text-secondary">
+          No records
+        </div>
+      @endif
     @endif
   </div>
   <div class="my-3">

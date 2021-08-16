@@ -9,6 +9,7 @@ class StudentDisplay extends Component
     public $student;
 
     public $addGuardianMode = false;
+    public $displayFeesMode = true;
 
     protected $listeners = [
         'exitAddGuardian' => 'exitAddGuardianMode',
@@ -27,5 +28,20 @@ class StudentDisplay extends Component
     public function exitAddGuardianMode()
     {
         $this->addGuardianMode = false;
+    }
+
+    public function hideFees()
+    {
+        $this->exitDisplayFeesMode();
+    }
+
+    public function enterDisplayFeesMode()
+    {
+        $this->displayFeesMode = true;
+    }
+
+    public function exitDisplayFeesMode()
+    {
+        $this->displayFeesMode = false;
     }
 }

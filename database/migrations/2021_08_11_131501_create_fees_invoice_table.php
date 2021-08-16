@@ -32,6 +32,7 @@ class CreateFeesInvoiceTable extends Migration
 
             $table->string('type');
             $table->string('term');
+            $table->integer('amount');
             $table->string('payment_status');
 
             $table->timestamps();

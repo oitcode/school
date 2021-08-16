@@ -78,7 +78,7 @@
           </table>
         </div>
       @else
-        <p>
+        <p class="text-danger">
           No vacancies to show. Please check again in future. 
         </p>
       @endif

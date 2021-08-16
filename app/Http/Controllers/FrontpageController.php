@@ -211,4 +211,16 @@ class FrontpageController extends Controller
             ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks);
     }
+
+    public function admissionForm()
+    {
+        $school = School::firstOrFail();
+        $frontpageTheme = FrontpageTheme::first();
+        $socialMediaLinks = SocialMediaLink::all();
+
+        return view('admission-application')
+            ->with('school', $school)
+            ->with('frontpageTheme', $frontpageTheme)
+            ->with('socialMediaLinks', $socialMediaLinks);
+    }
 }

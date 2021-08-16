@@ -12,9 +12,11 @@
       @livewire ('contact-message-component')
       @livewire ('notice-component')
       @livewire ('vacancy-component')
+      @livewire ('admission-application-component')
     </div>
     <div class="col-md-4">
       @livewire ('school-component')
+      @livewire ('fees-component')
     </div>
   </div>
 @stop
