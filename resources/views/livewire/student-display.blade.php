@@ -116,7 +116,11 @@
       <img src="{{ asset('img/logo_1.png') }}" width="100" height="100">
       @endif
 
-      <i class="fas fa-user-graduate fa-8x text-secondary"></i>
+      @if ($student->image_file_path)
+        <img src="{{ asset('storage/' . $student->image_file_path) }}" style="max-height:100px; max-width:100ps;">
+      @else
+        <i class="fas fa-user-graduate fa-8x text-secondary"></i>
+      @endif
     </div>
   </div>
 

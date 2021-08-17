@@ -19,6 +19,7 @@ class CreateStudentTable extends Migration
             $table->string('email')->email()->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
+            $table->string('image_file_path')->nullable();
 
             /*
              * Foreign key to o_class table.
