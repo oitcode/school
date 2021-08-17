@@ -47,7 +47,9 @@
 
     <h3 class="text-secondary">Share</h3>
 
-    <img src="{{ asset('img/fb-1.png') }}" width="30" height="30" alt="" class="mr-1">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}" target="_blank">
+      <img src="{{ asset('img/fb-1.png') }}" width="30" height="30" alt="" class="mr-1">
+    </a>
     <img src="{{ asset('img/twitter-1.png') }}" width="30" height="30" alt="" class="mr-1">
 
   </div>
