@@ -9,6 +9,7 @@ class AcademicSessionDisplay extends Component
     public $academicSession;
 
     public $publishFeesMode = false;
+    public $viewFeesStructureMode = false;
 
     protected $listeners = [
         'exitPublishFees' => 'exitPublishFeesMode',
@@ -27,5 +28,15 @@ class AcademicSessionDisplay extends Component
     public function exitPublishFeesMode()
     {
         $this->publishFeesMode = false;
+    }
+
+    public function enterViewFeesStructureMode()
+    {
+        $this->viewFeesStructureMode = true;
+    }
+
+    public function exitViewFeesStructureMode()
+    {
+        $this->viewFeesStructureMode = false;
     }
 }
