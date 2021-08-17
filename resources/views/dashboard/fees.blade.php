@@ -8,4 +8,5 @@
 
 @section('content')
   @livewire('fees-component')
+  @livewire('fees-structure-component')
 @stop

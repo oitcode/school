@@ -21,7 +21,7 @@ class AcademicSession extends Model
     protected $primaryKey = 'academic_session_id';
 
     protected $fillable = [
-        'name',
+        'name', 'status',
     ];
 
 
@@ -48,5 +48,40 @@ class AcademicSession extends Model
     public function admissionApplications()
     {
         return $this->hasMany('App\AdmissionApplication', 'academic_session_id', 'academic_session_id');
+    }
+
+    /*
+     * fees_structure table.
+     *
+     */
+    public function feesStructure()
+    {
+        return $this->hasOne('App\FeesStructure', 'academic_session_id', 'academic_session_id');
+    }
+
+    /*
+     * fees_term table.
+     *
+     */
+    public function feesTerms()
+    {
+        return $this->hasMany('App\FeesTerm', 'academic_session_id', 'academic_session_id');
+    }
+
+
+    /*-------------------------------------------------------------------------
+     * Methods
+     *-------------------------------------------------------------------------
+     *
+     */
+    public function getTotalStudents()
+    {
+        $total = 0;
+
+        foreach ($this->oClasses as $oClass) {
+            $total += count($oClass->students);
+        }
+
+        return $total;
     }
 }

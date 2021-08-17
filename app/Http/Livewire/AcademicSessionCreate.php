@@ -21,6 +21,8 @@ class AcademicSessionCreate extends Component
             'name' => 'required',
         ]);
 
+        $validatedData['status'] = 'default';
+
         AcademicSession::create($validatedData);
         $this->emit('exitCreate');
     }

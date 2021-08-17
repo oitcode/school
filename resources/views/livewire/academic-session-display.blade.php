@@ -53,21 +53,42 @@
       Academic Session
     </div>
     <div class="col-md-6">
-      <strong>
-        {{ $academicSession->name }}
-      </strong>
+      {{ $academicSession->name }}
     </div>
   </div>
 
   <div class="row p-2 border-bottom" style="margin: auto;">
     <div class="col-md-2">
-      Status
+      Total Students
     </div>
     <div class="col-md-6">
-      <span class="badge badge-success badge-pill">
-        New
-      </span>
+      {{ $academicSession->getTotalStudents() }}
     </div>
   </div>
+
+  <h3 class="h5 my-3 ml-2">Fees</h3>
+  @if (count($academicSession->feesTerms) > 0)
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Term</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($academicSession->feesTerms as $feesTerm)
+        <tr>
+          <td>
+            {{ $feesTerm->term }}
+          </td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+  @else
+    <div class="text-secondary p-2">
+      No fees yet
+    </div>
+  @endif
+
 
 </div>

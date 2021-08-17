@@ -153,7 +153,7 @@
             <tr>
 
               <td class="text-dark border-0">
-                {{ $feesInvoice->term }}
+                {{ $feesInvoice->feesTerm->term }}
               </td>
 
               <td class="text-dark border-0">

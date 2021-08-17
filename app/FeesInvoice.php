@@ -51,4 +51,13 @@ class FeesInvoice extends Model
     {
         return $this->belongsTo('App\OClass', 'o_class_id', 'o_class_id');
     }
+
+    /*
+     * fees_term table.
+     *
+     */
+    public function feesTerm()
+    {
+        return $this->belongsTo('App\FeesTerm', 'fees_term_id', 'fees_term_id');
+    }
 }

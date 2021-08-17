@@ -13,6 +13,7 @@
       @livewire ('notice-component')
       @livewire ('vacancy-component')
       @livewire ('admission-application-component')
+      @livewire ('fees-structure-component')
     </div>
     <div class="col-md-4">
       @livewire ('school-component')

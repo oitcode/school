@@ -30,8 +30,14 @@ class CreateFeesInvoiceTable extends Migration
             $table->foreign('o_class_id', 'fk_fees_invoice_o_class')
                 ->references('o_class_id')->on('o_class');
 
+            /*
+             * Foreign key to fees_term table.
+             */
+            $table->unsignedBigInteger('fees_term_id');
+            $table->foreign('fees_term_id', 'fk_fees_invoice_fees_term')
+                ->references('fees_term_id')->on('fees_term');
+
             $table->string('type');
-            $table->string('term');
             $table->integer('amount');
             $table->string('payment_status');
 

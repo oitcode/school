@@ -44,6 +44,7 @@ class SampleSchoolSeeder extends Seeder
         /* Create Academic Session */
         $academic_session_id = DB::table('academic_session')->insert([
             'name' => '2078',
+            'status' => 'current',
         ]);
 
         /* Create classes for school */

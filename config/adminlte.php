@@ -328,6 +328,11 @@ return [
                 ],
 
                 [
+                    'text' => 'Fee Structure',
+                    'url'  => '/dashboard/fees_structure',
+                ],
+
+                [
                     'text' => 'Fees',
                     'url'  => '/dashboard/fees',
                 ],

@@ -16,6 +16,7 @@ class CreateAcademicSessionTable extends Migration
         Schema::create('academic_session', function (Blueprint $table) {
             $table->bigIncrements('academic_session_id');
             $table->string('name')->unique();
+            $table->string('status');
 
             $table->timestamps();
         });
