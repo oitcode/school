@@ -7,14 +7,6 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if (url()->current() === url('') . '/notice/1')
-<meta property="og:url"                content="{{ url()->current() }}" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="{{ $notice->title }}" />
-<meta property="og:description"        content="Our school notice" />
-<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
-    @endif
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
