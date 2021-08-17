@@ -150,7 +150,7 @@
           </td>
 
           <td>
-            <span class="btn btn-tool btn-sm mr-2" wire:click="">
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateStudent', {{ $student }})">
               <i class="fas fa-pencil-alt text-primary"></i>
             </span>
             <span class="btn btn-tool btn-sm" wire:click="">

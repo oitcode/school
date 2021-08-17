@@ -20,6 +20,8 @@ class StudentComponent extends Component
     protected $listeners = [
         'displayStudent',
         'exitDisplay' => 'exitDisplayMode',
+        'updateStudent',
+        'exitUpdate' => 'exitUpdateMode',
     ];
 
     public function render()
@@ -42,5 +44,22 @@ class StudentComponent extends Component
     {
         $this->displayingStudent = $student;
         $this->enterDisplayMode();
+    }
+
+    public function enterUpdateMode()
+    {
+        $this->updateMode = true;
+    }
+
+    public function exitUpdateMode()
+    {
+        $this->updatingStudent = null;
+        $this->updateMode = false;
+    }
+
+    public function updateStudent(Student $student)
+    {
+        $this->updatingStudent = $student;
+        $this->enterUpdateMode();
     }
 }

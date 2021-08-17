@@ -47,6 +47,7 @@ Route::get('/dashboard/student', 'StudentController@index')->name('dashboard-stu
 Route::get('/dashboard/careers_resume_submission', 'CareersResumeSubmissionController@index')->name('dashboard-careers-resume-submission');
 Route::get('/dashboard/vacancy', 'VacancyController@index')->name('dashboard-vacancy');
 Route::get('/dashboard/admission_application', 'AdmissionApplicationController@index')->name('dashboard-admission-application');
+Route::get('/dashboard/fees', 'FeesController@index')->name('dashboard-fees');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');
