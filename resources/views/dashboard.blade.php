@@ -9,19 +9,19 @@
 @section('content')
   <div class="row">
     <div class="col-md-8">
-      @livewire ('contact-message-component')
 
       @if (false)
+        @livewire ('contact-message-component')
         @livewire ('notice-component')
         @livewire ('vacancy-component')
         @livewire ('admission-application-component')
+        @livewire ('school-component')
+      @livewire ('fees-structure-component')
       @endif
 
-      @livewire ('fees-structure-component')
       @livewire ('section-component')
     </div>
     <div class="col-md-4">
-      @livewire ('school-component')
       @livewire ('fees-component')
     </div>
   </div>
