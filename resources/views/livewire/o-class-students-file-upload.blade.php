@@ -1,6 +1,20 @@
 <div class="p-2">
 
+  <div wire:loading>
+     Loading ...
+  </div>
+
   <h3 class="h5">Upload students from file</h3>
+
+
+  @if ($startMode)
+    <button type="submit" class="btn btn-primary" wire:click="preview">Upload</button>
+  @elseif ($previewMode)
+    <button type="submit" class="btn btn-primary" wire:click="importFromFile">Import</button>
+  @endif
+  <button type="submit" class="btn btn-danger" wire:click="$emit('exitAddNewStudentsFromFileMode')">Cancel</button>
+
+
   <div class="form-group">
     <label for="">File</label>
     <input type="file" class="form-control" wire:model="students_file">
@@ -42,12 +56,5 @@
       </tbody>
     </table>
   @endif
-
-  @if ($startMode)
-    <button type="submit" class="btn btn-primary" wire:click="preview">Upload</button>
-  @elseif ($previewMode)
-    <button type="submit" class="btn btn-primary" wire:click="importFromFile">Import</button>
-  @endif
-  <button type="submit" class="btn btn-danger" wire:click="$emit('exitUploadStudentsFile')">Cancel</button>
 
 </div>

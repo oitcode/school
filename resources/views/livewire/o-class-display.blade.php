@@ -2,16 +2,9 @@
 
   <div class="bg-light border p-2">
     <div class="float-left mr-3">
-      <button class="btn" wire:click.prevent="enterAddStudentMode">
-        <i class="fas fa-user text-secondary mr-2"></i>
-          Add new student
-      </button>
-    </div>
-
-    <div class="float-left mr-3">
-      <button class="btn" wire:click.prevent="enterUploadStudentsFileMode">
-        <i class="fas fa-upload text-secondary mr-2"></i>
-        Upload students
+      <button class="btn" wire:click.prevent="enterCreateOClassSectionMode">
+        <i class="fas fa-plus text-secondary mr-2"></i>
+          Add section
       </button>
     </div>
 
@@ -68,13 +61,8 @@
   </div>
 
 
-
-  @if ($addStudentMode)
-    @livewire ('student-create', ['o_class_id' => $oClass->o_class_id, 'native' => false,])
-  @endif
-
-  @if ($uploadStudentsFileMode)
-    @livewire ('o-class-students-file-upload', ['o_class_id' => $oClass->o_class_id,])
+  @if ($createOClassSectionMode)
+    @livewire ('o-class-section-create', ['oClass' => $oClass,])
   @endif
 
   <div class="row" style="margin:auto;">

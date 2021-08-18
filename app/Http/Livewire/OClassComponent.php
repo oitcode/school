@@ -13,6 +13,8 @@ class OClassComponent extends Component
     public $updateMode = false;
     public $deleteMode = false;
 
+    public $createOClassSectionMode = false;
+
     public $displayingOClass;
 
     protected $listeners = [

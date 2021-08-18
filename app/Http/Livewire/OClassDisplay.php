@@ -8,12 +8,10 @@ class OClassDisplay extends Component
 {
     public $oClass;
 
-    public $addStudentMode = false;
-    public $uploadStudentsFileMode = false;
+    public $createOClassSectionMode = false;
 
     protected $listeners = [
-        'exitCreateStudent' => 'exitAddStudentMode',
-        'exitUploadStudentsFile' => 'exitUploadStudentsFileMode',
+        'exitCreateOClassSectionMode',
     ];
 
     public function render()
@@ -39,5 +37,15 @@ class OClassDisplay extends Component
     public function exitUploadStudentsFileMode()
     {
         $this->uploadStudentsFileMode = false;
+    }
+
+    public function enterCreateOClassSectionMode()
+    {
+        $this->createOClassSectionMode = true;
+    }
+
+    public function exitCreateOClassSectionMode()
+    {
+        $this->createOClassSectionMode = false;
     }
 }

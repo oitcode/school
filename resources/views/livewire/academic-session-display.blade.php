@@ -1,6 +1,14 @@
 <div class="p-0">
 
   <div class="bg-light border p-2">
+
+    <div class="float-left mr-3">
+      <button class="btn" wire:click.prevent="enterCreateAcademicSessionOclassMode">
+        <i class="fas fa-plus text-secondary mr-2"></i>
+        Add class
+      </button>
+    </div>
+
     <div class="float-left mr-3">
       <button class="btn" wire:click.prevent="enterPublishFeesMode">
         <i class="fas fa-coins text-secondary mr-2"></i>
@@ -53,9 +61,6 @@
   <div class="row">
 
     <div class="col-md-6">
-      @if ($publishFeesMode)
-        @livewire('academic-session-publish-fees-invoice', ['academicSession' => $academicSession,])
-      @endif
 
       <div class="row p-2 border-bottom" style="margin: auto;">
         <div class="col-md-2">
@@ -65,6 +70,15 @@
           {{ $academicSession->name }}
         </div>
       </div>
+
+      @if ($publishFeesMode)
+        @livewire('academic-session-publish-fees-invoice', ['academicSession' => $academicSession,])
+      @endif
+
+      @if ($createAcademicSessionOClassMode)
+        @livewire('academic-session-o-class-create', ['academicSession' => $academicSession,])
+      @endif
+
 
       <div class="row p-2 border-bottom" style="margin: auto;">
         <div class="col-md-2">

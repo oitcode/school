@@ -48,14 +48,6 @@
     </div>
   </div>
 
-  @if ($addNewStudentMode)
-    @livewire ('student-create', ['section_id' => $section->section_id, 'native' => false,])
-  @endif
-
-  @if ($addNewStudentsFromFileMode)
-    @livewire ('o-class-students-file-upload', ['section_id' => $section->section_id,])
-  @endif
-
 
   <div>
       <h3 class="h4 mt-3 ml-3">
@@ -63,6 +55,14 @@
         {{ $section->name }}
       </h3>
   </div>
+
+  @if ($addNewStudentMode)
+    @livewire ('student-create', ['section_id' => $section->section_id, 'native' => false,])
+  @endif
+
+  @if ($addNewStudentsFromFileMode)
+    @livewire ('o-class-students-file-upload', ['section_id' => $section->section_id,])
+  @endif
 
 
   <div class="row">
