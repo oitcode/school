@@ -55,6 +55,6 @@ class FeesStructureCreate extends Component
         ]);
 
         FeesStructure::create($validatedData);
-        $this->emit('exitCreateFeesStructureMode');
+        $this->emit('exitFeesStructureCreateMode');
     }
 }
