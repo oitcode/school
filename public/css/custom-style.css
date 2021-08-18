@@ -10,3 +10,8 @@
     background-color: black;
     opacity: 0.8;
 }
+
+.o-flipper:hover {
+    background-color: #ddd;
+    transition: background-color .5s;
+}

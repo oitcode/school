@@ -10,12 +10,13 @@ use Illuminate\Support\Facades\Storage;
 use App\Student;
 use App\Guardian;
 use App\GuardianStudent;
+use App\SectionStudent;
 
 class OClassStudentsFileUpload extends Component
 {
     use WithFileUploads;
 
-    public $o_class_id;
+    public $section_id;
 
     public $students_file;
 
@@ -101,7 +102,6 @@ class OClassStudentsFileUpload extends Component
                 $student->email = $line[1];
                 $student->phone = $line[2];
                 $student->address = $line[3];
-                $student->o_class_id = $this->o_class_id;
                 $student->save();
 
                 $guardian = new Guardian;
@@ -119,6 +119,13 @@ class OClassStudentsFileUpload extends Component
                 $guardianStudent->type = 'primary';
                 $guardianStudent->save();
 
+                $sectionStudent = new SectionStudent;
+
+                $sectionStudent->section_id = $this->section_id;
+                $sectionStudent->student_id = $student->student_id;
+                $sectionStudent->status = 'current';
+                $sectionStudent->save();
+
                 DB::commit();
             } catch (\Exception $e) {
                 DB::rollback();
@@ -128,6 +135,6 @@ class OClassStudentsFileUpload extends Component
         /* Delete the file */
         Storage::delete($this->filePath);
 
-        $this->emit('exitUploadStudentsFile');
+        $this->emit('exitAddNewStudentsFromFileMode');
     }
 }

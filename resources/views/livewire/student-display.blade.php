@@ -66,7 +66,8 @@
           Class
         </div>
         <div class="col-md-6">
-          {{ $student->oClass->name }}
+          {{ $student->getCurrentSection()->oClass->name }}
+          {{ $student->getCurrentSection()->name }}
         </div>
       </div>
 

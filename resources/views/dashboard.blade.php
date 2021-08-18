@@ -10,10 +10,15 @@
   <div class="row">
     <div class="col-md-8">
       @livewire ('contact-message-component')
-      @livewire ('notice-component')
-      @livewire ('vacancy-component')
-      @livewire ('admission-application-component')
+
+      @if (false)
+        @livewire ('notice-component')
+        @livewire ('vacancy-component')
+        @livewire ('admission-application-component')
+      @endif
+
       @livewire ('fees-structure-component')
+      @livewire ('section-component')
     </div>
     <div class="col-md-4">
       @livewire ('school-component')

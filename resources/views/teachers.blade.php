@@ -40,7 +40,7 @@
       <div class="row">
         @foreach ($teachers as $teacher)
           <div class="col-md-4">
-            <div class="card mb-3 shadow-sm">
+            <div class="card mb-3 shadow-sm o-flipper">
               <div class="card-body">
                 <div>
                   <div class="float-left">

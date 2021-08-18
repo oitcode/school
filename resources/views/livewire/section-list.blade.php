@@ -2,17 +2,10 @@
 
   <div class="bg-light border p-2">
     <div class="float-left mr-3">
-      @if (true)
-        <button class="btn" wire:click="hideFilter">
-          <i class="fas fa-filter text-secondary mr-2"></i>
-          Filter
-        </button>
-      @else
-        <button class="btn" wire:click="showFilter">
-          <i class="fas fa-filter text-secondary mr-2"></i>
-          Hide Filter
-        </button>
-      @endif
+      <button class="btn" wire:click="showFilter">
+        <i class="fas fa-filter text-secondary mr-2"></i>
+        Filter
+      </button>
     </div>
 
     <div class="float-left mr-3">
@@ -37,35 +30,32 @@
     </div>
   </div>
 
-  @if ($oClasses != null && count($oClasses) > 0)
-  <table class="table table-sm  table-hover table-valign-middle">
+  @if ($sections != null && count($sections) > 0)
+
+  <div class="border pl-2 p-1">
+    Total: {{ count($sections) }}
+  </div>
+
+  <table class="table table-sm table-hover">
     <thead>
-      <tr class="text-secondary">
-        <th>Academic Session</th>
-        <th>Name</th>
-        <th>Sections</th>
+      <tr class="bg-light text-secondary">
+        <th>Section</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($oClasses as $oClass)
+      @foreach ($sections as $section)
         <tr>
 
-          <td class="text-secondary">
-            {{ $oClass->academicSession->name }}
-          </td>
-
           <td>
-            <a class="text-dark" wire:click.prevent="$emit('displayOClass', {{ $oClass }})" href="">
-              {{ $oClass->name }}
+            <a class="text-dark" href="" wire:click.prevent="$emit('displaySection', {{ $section }})">
+              {{ $section->oClass->name }}
+              {{ $section->name }}
             </a>
           </td>
 
           <td class="text-secondary">
-            @foreach ($oClass->sections as $section)
-              {{ $section->name }}
-              &nbsp;&nbsp;
-            @endforeach
+            {{ count($section->students) }}
           </td>
 
           <td>
@@ -80,6 +70,7 @@
       @endforeach
     </tbody>
   </table>
+
   @else
     <div class="p-2 text-muted">
       No records to display

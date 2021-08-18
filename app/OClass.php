@@ -42,12 +42,12 @@ class OClass extends Model
     }
 
     /*
-     * student table.
+     * section table.
      *
      */
-    public function students()
+    public function sections()
     {
-        return $this->hasMany('App\Student', 'o_class_id', 'o_class_id');
+        return $this->hasMany('App\Section', 'o_class_id', 'o_class_id');
     }
 
     /*

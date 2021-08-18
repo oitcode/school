@@ -79,7 +79,9 @@ class AcademicSession extends Model
         $total = 0;
 
         foreach ($this->oClasses as $oClass) {
-            $total += count($oClass->students);
+            foreach ($oClass->sections as $section) {
+                $total += count($section->students);
+            }
         }
 
         return $total;

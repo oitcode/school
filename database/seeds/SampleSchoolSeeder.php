@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Faker\Generator as Faker;
+//use Faker\Generator as Faker;
 
 class SampleSchoolSeeder extends Seeder
 {
@@ -15,6 +15,9 @@ class SampleSchoolSeeder extends Seeder
      */
     public function run()
     {
+        $o_section_id;
+        $o_class_id;
+
         $classes = [
           'Nursery',
           'LKG',
@@ -31,12 +34,14 @@ class SampleSchoolSeeder extends Seeder
           'Ten',
         ];
 
+        $faker = Faker\Factory::create();
+
         /* Create School */
         DB::table('school')->insert([
             'name' => 'Test School',
-            'email' => Str::random(10).'@example.com',
-            'phone' => '+000 00 0000000',
-            'address' => '+977 23 456123',
+            'email' => $faker->email(),
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'slogan' => 'Our own slogan',
             'logo_image_path' => '/sample-path',
         ]);
@@ -49,23 +54,37 @@ class SampleSchoolSeeder extends Seeder
 
         /* Create classes for school */
         foreach ($classes as $oClass) {
-            $o_class_id = DB::table('o_class')->insert([
+            unset($o_class_id);
+            $o_class_id = DB::table('o_class')->insertGetId([
                 'name' => $oClass,
                 'academic_session_id' => $academic_session_id,
             ]);
 
-            /* Add 100 students to this class */
-            for ($i=0; $i<2; $i++) {
-                $newClass = DB::table('student')->insert([
-                    'name' => Str::random(10),
-                    'email' => Str::random(10).'@example.com',
-                    'phone' => '+000 0000000000',
-                    'address' => Str::random(25),
+            /* Create section in this class */
+            foreach (['A', 'B'] as $sectionName) {
+                $section_id = DB::table('section')->insertGetId([
+                    'name' => $sectionName,
                     'o_class_id' => $o_class_id,
                 ]);
+
+                /* Add 50 students to this section */
+                for ($i=0; $i<50; $i++) {
+
+                    $student_id = DB::table('student')->insertGetId([
+                        'name' => $faker->name(),
+                        'email' => Str::random(10).'@example.com',
+                        'phone' => '+000 0000000000',
+                        'address' => Str::random(25),
+                    ]);
+
+                    DB::table('section_student')->insertGetId([
+                        'section_id' => $section_id,
+                        'student_id' => $student_id,
+                        'status' => 'current',
+                    ]);
+                }
             }
 
-            $o_class_id = null;
         }
     }
 }

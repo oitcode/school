@@ -21,13 +21,6 @@ class CreateStudentTable extends Migration
             $table->string('address')->nullable();
             $table->string('image_file_path')->nullable();
 
-            /*
-             * Foreign key to o_class table.
-             */
-            $table->unsignedBigInteger('o_class_id');
-            $table->foreign('o_class_id', 'fk_student_o_class')
-                ->references('o_class_id')->on('o_class');
-
             $table->timestamps();
         });
     }

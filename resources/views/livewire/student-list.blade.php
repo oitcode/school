@@ -134,7 +134,8 @@
           </td>
 
           <td class="text-secondary">
-              {{ $student->oClass->name }}
+            {{ $student->getCurrentSection()->oClass->name }}
+            {{ $student->getCurrentSection()->name }}
           </td>
 
           <td class="text-secondary">

@@ -80,14 +80,14 @@
   <div class="row" style="margin:auto;">
     <div class="col-md-6 border-right">
       <div class="my-2">
-        <h3 class="h4 m-3">Students</h3>
+        <h3 class="h4 m-3">Sections</h3>
 
         <div class="row border-bottom py-2 pl-2" style="margin:auto;">
           <div class="col-md-4">
             Total
           </div>
           <div class="col-md-4">
-            {{ count($oClass->students) }}
+            {{ count($oClass->sections) }}
           </div>
         </div>
 
@@ -100,32 +100,41 @@
           </button>
         </div>
         @else
-          @if ($oClass->students != null && count($oClass->students) > 0)
+          @if ($oClass->sections != null && count($oClass->sections) > 0)
           <table class="table table-sm table-hover table-valign-middle">
             <thead>
               <tr>
                 <th>#</th>
                 <th>Name</th>
+                <th>Students</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($oClass->students as $student)
+              @foreach ($oClass->sections as $section)
                 <tr>
                   <td class="text-secondary">
                     {{ $loop->iteration }}
                   </td>
+
                   <td>
                     <a class="text-secondary" wire:click.prevent="" href="">
-                      {{ $student->name }}
+                      {{ $section->name }}
                     </a>
                   </td>
+
+                  <td>
+                    <a class="text-secondary">
+                      {{ count($section->students) }}
+                    </a>
+                  </td>
+
                 </tr>
               @endforeach
             </tbody>
           </table>
           @else
             <div class="m-3 text-secondary">
-            No Students
+            No sections
             </div>
           @endif
         @endif

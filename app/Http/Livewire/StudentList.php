@@ -35,7 +35,7 @@ class StudentList extends Component
 
     public function mount()
     {
-        $this->students = Student::limit(10)->get();
+        $this->students = Student::all();
     }
 
     public function render()

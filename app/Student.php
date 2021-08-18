@@ -36,12 +36,23 @@ class Student extends Model
 
 
     /*
-     * o_class table.
+     * section table.
      *
      */
-    public function oClass()
+    public function sections()
     {
-        return $this->belongsTo('App\OClass', 'o_class_id', 'o_class_id');
+        return $this->belongsToMany('App\Section', 'section_student', 'student_id', 'section_id')
+            ->withPivot('status');
+    }
+
+    /*
+     * current section table.
+     *
+     */
+    public function currentSection()
+    {
+        return $this->belongsToMany('App\Section', 'section_student', 'student_id', 'section_id')
+            ->wherePivot('status', 'current');
     }
 
     /*
@@ -61,5 +72,23 @@ class Student extends Model
     {
         return $this->belongsToMany('App\Guardian', 'guardian_student', 'student_id', 'guardian_id')
             ->withPivot('type');
+    }
+
+
+    /*-------------------------------------------------------------------------
+     * Methods
+     *-------------------------------------------------------------------------
+     *
+     */
+
+
+    /*
+     * Get current section of student.
+     *
+     */
+    public function getCurrentSection()
+    {
+        foreach ($this->currentSection as $currentSection)
+            return $currentSection;
     }
 }
