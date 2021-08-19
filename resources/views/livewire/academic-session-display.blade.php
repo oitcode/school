@@ -16,21 +16,29 @@
       </button>
     </div>
 
-    @if (false)
     <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-sticky-note text-secondary mr-2"></i>
-        Add note
+      <button class="btn" wire:click="enterCreateAcademicSessionFeesStructureMode">
+        <i class="fas fa-plus text-secondary mr-2"></i>
+        Fees Structure
       </button>
     </div>
-    @endif
 
+    @if (false)
     <div class="float-left mr-3">
       <button class="btn" wire:click="enterViewFeesStructureMode">
         <i class="fas fa-tag text-secondary mr-2"></i>
         View Fees Structure
       </button>
     </div>
+    @endif
+
+    <div class="float-left mr-3">
+      <button class="btn">
+        <i class="fas fa-sticky-note text-secondary mr-2"></i>
+        Add note
+      </button>
+    </div>
+
 
     <div class="float-left mr-3">
       <button class="btn">
@@ -117,6 +125,10 @@
     <div class="col-md-6">
       @if ($viewFeesStructureMode)
         @livewire ('fees-structure-display', ['feesStructure' => $academicSession->feesStructure,])
+      @endif
+
+      @if ($createAcademicSessionFeesStructureMode)
+        @livewire ('academic-session-fees-structure-create', ['academicSession' => $academicSession,])
       @endif
     </div>
 

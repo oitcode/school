@@ -11,10 +11,15 @@ class AcademicSessionDisplay extends Component
     public $publishFeesMode = false;
     public $viewFeesStructureMode = false;
     public $createAcademicSessionOClassMode = false;
+    public $createAcademicSessionFeesStructureMode = false;
+    public $academicSessionFeesStructureMode = false;
+
+    public $createFeesStructureMode = false;
 
     protected $listeners = [
         'exitPublishFees' => 'exitPublishFeesMode',
         'exitCreateAcademicSessionOclassMode',
+        'exitCreateAcademicSessionFeesStructureMode',
     ];
 
     public function render()
@@ -50,5 +55,15 @@ class AcademicSessionDisplay extends Component
     public function exitCreateAcademicSessionOclassMode()
     {
         $this->createAcademicSessionOClassMode = false;
+    }
+
+    public function enterCreateAcademicSessionFeesStructureMode()
+    {
+        $this->createAcademicSessionFeesStructureMode = true;
+    }
+
+    public function exitCreateAcademicSessionFeesStructureMode()
+    {
+        $this->createAcademicSessionFeesStructureMode = false;
     }
 }
