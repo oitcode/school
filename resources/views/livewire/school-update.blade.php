@@ -42,6 +42,10 @@
     @error('comment') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
-  <button type="submit" class="btn btn-primary" wire:click="update">Update</button>
+  <button type="submit" class="btn btn-primary" wire:click="update">
+    <span class="spinner-grow spinner-grow-sm" wire:loading.delay></span>
+    Update
+  </button>
+
   <button type="submit" class="btn btn-danger" wire:click="$emit('exitUpdate')">Cancel</button>
 </div>
