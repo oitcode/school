@@ -1,10 +1,10 @@
 <div class="container-fluid border-bottom py-2">
   <div class="container text-primary">
-    <div class="float-left mr-3">
+    <div class="float-left mr-3 mb-3 mb-md-0">
       <img src="{{ asset('img/email-1.png') }}" width="25" height="25" alt="" class="mr-1">
         {{ $school->email }}
     </div>
-    <div class="float-left mr-3">
+    <div class="float-left mr-3 mb-xs-3">
       <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
         {{ $school->phone }}
     </div>
