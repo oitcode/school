@@ -2,9 +2,9 @@
   <div class="container-fluid bg-light">
     <div class="container py-4">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4 mb-md-0">
 
-          <div class="mb-1">
+          <div class="mb-3">
             <h3 class="h5">
               <img src="{{ asset('storage/' . $school->logo_image_path) }}" width="25" height="25">
               {{ $school->name }}
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4 mb-md-0">
           <h3 class="h4">Useful links</h3>
             <a href="{{ route('careers') }}" class="text-dark">
             Careers
