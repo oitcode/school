@@ -12,17 +12,17 @@
           </div>
 
           <div class="mb-1">
-            <img src="{{ asset('img/location-1.png') }}" width="25" height="25" alt="" class="mr-1">
+            <i class="fa fa-map-marker mr-2 border border-primary rounded-circle p-2 text-info"></i>
             {{ $school->address }}
           </div>
 
           <div class="mb-1">
-            <img src="{{ asset('img/phone-1.webp') }}" width="25" height="25" alt="" class="mr-1">
+            <i class="fa fa-phone mr-2 border border-primary rounded-circle p-2 text-info"></i>
             {{ $school->phone }}
           </div>
 
           <div class="mb-1">
-            <img src="{{ asset('img/email-1.png') }}" width="25" height="25" alt="" class="mr-1">
+            <i class="fa fa-envelope mr-2 border border-primary rounded-circle p-2 text-info"></i>
             {{ $school->email }}
           </div>
         </div>
@@ -46,11 +46,11 @@
           @foreach ($socialMediaLinks as $socialMediaLink)
             <a href="{{ $socialMediaLink->url }}" target="_blank">
               @if (strtolower($socialMediaLink->media_name) === 'facebook')
-                <img src="{{ asset('img/fb-icon-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                <i class="fa fa-facebook mr-2 border border-primary rounded-circle p-2"></i>
               @elseif (strtolower($socialMediaLink->media_name) === 'twitter')
-                <img src="{{ asset('img/twitter-icon-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                <i class="fa fa-twitter mr-2 border border-primary rounded-circle p-2"></i>
               @elseif (strtolower($socialMediaLink->media_name) === 'youtube')
-                <img src="{{ asset('img/youtube-icon-1.png') }}" width="25" height="25" alt="" class="mr-1">
+                <i class="fa fa-youtube mr-2 border border-primary rounded-circle p-2"></i>
               @else
                 {{ $socialMediaLink->media_name }}
               @endif

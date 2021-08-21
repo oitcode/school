@@ -58,4 +58,17 @@ class OClass extends Model
     {
         return $this->hasMany('App\FeesInvoice', 'o_class_id', 'o_class_id');
     }
+
+
+
+    public function getTotalStudents()
+    {
+        $total = 0;
+
+        foreach ($this->sections as $section) {
+            $total += count($section->students);
+        }
+
+        return $total;
+    }
 }

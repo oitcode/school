@@ -126,7 +126,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-info elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -227,7 +227,7 @@ return [
     'menu' => [
         [
             'text' => 'search',
-            'search' => true,
+            'search' => false,
             'topnav' => true,
         ],
         [
@@ -251,7 +251,7 @@ return [
 
         [
             'text'    => 'Frontpages',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-cloud',
             'submenu' => [
                 [
                     'text' => 'School',
@@ -270,6 +270,10 @@ return [
                     'url'  => '/dashboard/aboutus',
                 ],
                 [
+                    'text' => 'Teachers',
+                    'url'  => '/dashboard/teacher',
+                ],
+                [
                     'text' => 'Facility',
                     'url'  => '/dashboard/facility',
                 ],
@@ -280,6 +284,10 @@ return [
                 [
                     'text' => 'Social media',
                     'url'  => '/dashboard/social_media_link',
+                ],
+                [
+                    'text' => 'Gallery',
+                    'url'  => '/dashboard/gallery',
                 ],
                 [
                     'text' => 'Theme',
@@ -328,6 +336,29 @@ return [
                 ],
 
                 [
+                    'text' => 'Class',
+                    'url'  => '/dashboard/class',
+                ],
+
+                [
+                    'text' => 'Section',
+                    'url'  => '/dashboard/section',
+                    'icon'    => 'fas fa-fw fa-users',
+                ],
+
+                [
+                    'text' => 'Student',
+                    'url'  => '/dashboard/student',
+                    'icon'    => 'fas fa-fw fa-user',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Fees',
+            'icon'    => 'fas fa-fw fa-dollar-sign',
+            'submenu' => [
+                [
                     'text' => 'Fee Structure',
                     'url'  => '/dashboard/fees_structure',
                 ],
@@ -336,21 +367,12 @@ return [
                     'text' => 'Fees',
                     'url'  => '/dashboard/fees',
                 ],
-
-                [
-                    'text' => 'Class',
-                    'url'  => '/dashboard/class',
-                ],
-                [
-                    'text' => 'Student',
-                    'url'  => '/dashboard/student',
-                ],
             ],
         ],
 
         [
             'text'    => 'Admission',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-mobile',
             'submenu' => [
                 [
                     'text' => 'Application',
@@ -379,27 +401,15 @@ return [
         ],
 
         [
-            'text'    => 'Notice',
+            'text'    => 'Noticeboard',
             'url'  => '/dashboard/notice',
-            'icon'    => 'fas fa-fw fa-clipboard',
-        ],
-
-        [
-            'text'    => 'Teachers',
-            'url'  => '/dashboard/teacher',
-            'icon'    => 'fas fa-fw fa-clipboard',
-        ],
-
-        [
-            'text'    => 'Gallery',
-            'url'  => '/dashboard/gallery',
-            'icon'    => 'fas fa-fw fa-clipboard',
+            'icon'    => 'fas fa-fw fa-flag',
         ],
 
         [
             'text'    => 'Contact Messages',
             'url'  => '/dashboard/contact_message',
-            'icon'    => 'fas fa-fw fa-clipboard',
+            'icon'    => 'fas fa-fw fa-comment',
         ],
 
 
@@ -415,6 +425,7 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
 
+        /*
         ['header' => '-----'],
         [
             'text'       => 'Todo',
@@ -431,6 +442,7 @@ return [
             'icon_color' => 'white',
             'url'        => '#',
         ],
+        */
     ],
 
     /*

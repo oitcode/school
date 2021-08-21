@@ -3,6 +3,21 @@
   <div class="bg-light border p-2">
 
     <div class="float-left mr-3">
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ $academicSession->name }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          @foreach ($academicSessions as $item)
+            <button class="dropdown-item" wire:click="setDisplayingAcademicSession({{ $item }})">
+              {{ $item->name }}
+            </button>
+          @endforeach
+        </div>
+      </div>
+    </div>
+
+    <div class="float-left mr-3">
       <button class="btn" wire:click.prevent="enterCreateAcademicSessionOclassMode">
         <i class="fas fa-plus text-secondary mr-2"></i>
         Add class
@@ -17,9 +32,16 @@
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn" wire:click="enterCreateAcademicSessionFeesStructureMode">
-        <i class="fas fa-plus text-secondary mr-2"></i>
-        Fees Structure
+      <button class="btn" wire:click="enterFeesStructureMode">
+
+        @if ($academicSession->feesStructure)
+          <i class="fas fa-dollar-sign text-secondary mr-2"></i>
+          View Fees Structure
+        @else
+          <i class="fas fa-plus text-secondary mr-2"></i>
+          Create Fees Structure
+        @endif
+
       </button>
     </div>
 
@@ -97,19 +119,23 @@
         </div>
       </div>
 
-      <h3 class="h5 my-3 ml-2">Fees</h3>
-      @if (count($academicSession->feesTerms) > 0)
+      <h3 class="h5 my-3 ml-2">Classes</h3>
+      @if (count($academicSession->oClasses) > 0)
       <table class="table table-sm">
         <thead>
           <tr>
-            <th>Term</th>
+            <th>Class</th>
+            <th>Students</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($academicSession->feesTerms as $feesTerm)
+          @foreach ($academicSession->oClasses as $oClass)
             <tr>
               <td>
-                {{ $feesTerm->term }}
+                {{ $oClass->name }}
+              </td>
+              <td class="text-secondary">
+                {{ $oClass->getTotalStudents() }}
               </td>
             </tr>
           @endforeach
@@ -117,18 +143,20 @@
       </table>
       @else
         <div class="text-secondary p-2">
-          No fees yet
+          No classes
         </div>
       @endif
     </div>
 
     <div class="col-md-6">
-      @if ($viewFeesStructureMode)
-        @livewire ('fees-structure-display', ['feesStructure' => $academicSession->feesStructure,])
-      @endif
+      @if ($feesStructureMode)
+        @if ($viewFeesStructureMode)
+          @livewire ('fees-structure-display', ['feesStructure' => $academicSession->feesStructure,])
+        @endif
 
-      @if ($createAcademicSessionFeesStructureMode)
-        @livewire ('academic-session-fees-structure-create', ['academicSession' => $academicSession,])
+        @if ($createAcademicSessionFeesStructureMode)
+          @livewire ('academic-session-fees-structure-create', ['academicSession' => $academicSession,])
+        @endif
       @endif
     </div>
 

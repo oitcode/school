@@ -18,9 +18,11 @@
         @livewire ('admission-application-component')
         @livewire ('school-component')
 
-        @livewire ('section-component')
         @livewire ('fees-structure-component')
+      @livewire ('section-component')
       @endif
+
+      @livewire ('academic-session-display', ['academicSession' => $academicSession,])
 
     </div>
     <div class="col-md-4">

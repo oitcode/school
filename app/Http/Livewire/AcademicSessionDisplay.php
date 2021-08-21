@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
+use App\AcademicSession;
+
 class AcademicSessionDisplay extends Component
 {
     public $academicSession;
@@ -14,7 +16,11 @@ class AcademicSessionDisplay extends Component
     public $createAcademicSessionFeesStructureMode = false;
     public $academicSessionFeesStructureMode = false;
 
+    public $feesStructureMode = false;
+
     public $createFeesStructureMode = false;
+
+    public $academicSessions;
 
     protected $listeners = [
         'exitPublishFees' => 'exitPublishFeesMode',
@@ -24,6 +30,7 @@ class AcademicSessionDisplay extends Component
 
     public function render()
     {
+        $this->academicSessions = AcademicSession::all();
         return view('livewire.academic-session-display');
     }
 
@@ -65,5 +72,21 @@ class AcademicSessionDisplay extends Component
     public function exitCreateAcademicSessionFeesStructureMode()
     {
         $this->createAcademicSessionFeesStructureMode = false;
+    }
+
+    public function enterFeesStructureMode()
+    {
+        $this->feesStructureMode = true;
+
+        if ($this->academicSession->feesStructure) {
+            $this->enterViewFeesStructureMode();
+        } else {
+            $this->enterCreateAcademicSessionFeesStructureMode();
+        }
+    }
+
+    public function setDisplayingAcademicSession(AcademicSession $academicSession)
+    {
+        $this->academicSession = $academicSession;
     }
 }
