@@ -4,15 +4,23 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
+use App\FeesInvoice;
+
 class StudentDisplay extends Component
 {
     public $student;
 
     public $addGuardianMode = false;
     public $displayFeesMode = true;
+    public $studentFeesPaymentCreateMode = false;
+
+    public $payingFeesInvoice;
+
+    public $studentFeesTab = false;
 
     protected $listeners = [
         'exitAddGuardian' => 'exitAddGuardianMode',
+        'exitStudentFeesPaymentCreateMode',
     ];
 
     public function render()
@@ -43,5 +51,26 @@ class StudentDisplay extends Component
     public function exitDisplayFeesMode()
     {
         $this->displayFeesMode = false;
+    }
+
+    public function enterStudentFeesPaymentCreateMode(FeesInvoice $feesInvoice)
+    {
+        $this->payingFeesInvoice = $feesInvoice;
+        $this->studentFeesPaymentCreateMode = true;
+    }
+
+    public function exitStudentFeesPaymentCreateMode()
+    {
+        $this->studentFeesPaymentCreateMode = false;
+    }
+
+    public function selectStudentFeesTab()
+    {
+        $this->studentFeesTab = true;
+    }
+
+    public function deselectStudentFeesTab()
+    {
+        $this->studentFeesTab = false;
     }
 }

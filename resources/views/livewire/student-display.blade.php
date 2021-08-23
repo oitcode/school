@@ -16,6 +16,20 @@
     </div>
 
     <div class="float-left mr-3">
+      <button class="btn" wire:click="selectStudentFeesTab">
+        <i class="fas fa-dollar-sign text-secondary mr-2"></i>
+        Fees
+      </button>
+    </div>
+
+    <div class="float-left mr-3">
+      <button class="btn">
+        <i class="fas fa-book text-secondary mr-2"></i>
+        Academic
+      </button>
+    </div>
+
+    <div class="float-left mr-3">
       <button class="btn">
         <i class="fas fa-sticky-note text-secondary mr-2"></i>
         Add note
@@ -125,124 +139,9 @@
     </div>
   </div>
 
-  <div class="my-3">
-    <h4 class="h5 m-3">Fees</h4>
 
-    @if ($displayFeesMode)
-      <button class="btn btn-sm mx-2 mb-2 text-primary" wire:click="exitDisplayFeesMode">
-        Hide
-      </button>
-    @else
-      <button class="btn btn-sm mx-2 mb-2 text-primary" wire:click="enterDisplayFeesMode">
-        Show
-      </button>
-    @endif
-
-    @if ($displayFeesMode)
-      @if (count($student->feesInvoices) > 0)
-      <table class="table table-sm table-hover">
-        <thead>
-          <tr class="text-secondary">
-            <th class="border-0-rm">Term</th>
-            <th class="border-0-rm">Amount</th>
-            <th class="border-0-rm">Payment Status</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          @foreach ($student->feesInvoices as $feesInvoice)
-            <tr>
-
-              <td class="text-dark border-0">
-                {{ $feesInvoice->feesTerm->term }}
-              </td>
-
-              <td class="text-dark border-0">
-                {{ $feesInvoice->amount }}
-              </td>
-
-              <td class="border-0">
-                @if (strtolower($feesInvoice->payment_status) === 'pending')
-                  <span class="badge badge-light badge-pill">
-                    Pending
-                  </span>
-                @elseif (strtolower($feesInvoice->payment_status) === 'paid')
-                  <span class="badge badge-success badge-pill">
-                    Paid
-                  </span>
-                @elseif (strtolower($feesInvoice->payment_status) === 'partially_paid')
-                  <span class="badge badge-warning badge-pill">
-                    Partially Paid
-                  </span>
-                @else
-                  <span class="badge badge-secondary badge-pill">
-                    {{ $feesInvoice->payment_status }}
-                  </span>
-                @endif
-              </td>
-            </tr>
-          @endforeach
-        </tbody>
-      </table>
-      @else
-        <div class="p-2 text-secondary">
-          No records
-        </div>
-      @endif
-    @endif
-  </div>
-  <div class="my-3">
-    <h4 class="h5 m-3">Academic record</h4>
-
-    @if (false)
-    <table class="table table-sm table-hover">
-      <thead>
-        <tr class="text-secondary">
-          <th>Session</th>
-          <th>Exam</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        @foreach ($student->feesInvoices as $feesInvoice)
-          <tr>
-            <td class="text-secondary">
-              {{ $feesInvoice->oClass->academicSession->name }}
-            </td>
-
-            <td class="text-primary">
-              {{ $feesInvoice->term }}
-            </td>
-            <td>
-              @if (strtolower($feesInvoice->payment_status) === 'pending')
-                <span class="badge badge-danger badge-pill">
-                  Pending
-                </span>
-              @elseif (strtolower($feesInvoice->payment_status) === 'paid')
-                <span class="badge badge-success badge-pill">
-                  Paid
-                </span>
-              @elseif (strtolower($feesInvoice->payment_status) === 'partially_paid')
-                <span class="badge badge-warning badge-pill">
-                  Partially Paid
-                </span>
-              @else
-                <span class="badge badge-secondary badge-pill">
-                  {{ $feesInvoice->payment_status }}
-                </span>
-              @endif
-            </td>
-          </tr>
-        @endforeach
-      </tbody>
-    </table>
-    @else
-      <div class="p-2 text-secondary">
-        No records
-      </div>
-    @endif
-  </div>
-
+  @if ($studentFeesTab)
+    @livewire ('student-fees-component', ['student' => $student,])
+  @endif
 
 </div>

@@ -37,6 +37,7 @@ class CreateFeesInvoiceTable extends Migration
             $table->foreign('fees_term_id', 'fk_fees_invoice_fees_term')
                 ->references('fees_term_id')->on('fees_term');
 
+            $table->date('date');
             $table->string('type');
             $table->integer('amount');
             $table->string('payment_status');

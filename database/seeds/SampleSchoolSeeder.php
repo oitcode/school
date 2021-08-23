@@ -68,7 +68,7 @@ class SampleSchoolSeeder extends Seeder
                 ]);
 
                 /* Add 50 students to this section */
-                for ($i=0; $i<50; $i++) {
+                for ($i=0; $i<5; $i++) {
 
                     $student_id = DB::table('student')->insertGetId([
                         'name' => $faker->name(),

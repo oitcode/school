@@ -78,6 +78,7 @@ class AcademicSessionPublishFeesInvoice extends Component
                     }
 
                     $feesInvoice->payment_status = 'pending';
+                    $feesInvoice->date = date('Y-m-d');
 
                     $feesInvoice->save();
                 }

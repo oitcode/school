@@ -60,4 +60,36 @@ class FeesInvoice extends Model
     {
         return $this->belongsTo('App\FeesTerm', 'fees_term_id', 'fees_term_id');
     }
+
+    /*
+     * fees_payment table.
+     *
+     */
+    public function feesPayments()
+    {
+        return $this->hasMany('App\FeesPayment', 'fees_invoice_id', 'fees_invoice_id');
+    }
+
+
+    /*-------------------------------------------------------------------------
+     * Methods
+     *-------------------------------------------------------------------------
+     *
+     */
+
+
+    /*
+     * get pending amount table.
+     *
+     */
+    public function getPendingAmount()
+    {
+        $pendingAmount = $this->amount;
+
+        foreach ($this->feesPayments as $feesPayment) {
+            $pendingAmount -= $feesPayment->amount;
+        }
+
+        return $pendingAmount;
+    }
 }

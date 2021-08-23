@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
+use App\FeesStructure;
+
 class AcademicSessionFeesStructureCreate extends Component
 {
     public $academicSessions;
