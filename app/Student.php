@@ -91,4 +91,26 @@ class Student extends Model
         foreach ($this->currentSection as $currentSection)
             return $currentSection;
     }
+
+    /*
+     * Get pending fees invoices of student.
+     *
+     */
+    public function getPendingFeesInvoices()
+    {
+        $invoices = $this->feesInvoices()->where('payment_status', '!=', 'paid')->get();
+
+        return $invoices;
+    }
+
+    /*
+     * Get paid fees invoices of student.
+     *
+     */
+    public function getPaidFeesInvoices()
+    {
+        $invoices = $this->feesInvoices()->where('payment_status', 'paid')->get();
+
+        return $invoices;
+    }
 }

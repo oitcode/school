@@ -16,16 +16,75 @@
         @livewire ('notice-component')
         @livewire ('vacancy-component')
         @livewire ('admission-application-component')
-        @livewire ('school-component')
 
         @livewire ('fees-structure-component')
-      @livewire ('section-component')
+        @livewire ('academic-session-display', ['academicSession' => $academicSession,])
+        @livewire ('section-component')
       @endif
 
-      @livewire ('academic-session-display', ['academicSession' => $academicSession,])
+
+      <div class="card">
+        <div class="card-header border-0">
+          <h2 class="card-title">
+            Session 2078
+          </h2>
+        </div>
+        <div class="card-body">
+
+          <div class="row">
+
+            <div class="col-md-3">
+              <div class="card text-white bg-primary">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Classes
+                  </h3>
+                </div>
+                <div class="card-body h1">
+                  13
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card text-white bg-success">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Sections
+                  </h3>
+                </div>
+                <div class="card-body h1">
+                  27
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card text-white bg-info">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Student
+                  </h3>
+                </div>
+                <div class="card-body h1">
+                  560
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
 
     </div>
+
     <div class="col-md-4">
+        @livewire ('school-component')
     </div>
   </div>
 @stop

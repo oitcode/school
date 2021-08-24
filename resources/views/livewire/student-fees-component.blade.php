@@ -1,19 +1,20 @@
 <div>
 
-  <h4 class="h5 m-3">Fees</h4>
+  <h4 class="h5 m-3">Pending fees</h4>
   
-  @if (count($student->feesInvoices) > 0)
+  @if (count($student->getPendingFeesInvoices()) > 0)
   <table class="table table-sm table-hover">
     <thead>
       <tr class="text-secondary">
         <th class="border-0-rm">Term</th>
         <th class="border-0-rm">Amount</th>
         <th class="border-0-rm">Payment Status</th>
+        <th class="border-0-rm">Pending amount</th>
         <th class="border-0-rm">Action</th>
       </tr>
     </thead>
   <tbody>
-      @foreach ($student->feesInvoices as $feesInvoice)
+      @foreach ($student->getPendingFeesInvoices() as $feesInvoice)
         <tr>
   
           <td class="text-dark border-0">
@@ -26,12 +27,8 @@
   
           <td class="border-0">
             @if (strtolower($feesInvoice->payment_status) === 'pending')
-              <span class="badge badge-light badge-pill">
+              <span class="badge badge-danger badge-pill">
                 Pending
-              </span>
-            @elseif (strtolower($feesInvoice->payment_status) === 'paid')
-              <span class="badge badge-success badge-pill">
-                Paid
               </span>
             @elseif (strtolower($feesInvoice->payment_status) === 'partially_paid')
               <span class="badge badge-warning badge-pill">
@@ -42,6 +39,10 @@
                 {{ $feesInvoice->payment_status }}
               </span>
             @endif
+          </td>
+
+          <td class="text-dark border-0">
+            {{ $feesInvoice->getPendingAmount() }}
           </td>
   
           <td class="text-dark border-0">
@@ -60,9 +61,15 @@
     </div>
   @endif
 
-  <h4 class="h5 m-3">Fees payments</h4>
   
-  @if (count($student->feesInvoices) > 0)
+  @if ($studentFeesPaymentCreateMode)
+    @livewire ('student-fees-payment-create', ['feesInvoice' => $payingFeesInvoice,])
+  @endif
+
+
+  <h4 class="h5 m-3">Paid Fees</h4>
+  
+  @if (count($student->getPaidFeesInvoices()) > 0)
   <table class="table table-sm table-hover">
     <thead>
       <tr class="text-secondary">
@@ -74,7 +81,7 @@
     </thead>
   
     <tbody>
-      @foreach ($student->feesInvoices as $feesInvoice)
+      @foreach ($student->getPaidFeesInvoices() as $feesInvoice)
         <tr>
   
           <td class="text-dark border-0">
@@ -106,10 +113,7 @@
           </td>
   
           <td class="text-dark border-0">
-            <button class="btn" wire:click="enterStudentFeesPaymentCreateMode({{ $feesInvoice }})">
-              <i class="fas fa-dollar-sign mr-2"></i>
-              Receive payment
-            </button>
+            <i class="fas fa-dollar-sign mr-2"></i>
           </td>
         </tr>
       @endforeach
@@ -119,10 +123,6 @@
     <div class="p-2 text-secondary">
       No records
     </div>
-  @endif
-  
-  @if (false)
-    @livewire ('student-fees-payment-create', ['feesInvoice' => $payingFeesInvoice,])
   @endif
 
 </div>

@@ -90,7 +90,7 @@
 
   <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 border-right">
 
       <div class="row p-2 border-bottom" style="margin: auto;">
         <div class="col-md-2">

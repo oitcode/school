@@ -1,6 +1,6 @@
 <div>
   @if ($school != null)
-    <table class="table table-sm table-hover table-valign-middle text-secondary">
+    <table class="table table-sm table-hover table-borderless text-secondary">
       <tr>
         <th>School Name</th>
         <td>

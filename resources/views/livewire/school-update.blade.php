@@ -36,12 +36,6 @@
     @error('slogan') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
-  <div class="form-group">
-    <label for="">Comment</label>
-    <input type="text" class="form-control" wire:model.defer="comment">
-    @error('comment') <span class="text-danger">{{ $message }}</span> @enderror
-  </div>
-
   <button type="submit" class="btn btn-primary" wire:click="update">
     <span class="spinner-grow spinner-grow-sm" wire:loading.delay></span>
     Update

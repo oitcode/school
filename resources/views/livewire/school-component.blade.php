@@ -1,6 +1,6 @@
 <div class="card card-outline card-light">
-  <div class="card-header p-2" {{-- style="background-color: #d0d0e8 !important;" --}} >
-    <h3 class="card-title mt-1">
+  <div class="card-header p-2 border-0">
+    <h3 class="card-title mt-1 ml-3">
       School
     </h3>
     <div class="card-tools mx-3">
