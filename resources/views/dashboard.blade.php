@@ -41,7 +41,7 @@
                   </h3>
                 </div>
                 <div class="card-body h1">
-                  13
+                  {{ $academicSession->getTotalClasses() }}
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@
                   </h3>
                 </div>
                 <div class="card-body h1">
-                  27
+                  {{ $academicSession->getTotalSections() }}
                 </div>
               </div>
             </div>
@@ -67,13 +67,24 @@
                   </h3>
                 </div>
                 <div class="card-body h1">
-                  560
+                  {{ $academicSession->getTotalStudents() }}
                 </div>
               </div>
             </div>
 
             <div class="col-md-3">
+              <div class="card text-white bg-warning">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Teachers
+                  </h3>
+                </div>
+                <div class="card-body h1">
+                  {{ count($teachers) }}
+                </div>
+              </div>
             </div>
+
           </div>
 
         </div>

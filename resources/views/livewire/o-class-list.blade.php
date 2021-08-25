@@ -1,18 +1,20 @@
 <div>
 
   <div class="bg-light border p-2">
+
     <div class="float-left mr-3">
-      @if (true)
-        <button class="btn" wire:click="hideFilter">
-          <i class="fas fa-filter text-secondary mr-2"></i>
-          Filter
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ $displayAcademicSession->name }}
         </button>
-      @else
-        <button class="btn" wire:click="showFilter">
-          <i class="fas fa-filter text-secondary mr-2"></i>
-          Hide Filter
-        </button>
-      @endif
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          @foreach ($academicSessions as $item)
+            <button class="dropdown-item" wire:click="setDisplayingAcademicSession({{ $item }})">
+              {{ $item->name }}
+            </button>
+          @endforeach
+        </div>
+      </div>
     </div>
 
     <div class="float-left mr-3">

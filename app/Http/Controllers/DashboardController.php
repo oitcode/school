@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\AcademicSession;
+use App\Teacher;
 
 class DashboardController extends Controller
 {
@@ -26,8 +27,10 @@ class DashboardController extends Controller
     public function index()
     {
         $academicSession = AcademicSession::where('status', 'current')->first();
+        $teachers = Teacher::all();
 
         return view('dashboard')
+            ->with('teachers', $teachers)
             ->with('academicSession', $academicSession);
     }
 }

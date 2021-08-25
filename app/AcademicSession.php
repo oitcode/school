@@ -86,4 +86,26 @@ class AcademicSession extends Model
 
         return $total;
     }
+
+    public function getTotalClasses()
+    {
+        $total = 0;
+
+        foreach ($this->oClasses as $oClass) {
+            $total++;
+        }
+
+        return $total;
+    }
+
+    public function getTotalSections()
+    {
+        $total = 0;
+
+        foreach ($this->oClasses as $oClass) {
+            $total += count($oClass->sections);
+        }
+
+        return $total;
+    }
 }

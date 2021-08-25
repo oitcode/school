@@ -45,30 +45,6 @@
       </button>
     </div>
 
-    @if (false)
-    <div class="float-left mr-3">
-      <button class="btn" wire:click="enterViewFeesStructureMode">
-        <i class="fas fa-tag text-secondary mr-2"></i>
-        View Fees Structure
-      </button>
-    </div>
-    @endif
-
-    <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-sticky-note text-secondary mr-2"></i>
-        Add note
-      </button>
-    </div>
-
-
-    <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-tag text-secondary mr-2"></i>
-        Misc
-      </button>
-    </div>
-
     <div class="float-right mr-3">
       <button class="btn text-danger" wire:click="$emit('exitDisplay')">
         <i class="fas fa-times mr-2"></i>
