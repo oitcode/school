@@ -36,8 +36,26 @@
   <div class="container-fluid my-5">
     <div class="container">
       <div class="row d-flex h-100">
-        <div class="col-md-6 justify-content-center align-self-center">
-          {{ $principalsMessage->message }}
+        <div class="col-md-8" style="font-size: 1.15em !important;">
+          <p>
+            {{ $principalsMessage->message }}
+          </p>
+          <div class="mt-4">
+            <strong>
+              {{ $principalsMessage->name }}
+            </strong>
+            <br/>
+            Principal
+            <br/>
+            {{ $school->name }}
+            <br/>
+            <br/>
+            <i class="fa fa-phone mr-1"></i>
+            {{ $principalsMessage->phone }}
+            <br/>
+            <i class="fa fa-envelope mr-1"></i>
+            {{ $principalsMessage->email }}
+          </div>
         </div>
         <div class="col-md-4">
           <img src="{{ asset('storage/' . $principalsMessage->image_path) }}" class="img-fluid">

@@ -29,6 +29,18 @@
       @if ($principalsMessage != null)
         <table class="table table-sm  table-hover table-valign-middle">
           <tr>
+            <th>Name</th>
+            <td>{{ $principalsMessage->name }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ $principalsMessage->email }}</td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td>{{ $principalsMessage->phone }}</td>
+          </tr>
+          <tr>
             <th>Message</th>
             <td>{{ $principalsMessage->message }}</td>
           </tr>

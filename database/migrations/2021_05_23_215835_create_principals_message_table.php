@@ -16,6 +16,9 @@ class CreatePrincipalsMessageTable extends Migration
         Schema::create('principals_message', function (Blueprint $table) {
             $table->bigIncrements('principals_message_id');
             $table->text('message');
+            $table->string('name');
+            $table->string('phone')->nullable();
+            $table->string('email')->email()->nullable();
             $table->string('image_path');
 
             $table->timestamps();

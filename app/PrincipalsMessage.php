@@ -21,6 +21,7 @@ class PrincipalsMessage extends Model
     protected $primaryKey = 'principals_message_id';
 
     protected $fillable = [
+        'name', 'email', 'phone',
         'message', 'image_path', 'comment',
     ];
 }

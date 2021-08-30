@@ -12,6 +12,9 @@ class PrincipalsMessageCreate extends Component
 {
     use WithFileUploads;
 
+    public $name;
+    public $email;
+    public $phone;
     public $message;
     public $image;
 
@@ -23,30 +26,36 @@ class PrincipalsMessageCreate extends Component
     public function store()
     {
         $validatedData = $this->validate([
+            'name' => 'required',
+            'email' => 'nullable|email',
+            'phone' => 'nullable',
             'message' => 'required',
             'image' => 'image',
         ]);
 
-        DB::beginTransaction();
+        //DB::beginTransaction();
 
-        try {
+        //try {
             $imagePath = $this->image->store('principals_message', 'public');
             $validatedData['image_path'] = $imagePath;
 
             PrincipalsMessage::create($validatedData);
 
-            DB::commit();
+            //DB::commit();
 
             /* Todo: Should this is outside the try block? */
             $this->emit('principalsMessageAdded');
-        } catch (\Exception $e) {
-            $this->resetInputFields();
-            DB::rollback();
-        }
+        //} catch (\Exception $e) {
+            //$this->resetInputFields();
+            //DB::rollback();
+        //}
     }
 
     public function resetInputFields()
     {
+        $this->name = '';
+        $this->email = '';
+        $this->phone = '';
         $this->message = '';
         $this->image = null; 
     }
