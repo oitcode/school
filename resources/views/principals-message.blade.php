@@ -40,15 +40,14 @@
           <p>
             {{ $principalsMessage->message }}
           </p>
-          <div class="mt-4">
-            <strong>
+          <div class="mt-4 text-secondary">
+            <strong class="text-info">
               {{ $principalsMessage->name }}
             </strong>
             <br/>
             Principal
             <br/>
             {{ $school->name }}
-            <br/>
             <br/>
             <i class="fa fa-phone mr-1"></i>
             {{ $principalsMessage->phone }}
