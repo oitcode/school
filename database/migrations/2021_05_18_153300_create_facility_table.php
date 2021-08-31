@@ -25,6 +25,8 @@ class CreateFacilityTable extends Migration
             $table->foreign('facility_category_id', 'fk_facility_facility_category')
                 ->references('facility_category_id')->on('facility_category');
 
+            $table->string('image_path');
+
             $table->timestamps();
             $table->string('comment', 255)->nullable();
         });

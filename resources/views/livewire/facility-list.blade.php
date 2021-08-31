@@ -45,7 +45,7 @@
             </td>
 
             <td class="text-secondary">
-              {{ $facility->info }}
+              {{ \Illuminate\Support\Str::limit($facility->info, 100, $end=' ...') }}
             </td>
 
             <td>

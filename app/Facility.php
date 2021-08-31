@@ -21,7 +21,7 @@ class Facility extends Model
     protected $primaryKey = 'facility_id';
 
     protected $fillable = [
-        'name', 'facility_category_id', 'info', 'comment',
+        'name', 'facility_category_id', 'info', 'image_path', 'comment',
     ];
 
 

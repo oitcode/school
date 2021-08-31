@@ -4,17 +4,21 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
+use Livewire\WithFileUploads;
 
 use App\FacilityCategory;
 use App\Facility;
 
 class FacilityCreate extends Component
 {
+    use WithFileUploads;
+
     public $facilityCategories = null;
 
     public $name;
     public $facility_category_id;
     public $info;
+    public $image;
     public $comment;
 
     public function render()
@@ -31,7 +35,12 @@ class FacilityCreate extends Component
             'facility_category_id' => 'required',
             'info' => 'required',
             'comment' => 'nullable',
+
+            'image' => 'image'
         ]);
+
+        $image_path = $this->image->store('extra-curriculars', 'public');
+        $validatedData['image_path'] = $image_path;
 
         DB::beginTransaction();
 

@@ -43,7 +43,7 @@
             </td>
 
             <td class="text-secondary">
-              {{ $extraCurricular->description }}
+              {{ \Illuminate\Support\Str::limit($extraCurricular->description, 100, $end=' ...') }}
             </td>
 
             <td>

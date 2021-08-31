@@ -39,7 +39,7 @@ class ExtraCurricularCreate extends Component
             'image' => 'image'
         ]);
 
-        $image_path = $this->image->store('extra-curriculars', 'public');
+        $image_path = $this->image->store('facilities', 'public');
         $validatedData['image_path'] = $image_path;
 
         DB::beginTransaction();
