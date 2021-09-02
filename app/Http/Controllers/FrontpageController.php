@@ -12,7 +12,7 @@ use App\ExtraCurricular;
 use App\ExtraCurricularCategory;
 use App\Gallery;
 use App\PrincipalsMessage;
-use App\AboutUs;
+use App\AboutUsContent;
 use App\MainpageContent;
 use App\SocialMediaLink;
 use App\FrontpageTheme;
@@ -59,17 +59,15 @@ class FrontpageController extends Controller
         $frontpageTheme = FrontpageTheme::first();
         $socialMediaLinks = SocialMediaLink::all();
 
-        $aboutUs = null;
+        $aboutUsContents = null;
 
-        if (AboutUs::count() > 0) {
-            $aboutUs = AboutUs::firstOrFail();
-        }
+        $aboutUsContents = AboutUsContent::all();
 
         return view('aboutus')
             ->with('school', $school)
             ->with('frontpageTheme', $frontpageTheme)
             ->with('socialMediaLinks', $socialMediaLinks)
-            ->with('aboutUs', $aboutUs);
+            ->with('aboutUsContents', $aboutUsContents);
     }
 
     public function contact()

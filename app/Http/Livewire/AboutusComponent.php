@@ -4,14 +4,14 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-use App\AboutUs;
+use App\AboutUsContent;
 
 class AboutusComponent extends Component
 {
     public $createMode = false;
     public $updateMode = false;
 
-    public $aboutUs = null;
+    public $aboutUsContents = null;
 
     protected $listeners = [
         'exitCreate' => 'exitCreateMode',
@@ -21,9 +21,7 @@ class AboutusComponent extends Component
 
     public function render()
     {
-        if (AboutUs::count() > 0) {
-            $this->aboutUs = AboutUs::firstOrFail();
-        }
+        $this->aboutUsContents = AboutUsContent::all();
 
         return view('livewire.aboutus-component');
     }

@@ -1,5 +1,5 @@
 <div class="m-3">
-  <h2 class="h5">Create Mainpage Content</h2>
+  <h2 class="h5">Create Aboutus Content</h2>
 
   <div class="form-group">
     <label for="">Body</label>

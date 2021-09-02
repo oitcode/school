@@ -13,13 +13,13 @@
                            background-position: center;">
   <div class="o-overlay">
     <div class="container py-4">
-      <h1 class="display-4 text-light">Extra Curriculars</h1>
+      <h1 class="display-4 text-light">Facilities</h1>
       <div class="row">
         <div class="col-md-6">
           <hr class="my-4 bg-light">
           <p class="mr-3">
             <span class="lead text-light">
-              Extra Curricular Activities
+              Extracurriculars
             </span>
           </p>
         </div>
@@ -33,41 +33,48 @@
   </div>
 </div>
 
-    @if ($extraCurricularCategories != null && count($extraCurricularCategories) > 0)
-        @foreach ($extraCurricularCategories as $extraCurricularCategory)
-          @if (count($extraCurricularCategory->extraCurriculars) > 0)
-            <div class="container-fluid">
-              <div class="container py-3 border-top">
-                <h2>
-                  {{ $extraCurricularCategory->name }}
-                </h2>
-                <div class="row">
-                @foreach ($extraCurricularCategory->extraCurriculars as $extraCurricular)
-                  <div class="col-md-4">
-                    <div class="card mb-3">
-                      <div class="card-body">
-                      <img src="{{ asset('storage/' . $extraCurricular->image_path) }}">
-                        <h3 class="card-title">
-                        {{ $extraCurricular->name }}
-                        </h3>
-                        <p class="card-text">
-                          {{ $extraCurricular->description }}
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                      </div>
-                    </div>
-                  </div>
-                @endforeach
-                </div>
+@if ($extraCurricularCategories != null && count($extraCurricularCategories) > 0)
+
+  {{-- To track odd/even content --}}
+  @php
+    $i = 0;
+  @endphp
+
+  @foreach ($extraCurricularCategories as $extraCurricularCategory)
+    @foreach ($extraCurricularCategory->extraCurriculars as $extraCurricular)
+      <div class="container-fluid border-bottom py-4 @if ($i % 2 == 1) bg-light @endif">
+        <div class="container py-3" style="font-size: 1.1em !important;">
+      
+          <div class="row">
+
+            <div class="col-md-8">
+              <h3 class="card-title">
+              {{ $extraCurricular->name }}
+              </h3>
+
+              <p class="card-text">
+                {{ $extraCurricular->description }}
+              </p>
             </div>
+
+            <div class="col-md-4">
+              <img src="{{ asset('storage/' . $extraCurricular->image_path) }}" class="img-fluid rounded-circle">
+            </div>
+
           </div>
-          @endif
-        @endforeach
+        </div>
       </div>
-    @else
-      <div class="container text-danger p-3">
-        No content
-      </div>
-    @endif
+
+      @php
+        $i++;
+      @endphp
+
+    @endforeach
+  @endforeach
+@else
+  <div class="container text-danger my-4">
+    No content
+  </div>
+@endif
 
 @endsection
