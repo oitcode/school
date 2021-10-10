@@ -12,7 +12,7 @@
         Credit Available
       </div>
       <div class="col-md-4">
-        100
+        {{ $response['credits_availabe'] }}
       </div>
     </div>
 
@@ -21,12 +21,8 @@
         Credits Consumed
       </div>
       <div class="col-md-4">
-        100
+        {{ $response['credits_consumed'] }}
       </div>
-    </div>
-
-    <div>
-      {{ $response }}
     </div>
 
   </div>
