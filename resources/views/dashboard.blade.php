@@ -23,6 +23,7 @@
       @endif
 
 
+      @if (false)
       <div class="card">
         <div class="card-header border-0">
           <h2 class="card-title">
@@ -89,6 +90,7 @@
 
         </div>
       </div>
+      @endif
 
 
 
