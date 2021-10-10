@@ -18,7 +18,7 @@ class SmsCreditComponent extends Component
             'token' => '<token-provided>',));
 
         $response = file_get_contents($api_url);
-        $this->response = $response;
+        $this->response = json_decode($response, true);
 
         return view('livewire.sms-credit-component');
     }
