@@ -68,3 +68,15 @@ Auth::routes();
 //Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// TEMPORARY
+Route::get('/dashboard/sms/credit', function () {
+   $api_url = "http://api.sparrowsms.com/v2/credit/?".
+        http_build_query(array(
+            'token' => '<token-provided>',
+
+    $response = file_get_contents($api_url); 
+
+    return $response;
+});
+
