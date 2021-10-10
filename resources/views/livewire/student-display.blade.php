@@ -37,6 +37,13 @@
     </div>
 
     <div class="float-left mr-3">
+      <button class="btn" wire:click="enterSendSmsMode">
+        <i class="fas fa-envelope text-secondary mr-2"></i>
+        SMS
+      </button>
+    </div>
+
+    <div class="float-left mr-3">
       <button class="btn">
         <i class="fas fa-tag text-secondary mr-2"></i>
         Misc
@@ -138,6 +145,10 @@
       @endif
     </div>
   </div>
+
+  @if ($sendSmsMode)
+    @livewire ('student-send-sms', ['student' => $student,])
+  @endif
 
 
   @if ($studentFeesTab)

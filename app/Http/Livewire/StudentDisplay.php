@@ -13,6 +13,7 @@ class StudentDisplay extends Component
     public $addGuardianMode = false;
     public $displayFeesMode = true;
     public $studentFeesPaymentCreateMode = false;
+    public $sendSmsMode = false;
 
     public $payingFeesInvoice;
 
@@ -21,6 +22,7 @@ class StudentDisplay extends Component
     protected $listeners = [
         'exitAddGuardian' => 'exitAddGuardianMode',
         'exitStudentFeesPaymentCreateMode',
+        'exitSendSmsMode',
     ];
 
     public function render()
@@ -72,5 +74,15 @@ class StudentDisplay extends Component
     public function deselectStudentFeesTab()
     {
         $this->studentFeesTab = false;
+    }
+
+    public function enterSendSmsMode()
+    {
+        $this->sendSmsMode = true;
+    }
+
+    public function exitSendSmsMode()
+    {
+        $this->sendSmsMode = false;
     }
 }
