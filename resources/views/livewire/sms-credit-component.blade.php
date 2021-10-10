@@ -12,7 +12,7 @@
         Credit Available
       </div>
       <div class="col-md-4">
-        {{ $response['credits_availabe'] }}
+        {{ $response['credits_available'] }}
       </div>
     </div>
 
