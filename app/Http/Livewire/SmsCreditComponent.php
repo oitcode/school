@@ -8,6 +8,7 @@ class SmsCreditComponent extends Component
 {
     public $creditsAvailable;
     public $creditsConsumed;
+    public $response;
 
     public function render()
     {
@@ -17,6 +18,7 @@ class SmsCreditComponent extends Component
             'token' => '<token-provided>',));
 
         $response = file_get_contents($api_url);
+        $this->response = $response;
 
         return view('livewire.sms-credit-component');
     }
