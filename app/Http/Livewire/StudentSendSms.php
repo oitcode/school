@@ -52,7 +52,12 @@ class StudentSendSms extends Component
         curl_close($ch);
 
         // TODO: How to finish gracely
-        session()->flash('message', 'SMS Sent | ' . 'Response: ' . $response . ' | Status Code: ' . $status_code);
+        if ($status_code == 200) {
+            session()->flash('message', 'SMS Sent');
+        } else {
+            session()->flash('message', 'SMS Failed');
+        }
+
         $this->resetInputFields();
     }
 

@@ -73,7 +73,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard/sms/credit', function () {
    $api_url = "http://api.sparrowsms.com/v2/credit/?".
         http_build_query(array(
-            'token' => '<token-provided>',
+            'token' => '<token-provided>',));
 
     $response = file_get_contents($api_url); 
 
