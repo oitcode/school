@@ -52,5 +52,12 @@ class StudentSendSms extends Component
         curl_close($ch);
 
         // TODO: How to finish gracely
+        session()->flash('message', 'SMS Sent | ' . 'Response: ' . $response . ' | Status Code: ' . $status_code);
+        $this->resetInputFields();
+    }
+
+    public function resetInputFields()
+    {
+        $this->message = '';
     }
 }

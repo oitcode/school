@@ -2,6 +2,12 @@
 
   <h2 class="h5 p-2 bg-light border">Send SMS</h2>
 
+  @if (session()->has('message'))
+    <div class="bg-success">
+      {{ session('message') }}
+    </div>
+  @endif
+
   <div class="my-2">
     @if (count($student->guardians) > 0)
       @foreach ($student->guardians as $guardian)
