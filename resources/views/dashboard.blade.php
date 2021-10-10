@@ -19,8 +19,10 @@
 
         @livewire ('fees-structure-component')
         @livewire ('academic-session-display', ['academicSession' => $academicSession,])
-      @endif
         @livewire ('section-component')
+      @endif
+
+      @livewire ('sms-credit-component')
 
 
       @if (false)

@@ -1,5 +1,11 @@
 <div>
 
+  <div class="my-3 p-3 border">
+    <button class="btn btn-sm btn-primary">
+      Receive Deposit
+    </button>
+  </div>
+
   <h4 class="h5 m-3">Pending fees</h4>
   
   @if (count($student->getPendingFeesInvoices()) > 0)
