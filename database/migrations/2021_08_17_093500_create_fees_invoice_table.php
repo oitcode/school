@@ -33,7 +33,7 @@ class CreateFeesInvoiceTable extends Migration
             /*
              * Foreign key to fees_term table.
              */
-            $table->unsignedBigInteger('fees_term_id');
+            $table->unsignedBigInteger('fees_term_id')->nullable();
             $table->foreign('fees_term_id', 'fk_fees_invoice_fees_term')
                 ->references('fees_term_id')->on('fees_term');
 

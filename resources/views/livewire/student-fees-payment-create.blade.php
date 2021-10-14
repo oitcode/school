@@ -29,7 +29,9 @@
         Term
       </div>
       <div class="col-md-4">
-        {{ $feesInvoice->feesTerm->term }}
+        @if ($feesInvoice->feesTerm)
+          {{ $feesInvoice->feesTerm->term }}
+        @endif
       </div>
     </div>
 

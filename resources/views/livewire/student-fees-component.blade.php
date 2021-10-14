@@ -1,10 +1,20 @@
 <div>
 
+  @if (session()->has('message'))
+    <div class="alert alert-success">
+      {{ session('message') }}
+    </div>
+  @endif
+
   <div class="my-3 p-3 border">
-    <button class="btn btn-sm btn-primary">
-      Receive Deposit
+    <button class="btn btn-sm btn-primary" wire:click="enterStudentPaymentReceiveMode">
+      Receive Payment
     </button>
   </div>
+
+  @if ($studentPaymentReceiveMode)
+    @livewire ('student-payment-create', ['student' => $student,])
+  @endif
 
   <h4 class="h5 m-3">Pending fees</h4>
   
@@ -24,7 +34,9 @@
         <tr>
   
           <td class="text-dark border-0">
-            {{ $feesInvoice->feesTerm->term }}
+            @if ($feesInvoice->feesTerm)
+              {{ $feesInvoice->feesTerm->term }}
+            @endif
           </td>
   
           <td class="text-dark border-0">
@@ -91,7 +103,9 @@
         <tr>
   
           <td class="text-dark border-0">
-            {{ $feesInvoice->feesTerm->term }}
+            @if ($feesInvoice->feesTerm)
+              {{ $feesInvoice->feesTerm->term }}
+            @endif
           </td>
   
           <td class="text-dark border-0">
@@ -118,8 +132,8 @@
             @endif
           </td>
   
-          <td class="text-dark border-0">
-            <i class="fas fa-dollar-sign mr-2"></i>
+          <td class="text-primary border-0">
+            View Payment
           </td>
         </tr>
       @endforeach

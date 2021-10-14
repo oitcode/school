@@ -13,9 +13,13 @@ class StudentFeesComponent extends Component
     public $payingFeesInvoice;
 
     public $studentFeesPaymentCreateMode = false;
+    public $studentPaymentReceiveMode = false;
 
     protected $listeners = [
         'exitStudentFeesPaymentCreateMode',
+        'exitStudentPaymentReceiveMode',
+
+        'studentPaymentMade',
     ];
 
     public function render()
@@ -33,5 +37,21 @@ class StudentFeesComponent extends Component
     {
         $this->payingFeesInvoice = null;
         $this->studentFeesPaymentCreateMode = false;
+    }
+
+    public function enterStudentPaymentReceiveMode()
+    {
+        $this->studentPaymentReceiveMode = true;
+    }
+
+    public function exitStudentPaymentReceiveMode()
+    {
+        $this->studentPaymentReceiveMode = false;
+    }
+
+    public function studentPaymentMade()
+    {
+        $this->exitStudentPaymentReceiveMode();
+        session()->flash('message', 'Payment Made');
     }
 }

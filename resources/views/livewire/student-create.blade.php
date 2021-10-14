@@ -25,6 +25,14 @@
     @error('address') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
+  <hr />
+
+  <div class="form-group">
+    <label for="">Starting Pending Balance</label>
+    <input type="text" class="form-control" wire:model.defer="starting_pending_balance">
+    @error('starting_pending_balance') <span class="text-danger">{{ $message }}</span> @enderror
+  </div>
+
   <button class="btn btn-primary" wire:click="store">Submit</button>
 
   @if ($native)
