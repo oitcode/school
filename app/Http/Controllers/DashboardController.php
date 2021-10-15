@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\AcademicSession;
 use App\Teacher;
+use App\School;
 
 class DashboardController extends Controller
 {
@@ -26,11 +27,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $school = School::first();
         $academicSession = AcademicSession::where('status', 'current')->first();
         $teachers = Teacher::all();
 
         return view('dashboard')
-            ->with('teachers', $teachers)
+            ->with('school', $school)
             ->with('academicSession', $academicSession);
     }
 }

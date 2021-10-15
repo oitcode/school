@@ -25,7 +25,7 @@
           </div>
 
           <div class="h3">
-            SNJES
+            {{ $school->name }}
           </div>
 
           <div>
@@ -52,7 +52,7 @@
           </div>
 
           <div class="h3">
-            2078
+            {{ $academicSession->name }}
           </div>
 
           <div>
@@ -79,7 +79,7 @@
           </div>
 
           <div class="h3">
-            2213
+            {{ $academicSession->getTotalStudents() }}
           </div>
 
           <div>
@@ -90,7 +90,15 @@
       </div>
     </div>
 
+  </div>
 
+  <div class="card card-outline card-info">
+    <div class="card-body">
+      WELCOME
+      <p class="text-secondary mt-5">
+        &copy; Operating IT Pvt Ltd
+      </p>
+    </div>
   </div>
 
   <div class="row">

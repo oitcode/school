@@ -49,9 +49,9 @@ class StudentFeesComponent extends Component
         $this->studentPaymentReceiveMode = false;
     }
 
-    public function studentPaymentMade()
+    public function studentPaymentMade($amountRemaining)
     {
         $this->exitStudentPaymentReceiveMode();
-        session()->flash('message', 'Payment Made');
+        session()->flash('message', 'Payment Made. Return amount: ' . $amountRemaining);
     }
 }

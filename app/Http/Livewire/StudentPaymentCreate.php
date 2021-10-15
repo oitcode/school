@@ -40,8 +40,7 @@ class StudentPaymentCreate extends Component
         /* TODO */
         /* If amount still remaining ask to return or keep the balance */
 
-        $this->emitUp('studentPaymentMade');
-        // session()->flash('message', 'Payments created. Return: ' . $amountRemaining);
+        $this->emitUp('studentPaymentMade', $amountRemaining);
     }
 
     public function receiveFeesInvoicePayment($feesInvoice, $amountAvailable, $depositedBy)

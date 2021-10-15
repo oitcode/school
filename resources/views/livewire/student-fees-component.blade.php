@@ -1,8 +1,14 @@
 <div>
 
+  <!-- Flash message div -->
   @if (session()->has('message'))
-    <div class="alert alert-success">
-      {{ session('message') }}
+    <div class="p-2">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('message') }}
+        <button type="button" class="close text-white" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     </div>
   @endif
 
