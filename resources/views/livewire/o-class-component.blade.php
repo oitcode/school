@@ -17,7 +17,7 @@
     @if ($createMode)
       @livewire ('o-class-create')
     @elseif ($updateMode)
-      @livewire ('o-class-update', ['oClass' => $updatingOClass,])
+      @livewire ('o-class-update', ['updatingOClass' => $updatingOClass,])
     @elseif ($displayMode)
       @livewire ('o-class-display', ['oClass' => $displayingOClass,])
     @else

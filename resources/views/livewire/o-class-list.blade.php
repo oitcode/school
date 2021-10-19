@@ -17,12 +17,14 @@
       </div>
     </div>
 
+    @if (false)
     <div class="float-left mr-3">
       <button class="btn">
         <i class="fas fa-tag text-secondary mr-2"></i>
         Misc
       </button>
     </div>
+    @endif
 
     <div class="float-right mr-3">
       <button class="btn text-primary" wire:click="$refresh">
@@ -44,7 +46,7 @@
     <thead>
       <tr class="text-secondary">
         <th>Academic Session</th>
-        <th>Name</th>
+        <th>Class</th>
         <th>Sections</th>
         <th>Action</th>
       </tr>
@@ -71,7 +73,7 @@
           </td>
 
           <td>
-            <span class="btn btn-tool btn-sm mr-2" wire:click="">
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateOClass', {{ $oClass }})">
               <i class="fas fa-pencil-alt text-primary"></i>
             </span>
             <span class="btn btn-tool btn-sm" wire:click="">

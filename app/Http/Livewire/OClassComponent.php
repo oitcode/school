@@ -16,11 +16,14 @@ class OClassComponent extends Component
     public $createOClassSectionMode = false;
 
     public $displayingOClass;
+    public $updatingOClass;
 
     protected $listeners = [
         'exitCreate' => 'exitCreateMode',
         'displayOClass',
         'exitDisplay' => 'exitDisplayMode',
+        'updateOClass',
+        'exitUpdate' => 'exitUpdateMode',
     ];
 
     public function render()
@@ -53,5 +56,22 @@ class OClassComponent extends Component
     {
         $this->displayingOClass = $oClass;
         $this->enterDisplayMode();
+    }
+
+    public function enterUpdateMode()
+    {
+        $this->updateMode = true;
+    }
+
+    public function exitUpdateMode()
+    {
+        $this->updatingOClass = null;
+        $this->updateMode = false;
+    }
+
+    public function updateOClass(OClass $oClass) 
+    {
+        $this->updatingOClass = $oClass;
+        $this->enterUpdateMode();
     }
 }

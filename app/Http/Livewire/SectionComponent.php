@@ -14,9 +14,12 @@ class SectionComponent extends Component
     public $deleteMode = false;
 
     public $displayingSection;
+    public $updatingSection;
 
     protected $listeners = [
         'displaySection',
+        'updateSection',
+        'exitUpdate' => 'exitUpdateMode',
     ];
 
     public function render()
@@ -49,5 +52,22 @@ class SectionComponent extends Component
     {
         $this->displayingSection = $section;
         $this->enterDisplayMode();
+    }
+
+    public function enterUpdateMode()
+    {
+        $this->updateMode = true;
+    }
+
+    public function exitUpdateMode()
+    {
+        $this->updatingSection = null;
+        $this->updateMode = false;
+    }
+
+    public function updateSection(Section $section)
+    {
+        $this->updatingSection = $section;
+        $this->enterUpdateMode();
     }
 }

@@ -1,19 +1,30 @@
 <div>
 
   <div class="bg-light border p-2">
+
     <div class="float-left mr-3">
-      <button class="btn" wire:click="showFilter">
-        <i class="fas fa-filter text-secondary mr-2"></i>
-        Filter
-      </button>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ $displayAcademicSession->name }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          @foreach ($academicSessions as $item)
+            <button class="dropdown-item" wire:click="setDisplayingAcademicSession({{ $item }})">
+              {{ $item->name }}
+            </button>
+          @endforeach
+        </div>
+      </div>
     </div>
 
+    @if (false)
     <div class="float-left mr-3">
       <button class="btn">
         <i class="fas fa-tag text-secondary mr-2"></i>
         Misc
       </button>
     </div>
+    @endif
 
     <div class="float-right mr-3">
       <button class="btn text-primary" wire:click="$refresh">
@@ -40,6 +51,7 @@
     <thead>
       <tr class="bg-light text-secondary">
         <th>Section</th>
+        <th>Students</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -59,7 +71,7 @@
           </td>
 
           <td>
-            <span class="btn btn-tool btn-sm mr-2" wire:click="">
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateSection', {{ $section }})">
               <i class="fas fa-pencil-alt text-primary"></i>
             </span>
             <span class="btn btn-tool btn-sm" wire:click="">
