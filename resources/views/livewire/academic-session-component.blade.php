@@ -16,8 +16,14 @@
       @livewire ('academic-session-create')
     @elseif ($displayMode)
       @livewire ('academic-session-display', ['academicSession' => $displayingAcademicSession,])
+    @elseif ($updateMode)
+      @livewire ('academic-session-update', ['academicSession' => $updatingAcademicSession,])
     @else
       @livewire ('academic-session-list')
+    @endif
+
+    @if ($deleteMode)
+      @livewire ('academic-session-delete-confirm', ['deletingAcademicSession' => $deletingAcademicSession,])
     @endif
 
   </div>

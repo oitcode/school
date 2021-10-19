@@ -81,7 +81,7 @@
   </table>
   @else
     <div class="p-2 text-secondary">
-      No records
+      No pending fees
     </div>
   @endif
 

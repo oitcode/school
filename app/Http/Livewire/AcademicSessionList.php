@@ -10,6 +10,10 @@ class AcademicSessionList extends Component
 {
     public $academicSessions;
 
+    protected $listeners = [
+        'updateList' => 'render',
+    ];
+
     public function render()
     {
         $this->academicSessions = AcademicSession::all();

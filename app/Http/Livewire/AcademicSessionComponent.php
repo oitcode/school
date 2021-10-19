@@ -14,11 +14,18 @@ class AcademicSessionComponent extends Component
     public $deleteMode = false;
 
     public $displayingAcademicSession;
+    public $updatingAcademicSession;
+    public $deletingAcademicSession;
 
     protected $listeners = [
         'exitCreate' => 'exitCreateMode',
         'displayAcademicSession',
         'exitDisplay' => 'exitDisplayMode',
+        'updateAcademicSession',
+        'exitUpdate' => 'exitUpdateMode',
+        'confirmDeleteAcademicSession',
+        'deleteAcademicSession',
+        'exitDelete' => 'exitDeleteMode',
     ];
 
     public function render()
@@ -53,5 +60,46 @@ class AcademicSessionComponent extends Component
     {
         $this->displayingAcademicSession = $academicSession;
         $this->enterDisplayMode();
+    }
+
+    public function enterUpdateMode()
+    {
+        $this->updateMode = true;
+    }
+
+    public function exitUpdateMode()
+    {
+        $this->updatingAcademicSession = null;
+        $this->updateMode = false;
+    }
+
+    public function updateAcademicSession(AcademicSession $academicSession)
+    {
+        $this->updatingAcademicSession = $academicSession;
+        $this->enterUpdateMode();
+    }
+
+    public function enterDeleteMode()
+    {
+        $this->deleteMode = true;
+    }
+
+    public function exitDeleteMode()
+    {
+        $this->deletingAcademicSession = null;
+        $this->deleteMode = false;
+    }
+
+    public function confirmDeleteAcademicSession(AcademicSession $academicSession)
+    {
+        $this->deletingAcademicSession = $academicSession;
+        $this->enterDeleteMode();
+    }
+
+    public function deleteAcademicSession(AcademicSession $academicSession)
+    {
+        $academicSession->delete();
+        $this->exitDisplayMode();
+        $this->emit('updateList');
     }
 }

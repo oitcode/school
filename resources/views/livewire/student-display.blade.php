@@ -92,6 +92,7 @@
         </div>
       </div>
 
+      @if (false)
       <div class="row p-2 border-bottom-rm text-secondary" style="margin: auto;">
         <div class="col-md-2">
           Address
@@ -106,6 +107,7 @@
           @endif
         </div>
       </div>
+      @endif
 
       <div class="row p-2 border-bottom-rm text-secondary" style="margin: auto;">
         <div class="col-md-2">
@@ -141,7 +143,7 @@
       @if ($student->image_file_path)
         <img src="{{ asset('storage/' . $student->image_file_path) }}" style="max-height:100px; max-width:100ps;">
       @else
-        <i class="fas fa-user-graduate fa-8x text-secondary"></i>
+        <i class="fas fa-user-graduate fa-4x text-secondary"></i>
       @endif
     </div>
   </div>

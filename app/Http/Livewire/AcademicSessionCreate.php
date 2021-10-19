@@ -18,7 +18,7 @@ class AcademicSessionCreate extends Component
     public function store()
     {
         $validatedData = $this->validate([
-            'name' => 'required',
+            'name' => 'required|unique:academic_session,name',
         ]);
 
         $validatedData['status'] = 'default';

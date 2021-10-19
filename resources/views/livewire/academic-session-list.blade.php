@@ -16,13 +16,18 @@
             <a class="text-dark" href="" wire:click.prevent="$emit('displayAcademicSession', {{ $academicSession }})">
               {{ $academicSession->name }}
             </a>
+            @if ($academicSession->status === 'current')
+              <span class="badge badge-pill badge-success ml-2">
+                Current
+              </span>
+            @endif
           </td>
 
           <td>
-            <span class="btn btn-tool btn-sm mr-2" wire:click="">
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateAcademicSession', {{ $academicSession }})">
               <i class="fas fa-pencil-alt text-primary"></i>
             </span>
-            <span class="btn btn-tool btn-sm" wire:click="">
+            <span class="btn btn-tool btn-sm" wire:click="$emit('confirmDeleteAcademicSession', {{ $academicSession }})">
               <i class="fas fa-trash text-danger"></i>
             </span>
           </td>
