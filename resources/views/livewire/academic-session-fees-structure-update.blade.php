@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
   
-    <h2 class="h5 mb-3">Create fees structure</h2>
+    <h2 class="h5 mb-3">Update fees structure</h2>
   
     <div class="row">
       <div class="col-md-6">
@@ -126,7 +126,7 @@
       </div>
     </div>
   
-    <button type="submit" class="btn btn-primary" wire:click="store">Submit</button>
-    <button type="submit" class="btn btn-danger" wire:click="$emit('exitFeesStructureCreateMode')">Cancel</button>
+    <button type="submit" class="btn btn-primary" wire:click="update">Update</button>
+    <button type="submit" class="btn btn-danger" wire:click="$emit('exitFeesStructureUpdateMode')">Cancel</button>
   </div>
 </div>

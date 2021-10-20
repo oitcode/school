@@ -24,6 +24,7 @@ class CreateFeesTermTable extends Migration
                 ->references('academic_session_id')->on('academic_session');
 
             $table->string('term');
+            $table->date('fees_publish_date');
 
             $table->timestamps();
         });

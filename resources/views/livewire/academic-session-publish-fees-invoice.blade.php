@@ -1,18 +1,20 @@
-<div class="p-2">
-
-    <h3 class="h5">Publish Fees Invoice</h3>
-
-    <div wire:loading>
-      Processing ...
-    </div>
+<div class="card">
+  <div class="card-body">
   
-    <div class="form-group">
-      <label for="">Term</label>
-      <input type="text" class="form-control" wire:model.defer="term">
-      @error('term') <span class="text-danger">{{ $message }}</span> @enderror
-    </div>
+      <h3 class="h5">Publish Fees Invoice</h3>
   
-    <button type="submit" class="btn btn-primary" wire:click="store">Submit</button>
-    <button type="submit" class="btn btn-danger" wire:click="$emit('exitPublishFees')">Cancel</button>
-
+      <div wire:loading>
+        Processing ...
+      </div>
+    
+      <div class="form-group">
+        <label for="">Term</label>
+        <input type="text" class="form-control" wire:model.defer="term">
+        @error('term') <span class="text-danger">{{ $message }}</span> @enderror
+      </div>
+    
+      <button type="submit" class="btn btn-primary" wire:click="store">Submit</button>
+      <button type="submit" class="btn btn-danger" wire:click="$emit('exitPublishFees')">Cancel</button>
+  
+  </div>
 </div>

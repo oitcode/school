@@ -33,6 +33,7 @@ class AcademicSessionPublishFeesInvoice extends Component
         /* Create fees term */
         $feesTerm = new FeesTerm;
         $feesTerm->term = $validatedData['term'];
+        $feesTerm->fees_publish_date = date('Y-m-d');
         $feesTerm->academic_session_id = $this->academicSession->academic_session_id;
         $feesTerm->save();
 

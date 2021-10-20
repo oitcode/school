@@ -20,12 +20,20 @@ class AcademicSessionDisplay extends Component
 
     public $createFeesStructureMode = false;
 
+    public $oClassListMode = false;
+    public $feesTermListMode = false;
+    public $feesStructureCreateMode = false;
+    public $feesStructureUpdateMode = false;
+    public $feesStructureViewMode = false;
+
     public $academicSessions;
 
     protected $listeners = [
         'exitPublishFees' => 'exitPublishFeesMode',
         'exitCreateAcademicSessionOclassMode',
         'exitCreateAcademicSessionFeesStructureMode',
+        'exitFeesStructureCreateMode',
+        'exitFeesStructureUpdateMode',
     ];
 
     public function render()
@@ -93,6 +101,7 @@ class AcademicSessionDisplay extends Component
     public function setDisplayingAcademicSession(AcademicSession $academicSession)
     {
         $this->academicSession = $academicSession;
+        $this->clearModes();
     }
 
     public function clearModes()
@@ -101,5 +110,65 @@ class AcademicSessionDisplay extends Component
         $this->exitCreateAcademicSessionOclassMode();
         $this->exitPublishFeesMode();
         $this->exitViewFeesStructureMode();
+        $this->exitOClassListMode();
+        $this->exitFeesTermListMode();
+        $this->exitFeesStructureCreateMode();
+        $this->exitFeesStructureViewMode();
+        $this->exitFeesStructureUpdateMode();
+    }
+
+    public function enterOClassListMode()
+    {
+        $this->clearModes();
+        $this->oClassListMode = true;
+    }
+
+    public function exitOClassListMode()
+    {
+        $this->oClassListMode = false;
+    }
+
+    public function enterFeesTermListMode()
+    {
+        $this->clearModes();
+        $this->feesTermListMode = true;
+    }
+
+    public function exitFeesTermListMode()
+    {
+        $this->feesTermListMode = false;
+    }
+
+    public function enterFeesStructureCreateMode()
+    {
+        $this->clearModes();
+        $this->feesStructureCreateMode = true;
+    }
+
+    public function exitFeesStructureCreateMode()
+    {
+        $this->feesStructureCreateMode = false;
+    }
+
+    public function enterFeesStructureViewMode()
+    {
+        $this->clearModes();
+        $this->feesStructureViewMode = true;
+    }
+
+    public function exitFeesStructureViewMode()
+    {
+        $this->feesStructureViewMode = false;
+    }
+
+    public function enterFeesStructureUpdateMode()
+    {
+        $this->clearModes();
+        $this->feesStructureUpdateMode = true;
+    }
+
+    public function exitFeesStructureUpdateMode()
+    {
+        $this->feesStructureUpdateMode = false;
     }
 }
