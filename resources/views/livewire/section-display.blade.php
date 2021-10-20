@@ -1,6 +1,13 @@
 <div class="p-0">
 
-  <div class="bg-light border p-2">
+  <div class="bg-white border p-2">
+
+    <div class="float-left mr-3" wire:click="enterStudentListMode">
+      <button class="btn">
+        <i class="fas fa-users text-secondary mr-2"></i>
+        Student List
+      </button>
+    </div>
 
     <div class="float-left mr-3">
       <button class="btn" wire:click="enterAddNewStudentMode">
@@ -49,11 +56,41 @@
   </div>
 
 
-  <div>
-      <h3 class="h4 mt-3 ml-3">
-        {{ $section->oClass->name }}
-        {{ $section->name }}
-      </h3>
+  <div class="card">
+    <div class="card-body">
+      <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
+        <div class="col-md-2">
+          Section
+        </div>
+        <div class="col-md-6 text-primary">
+          {{ $section->oClass->name }}
+          {{ $section->name }}
+        </div>
+      </div>
+
+      <div class="row px-2 py-4 border-bottom h6" style="margin: auto;">
+        <div class="col-md-2">
+          Academic Session
+        </div>
+        <div class="col-md-6 text-primary">
+          {{ $section->oClass->academicSession->name }}
+          @if ($section->oClass->academicSession->status === 'current')
+            <span class="badge badge-pill badge-success ml-3">
+              Current
+            </span>
+          @endif
+        </div>
+      </div>
+
+      <div class="row p-2 border-bottom-rm" style="margin: auto;">
+        <div class="col-md-2">
+          Total Students
+        </div>
+        <div class="col-md-6">
+          {{ count($section->students) }}
+        </div>
+      </div>
+    </div>
   </div>
 
   @if ($addNewStudentMode)
@@ -64,25 +101,8 @@
     @livewire ('o-class-students-file-upload', ['section_id' => $section->section_id,])
   @endif
 
-
-  <div class="row">
-    <div class="col-md-6">
-
-      <div class="row p-2 border-bottom-rm text-secondary" style="margin: auto;">
-        <div class="col-md-2">
-          Total Students
-        </div>
-        <div class="col-md-6">
-          {{ count($section->students) }}
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-2">
-    </div>
-
-    <div class="col-md-4">
-    </div>
-  </div>
+  @if ($studentListMode)
+    @livewire ('section-student-list', ['section' => $section,])
+  @endif
 
 </div>

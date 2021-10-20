@@ -64,68 +64,36 @@
   </div>
 
 
-  <div class="row">
+  <div class="">
 
-    <div class="col-md-6 border-right">
-
-      <div class="row p-2 border-bottom" style="margin: auto;">
+      <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
         <div class="col-md-2">
           Academic Session
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-primary">
           {{ $academicSession->name }}
+          @if ($academicSession->status === 'current')
+            <span class="badge badge-pill badge-success ml-3">
+              Current
+            </span>
+          @endif
+        </div>
+      </div>
+
+      <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
+        <div class="col-md-2">
+          Total Students
+        </div>
+        <div class="col-md-6 text-primary">
+          {{ $academicSession->getTotalStudents() }}
         </div>
       </div>
 
       @if ($publishFeesMode)
         @livewire('academic-session-publish-fees-invoice', ['academicSession' => $academicSession,])
-      @endif
-
-      @if ($createAcademicSessionOClassMode)
+      @elseif ($createAcademicSessionOClassMode)
         @livewire('academic-session-o-class-create', ['academicSession' => $academicSession,])
-      @endif
-
-
-      <div class="row p-2 border-bottom" style="margin: auto;">
-        <div class="col-md-2">
-          Total Students
-        </div>
-        <div class="col-md-6">
-          {{ $academicSession->getTotalStudents() }}
-        </div>
-      </div>
-
-      <h3 class="h5 my-3 ml-2">Classes</h3>
-      @if (count($academicSession->oClasses) > 0)
-      <table class="table table-sm">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Students</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($academicSession->oClasses as $oClass)
-            <tr>
-              <td>
-                {{ $oClass->name }}
-              </td>
-              <td class="text-secondary">
-                {{ $oClass->getTotalStudents() }}
-              </td>
-            </tr>
-          @endforeach
-        </tbody>
-      </table>
-      @else
-        <div class="text-secondary p-2">
-          No classes
-        </div>
-      @endif
-    </div>
-
-    <div class="col-md-6">
-      @if ($feesStructureMode)
+      @elseif ($feesStructureMode)
         @if ($viewFeesStructureMode)
           @livewire ('fees-structure-display', ['feesStructure' => $academicSession->feesStructure,])
         @endif
@@ -133,10 +101,36 @@
         @if ($createAcademicSessionFeesStructureMode)
           @livewire ('academic-session-fees-structure-create', ['academicSession' => $academicSession,])
         @endif
+      @else
+        <h3 class="h5 my-3 ml-2">Classes</h3>
+        @if (count($academicSession->oClasses) > 0)
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Students</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($academicSession->oClasses as $oClass)
+              <tr>
+                <td>
+                  {{ $oClass->name }}
+                </td>
+                <td class="text-secondary">
+                  {{ $oClass->getTotalStudents() }}
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+        @else
+          <div class="text-secondary p-2">
+            No classes
+          </div>
+        @endif
       @endif
-    </div>
 
   </div>
-
 
 </div>

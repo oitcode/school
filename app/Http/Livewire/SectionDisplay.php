@@ -10,6 +10,8 @@ class SectionDisplay extends Component
 
     public $addNewStudentMode = false;
     public $addNewStudentsFromFileMode = false;
+    public $studentListMode = false;
+
 
     protected $listeners = [
         'exitCreateStudent' => 'exitAddNewStudentMode',
@@ -23,6 +25,7 @@ class SectionDisplay extends Component
 
     public function enterAddNewStudentMode()
     {
+        $this->clearModes();
         $this->addNewStudentMode = true;
     }
 
@@ -33,11 +36,30 @@ class SectionDisplay extends Component
 
     public function enterAddNewStudentsFromFileMode()
     {
+        $this->clearModes();
         $this->addNewStudentsFromFileMode = true;
     }
 
     public function exitAddNewStudentsFromFileMode()
     {
         $this->addNewStudentsFromFileMode = false;
+    }
+
+    public function enterStudentListMode()
+    {
+        $this->clearModes();
+        $this->studentListMode = true;
+    }
+
+    public function exitStudentListMode()
+    {
+        $this->studentListMode = false;
+    }
+
+    public function clearModes()
+    {
+        $this->exitAddNewStudentsFromFileMode();
+        $this->exitAddNewStudentMode();
+        $this->exitStudentListMode();
     }
 }

@@ -42,39 +42,39 @@
     </div>
   </div>
 
-  <div>
-
-    <div class="float-left mr-3">
-      <h3 class="h4 mt-3 ml-3">
-        {{ $oClass->name }}
-      </h3>
+  <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
+    <div class="col-md-2">
+      Class
     </div>
-
-    <div class="float-left text-secondary mt-3">
-      <small>
-        {{ $oClass->academicSession->name }}
-      </small>
+    <div class="col-md-6 text-primary">
+      {{ $oClass->name }}
     </div>
-
-
-    <div class="clearfix">
-    </div>
-
   </div>
 
+  <div class="row px-2 py-4 border-bottom h6" style="margin: auto;">
+    <div class="col-md-2">
+      Academic Session
+    </div>
+    <div class="col-md-6 text-primary">
+      {{ $oClass->academicSession->name }}
+      @if ($oClass->academicSession->status === 'current')
+        <span class="badge badge-pill badge-success ml-3">
+          Current
+        </span>
+      @endif
+    </div>
+  </div>
 
   @if ($createOClassSectionMode)
     @livewire ('o-class-section-create', ['oClass' => $oClass,])
   @endif
 
   <div class="my-2">
-    <h3 class="h4 m-3">Sections</h3>
-
-    <div class="row border-bottom py-2 pl-2" style="margin:auto;">
-      <div class="col-md-4">
-        Total
+    <div class="row border-bottom py-2 pl-2 h6" style="margin:auto;">
+      <div class="col-md-2">
+        Total Sections
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         {{ count($oClass->sections) }}
       </div>
     </div>

@@ -36,6 +36,7 @@ class AcademicSessionDisplay extends Component
 
     public function enterPublishFeesMode()
     {
+        $this->clearModes();
         $this->publishFeesMode = true;
     }
 
@@ -46,6 +47,7 @@ class AcademicSessionDisplay extends Component
 
     public function enterViewFeesStructureMode()
     {
+        $this->clearModes();
         $this->viewFeesStructureMode = true;
     }
 
@@ -56,6 +58,7 @@ class AcademicSessionDisplay extends Component
 
     public function enterCreateAcademicSessionOclassMode()
     {
+        $this->clearModes();
         $this->createAcademicSessionOClassMode = true;
     }
 
@@ -66,6 +69,7 @@ class AcademicSessionDisplay extends Component
 
     public function enterCreateAcademicSessionFeesStructureMode()
     {
+        $this->clearModes();
         $this->createAcademicSessionFeesStructureMode = true;
     }
 
@@ -76,6 +80,7 @@ class AcademicSessionDisplay extends Component
 
     public function enterFeesStructureMode()
     {
+        $this->clearModes();
         $this->feesStructureMode = true;
 
         if ($this->academicSession->feesStructure) {
@@ -88,5 +93,13 @@ class AcademicSessionDisplay extends Component
     public function setDisplayingAcademicSession(AcademicSession $academicSession)
     {
         $this->academicSession = $academicSession;
+    }
+
+    public function clearModes()
+    {
+        $this->exitCreateAcademicSessionFeesStructureMode();
+        $this->exitCreateAcademicSessionOclassMode();
+        $this->exitPublishFeesMode();
+        $this->exitViewFeesStructureMode();
     }
 }

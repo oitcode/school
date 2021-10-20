@@ -1,6 +1,10 @@
 <div class="p-2">
   <h3 class="h5">Update Class</h3>
 
+  <div class="my-3">
+    Academic Session: {{ $updatingOClass->academicSession->name }}
+  </div>
+
   <div class="form-group">
     <label for="">Name</label>
     <input type="text" class="form-control" wire:model.defer="name">

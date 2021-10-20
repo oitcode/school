@@ -1,4 +1,5 @@
-<div class="p-2">
+<div class="card">
+<div class="card-body">
 
   <div wire:loading>
      Loading ...
@@ -57,4 +58,5 @@
     </table>
   @endif
 
+</div>
 </div>
