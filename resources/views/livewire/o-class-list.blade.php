@@ -43,7 +43,7 @@
     </div>
   
     @if ($oClasses != null && count($oClasses) > 0)
-    <table class="table table-sm  table-hover table-valign-middle">
+    <table class="table table table-hover table-valign-middle">
       <thead>
         <tr class="text-secondary">
           <th class="text-info">Class</th>

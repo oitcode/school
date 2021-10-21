@@ -9,6 +9,7 @@ class OClassDisplay extends Component
     public $oClass;
 
     public $createOClassSectionMode = false;
+    public $oClassSectionListMode = false;
 
     protected $listeners = [
         'exitCreateOClassSectionMode',
@@ -41,11 +42,29 @@ class OClassDisplay extends Component
 
     public function enterCreateOClassSectionMode()
     {
+        $this->clearModes();
         $this->createOClassSectionMode = true;
     }
 
     public function exitCreateOClassSectionMode()
     {
         $this->createOClassSectionMode = false;
+    }
+
+    public function clearModes()
+    {
+        $this->exitCreateOClassSectionMode();
+        $this->exitOClassSectionListMode();
+    }
+
+    public function enterOClassSectionListMode()
+    {
+        $this->clearModes();
+        $this->oClassSectionListMode = true;
+    }
+
+    public function exitOClassSectionListMode()
+    {
+        $this->oClassSectionListMode = false;
     }
 }
