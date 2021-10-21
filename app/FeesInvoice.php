@@ -79,7 +79,7 @@ class FeesInvoice extends Model
 
 
     /*
-     * get pending amount table.
+     * get pending amount.
      *
      */
     public function getPendingAmount()
@@ -91,5 +91,20 @@ class FeesInvoice extends Model
         }
 
         return $pendingAmount;
+    }
+
+    /*
+     * get received amount.
+     *
+     */
+    public function getReceivedAmount()
+    {
+        $receivedAmount = 0;
+
+        foreach ($this->feesPayments as $feesPayment) {
+            $receivedAmount += $feesPayment->amount;
+        }
+
+        return $receivedAmount;
     }
 }

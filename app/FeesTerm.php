@@ -49,4 +49,43 @@ class FeesTerm extends Model
     {
         return $this->hasMany('App\FeesInvoice', 'fees_term_id', 'fees_term_id');
     }
+
+
+    /*-------------------------------------------------------------------------
+     * Methods
+     *-------------------------------------------------------------------------
+     *
+     */
+    public function getFeesInvoicesTotal()
+    {
+        $total = 0;
+
+        foreach ($this->feesInvoices as $feesInvoice) {
+            $total += $feesInvoice->amount;
+        }
+
+        return $total;
+    }
+
+    public function getFeesInvoicesReceivedAmount()
+    {
+        $total = 0;
+
+        foreach ($this->feesInvoices as $feesInvoice) {
+            $total += $feesInvoice->getReceivedAmount();
+        }
+
+        return $total;
+    }
+
+    public function getFeesInvoicesPendingAmount()
+    {
+        $total = 0;
+
+        foreach ($this->feesInvoices as $feesInvoice) {
+            $total += $feesInvoice->getPendingAmount();
+        }
+
+        return $total;
+    }
 }

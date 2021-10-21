@@ -96,6 +96,13 @@
             Refresh
           </button>
         </div>
+
+        <div class="float-right mr-3" wire:loading>
+          <div class="spinner-border text-primary" role="status">
+          </div>
+          <span>Loading ...</span>
+        </div>
+
     
         <div class="clearfix">
         </div>
@@ -104,7 +111,7 @@
     
       <div class="">
     
-          <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
+          <div class="row px-2 py-4 border-bottom h6" style="margin: auto;">
             <div class="col-md-2">
               Academic Session
             </div>
@@ -118,7 +125,7 @@
             </div>
           </div>
     
-          <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
+          <div class="row px-2 py-4 border-bottom h6" style="margin: auto;">
             <div class="col-md-2">
               Total Students
             </div>
@@ -126,7 +133,16 @@
               {{ $academicSession->getTotalStudents() }}
             </div>
           </div>
-    
+
+          <!-- Flash message div -->
+          @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible fade show col-md-4 mx-3 my-2" role="alert">
+              {{ session('message') }}
+              <button type="button" class="close text-white" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
     
       </div>
     

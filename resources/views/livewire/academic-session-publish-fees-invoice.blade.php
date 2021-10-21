@@ -4,7 +4,9 @@
       <h3 class="h5">Publish Fees Invoice</h3>
   
       <div wire:loading>
-        Processing ...
+        <div class="spinner-border text-primary" role="status">
+        </div>
+        <span>Processing ...</span>
       </div>
     
       <div class="form-group">

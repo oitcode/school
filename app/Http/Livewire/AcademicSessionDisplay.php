@@ -34,6 +34,7 @@ class AcademicSessionDisplay extends Component
         'exitCreateAcademicSessionFeesStructureMode',
         'exitFeesStructureCreateMode',
         'exitFeesStructureUpdateMode',
+        'exitPublishFee',
     ];
 
     public function render()
@@ -170,5 +171,11 @@ class AcademicSessionDisplay extends Component
     public function exitFeesStructureUpdateMode()
     {
         $this->feesStructureUpdateMode = false;
+    }
+
+    public function exitPublishFee($term)
+    {
+        $this->exitPublishFeesMode();
+        session()->flash('message', 'Fees published for term: ' . $term);
     }
 }

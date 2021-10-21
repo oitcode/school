@@ -57,8 +57,8 @@
 
 
   <div class="card">
-    <div class="card-body">
-      <div class="row px-2 py-4 border-bottom h5" style="margin: auto;">
+    <div class="card-body p-0">
+      <div class="row px-2 py-4 border-bottom h6" style="margin: auto;">
         <div class="col-md-2">
           Section
         </div>

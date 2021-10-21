@@ -10,6 +10,15 @@
           <th class="text-info">
             Published date
           </th>
+          <th class="text-info">
+            Amount
+          </th>
+          <th class="text-info">
+            Amount received
+          </th>
+          <th class="text-info">
+            Amount pending
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +29,15 @@
             </td>
             <td>
               {{ $feesTerm->fees_publish_date }}
+            </td>
+            <td class="">
+              {{ $feesTerm->getFeesInvoicesTotal() }}
+            </td>
+            <td class="text-success">
+              {{ $feesTerm->getFeesInvoicesReceivedAmount() }}
+            </td>
+            <td class="text-danger">
+              {{ $feesTerm->getFeesInvoicesPendingAmount() }}
             </td>
           </tr>
         @endforeach

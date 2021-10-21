@@ -42,6 +42,8 @@
           <td class="text-dark border-0">
             @if ($feesInvoice->feesTerm)
               {{ $feesInvoice->feesTerm->term }}
+            @else
+              PREVIOUS
             @endif
           </td>
   
@@ -100,6 +102,8 @@
         <th class="border-0-rm">Term</th>
         <th class="border-0-rm">Amount</th>
         <th class="border-0-rm">Payment Status</th>
+        <th class="border-0-rm">Paid Amount</th>
+        <th class="border-0-rm">Pending Amount</th>
         <th class="border-0-rm">Action</th>
       </tr>
     </thead>
@@ -111,6 +115,8 @@
           <td class="text-dark border-0">
             @if ($feesInvoice->feesTerm)
               {{ $feesInvoice->feesTerm->term }}
+            @else
+              PREVIOUS
             @endif
           </td>
   
@@ -138,6 +144,14 @@
             @endif
           </td>
   
+          <td class="text-dark border-0">
+            {{ $feesInvoice->getReceivedAmount() }}
+          </td>
+
+          <td class="text-dark border-0">
+            {{ $feesInvoice->getPendingAmount() }}
+          </td>
+
           <td class="text-primary border-0">
             View Payment
           </td>

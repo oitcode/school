@@ -109,7 +109,7 @@ class Student extends Model
      */
     public function getPaidFeesInvoices()
     {
-        $invoices = $this->feesInvoices()->where('payment_status', 'paid')->get();
+        $invoices = $this->feesInvoices()->where('payment_status', '!=', 'pending')->get();
 
         return $invoices;
     }

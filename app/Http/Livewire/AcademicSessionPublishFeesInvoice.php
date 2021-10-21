@@ -86,6 +86,6 @@ class AcademicSessionPublishFeesInvoice extends Component
             }
         }
 
-        $this->emit('exitPublishFee');
+        $this->emit('exitPublishFee', $validatedData['term']);
     }
 }
