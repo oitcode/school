@@ -32,13 +32,13 @@ class StudentFeesPaymentCreate extends Component
 
         $pendingAmount = $this->feesInvoice->getPendingAmount();
 
-        /* Create fees payment */
-        $feesPayment = FeesPayment::create($validatedData);
-
         /* Update fees invoice payment status */
-        if ($feesPayment->amount < $pendingAmount) {
+        if ($validatedData['amount'] < $pendingAmount) {
+            $feesPayment = FeesPayment::create($validatedData);
             $this->feesInvoice->payment_status = 'partially_paid';
         } else {
+            $validatedData['amount'] = $pendingAmount;
+            $feesPayment = FeesPayment::create($validatedData);
             $this->feesInvoice->payment_status = 'paid';
         }
 

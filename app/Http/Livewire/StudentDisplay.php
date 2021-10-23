@@ -32,6 +32,7 @@ class StudentDisplay extends Component
 
     public function enterAddGuardianMode()
     {
+        $this->clearModes();
         $this->addGuardianMode = true;
     }
 
@@ -47,6 +48,7 @@ class StudentDisplay extends Component
 
     public function enterDisplayFeesMode()
     {
+        $this->clearModes();
         $this->displayFeesMode = true;
     }
 
@@ -78,11 +80,19 @@ class StudentDisplay extends Component
 
     public function enterSendSmsMode()
     {
+        $this->clearModes();
         $this->sendSmsMode = true;
     }
 
     public function exitSendSmsMode()
     {
         $this->sendSmsMode = false;
+    }
+
+    public function clearModes()
+    {
+        $this->exitAddGuardianMode();
+        $this->exitDisplayFeesMode();
+        $this->exitSendSmsMode();
     }
 }
