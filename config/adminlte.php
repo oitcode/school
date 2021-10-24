@@ -412,6 +412,12 @@ return [
             'icon'    => 'fas fa-fw fa-comment',
         ],
 
+        [
+            'text'    => 'Expense',
+            'url'  => '/dashboard/expense',
+            'icon'    => 'fas fa-fw fa-dollar-sign',
+        ],
+
 
         ['header' => 'account_settings'],
         [
