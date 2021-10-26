@@ -44,6 +44,21 @@
       </div>
     </div>
 
+    <div class="float-left mr-3">
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-chart-area text-secondary mr-2"></i>
+          Report
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" wire:click="enterReportMode">
+            <i class="fas fa-chart-area text-secondary mr-2"></i>
+            View report
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="float-right mr-3">
       <button class="btn text-danger" wire:click="$emit('exitDisplay')">
         <i class="fas fa-times mr-2"></i>
@@ -91,22 +106,8 @@
     @livewire ('expense-create')
   @elseif ($listMode)
     @livewire ('expense-list')
-  @endif
-
-  @if (false)
-  @if ($createMode)
-    @livewire ('academic-session-create')
-  @elseif ($displayMode)
-    @livewire ('academic-session-display', ['academicSession' => $displayingAcademicSession,])
-  @elseif ($updateMode)
-    @livewire ('academic-session-update', ['academicSession' => $updatingAcademicSession,])
-  @else
-    @livewire ('academic-session-list')
-  @endif
-
-  @if ($deleteMode)
-    @livewire ('academic-session-delete-confirm', ['deletingAcademicSession' => $deletingAcademicSession,])
-  @endif
+  @elseif ($reportMode)
+    @livewire ('chart-expense-by-category')
   @endif
 
 </div>

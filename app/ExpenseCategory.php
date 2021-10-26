@@ -40,4 +40,38 @@ class ExpenseCategory extends Model
     {
         return $this->hasMany('App\Expense', 'expense_category_id', 'expense_category_id');
     }
+
+
+    /*-------------------------------------------------------------------------
+     * Methods
+     *-------------------------------------------------------------------------
+     *
+     */
+
+    /*
+     * Get total expense in a category.
+     *
+     */
+    public function getExpensesTotal($startDate, $endDate)
+    {
+        $total = 0;
+
+        $expenses = null;
+
+        if (! $endDate) {
+            $expenses = $this->expenses()->where('date', '=', $startDate);
+        } else {
+            $expenses = $this->expenses()->where('date', '>=', $startDate);
+            $expenses = $expenses->where('date', '<=', $endDate);
+        }
+
+        $expenses = $expenses->get();
+
+        foreach ($expenses as $expense) {
+            $total += $expense->amount;
+        }
+
+        return $total;
+    }
+
 }

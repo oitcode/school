@@ -12,6 +12,8 @@ class ExpenseComponent extends Component
     public $createMode = false;
     public $listMode = false;
 
+    public $reportMode = false;
+
     protected $listeners = [
         'exitCategoryCreateMode',
         'expenseCategoryCreated' => 'acknowledgeExpenseCategoryCreated',
@@ -32,6 +34,8 @@ class ExpenseComponent extends Component
 
         $this->exitCreateMode();
         $this->exitListMode();
+
+        $this->exitReportMode();
     }
 
     public function enterCategoryCreateMode()
@@ -86,5 +90,16 @@ class ExpenseComponent extends Component
     public function exitListMode()
     {
         $this->listMode = false;
+    }
+
+    public function enterReportMode()
+    {
+        $this->clearModes();
+        $this->reportMode = true;
+    }
+
+    public function exitReportMode()
+    {
+        $this->reportMode = false;
     }
 }
