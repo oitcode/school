@@ -2,50 +2,50 @@
 
   <div class="bg-light border p-2">
     <div class="float-left mr-3">
-      <button class="btn" wire:click="enterAddGuardianMode">
-        <i class="fas fa-user text-secondary mr-2"></i>
+      <button class="btn text-secondary" wire:click="enterAddGuardianMode">
+        <i class="fas fa-user mr-2"></i>
         Add guardian
       </button>
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-arrow-up text-secondary mr-2"></i>
+      <button class="btn text-secondary">
+        <i class="fas fa-arrow-up mr-2"></i>
         Promote
       </button>
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn" wire:click="enterDisplayFeesMode">
-        <i class="fas fa-dollar-sign text-secondary mr-2"></i>
+      <button class="btn text-secondary" wire:click="enterDisplayFeesMode">
+        <i class="fas fa-dollar-sign mr-2"></i>
         Fees
       </button>
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-book text-secondary mr-2"></i>
+      <button class="btn text-secondary">
+        <i class="fas fa-book mr-2"></i>
         Academic
       </button>
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-sticky-note text-secondary mr-2"></i>
+      <button class="btn text-secondary">
+        <i class="fas fa-sticky-note mr-2"></i>
         Add note
       </button>
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn" wire:click="enterSendSmsMode">
-        <i class="fas fa-envelope text-secondary mr-2"></i>
+      <button class="btn text-secondary" wire:click="enterSendSmsMode">
+        <i class="fas fa-envelope mr-2"></i>
         SMS
       </button>
     </div>
 
     <div class="float-left mr-3">
-      <button class="btn">
-        <i class="fas fa-tag text-secondary mr-2"></i>
+      <button class="btn text-secondary">
+        <i class="fas fa-tag mr-2"></i>
         Misc
       </button>
     </div>

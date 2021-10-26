@@ -1,12 +1,13 @@
 <div class="card">
 <div class="card-body">
 
-  <div wire:loading>
-     Loading ...
-  </div>
-
   <h3 class="h5">Upload students from file</h3>
 
+  <div wire:loading class="text-primary">
+    <div class="spinner-border text-primary" role="status">
+    </div>
+     Processing ...
+  </div>
 
   @if ($startMode)
     <button type="submit" class="btn btn-primary" wire:click="preview">Upload</button>
@@ -23,9 +24,6 @@
   </div>
 
 
-  <div wire:loading class="text-danger">
-    Importing from file ...
-  </div>
 
   @if ($previewMode)
 
@@ -34,7 +32,7 @@
 
     <table class="table table-sm table-hover">
       <thead>
-        <tr class="bg-light text-secondary">
+        <tr class="bg-light table-info">
           <th>Student</th>
           <th>Email</th>
           <th>Phone</th>
@@ -43,6 +41,7 @@
           <th>Email</th>
           <th>Phone</th>
           <th>Address</th>
+          <th>Pending balance</th>
         </tr>
       <thead>
 

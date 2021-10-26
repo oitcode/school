@@ -11,6 +11,7 @@ use App\Student;
 use App\Guardian;
 use App\GuardianStudent;
 use App\SectionStudent;
+use App\FeesInvoice;
 
 class OClassStudentsFileUpload extends Component
 {
@@ -104,20 +105,23 @@ class OClassStudentsFileUpload extends Component
                 $student->address = $line[3];
                 $student->save();
 
-                $guardian = new Guardian;
+                /* Create guardian if provided */
+                if ($line[4]) {
+                    $guardian = new Guardian;
 
-                $guardian->name = $line[4];
-                $guardian->email = $line[5];
-                $guardian->phone = $line[6];
-                $guardian->address = $line[7];
-                $guardian->save();
+                    $guardian->name = $line[4];
+                    $guardian->email = $line[5];
+                    $guardian->phone = $line[6];
+                    $guardian->address = $line[7];
+                    $guardian->save();
 
-                $guardianStudent = new GuardianStudent;
+                    $guardianStudent = new GuardianStudent;
 
-                $guardianStudent->guardian_id = $guardian->guardian_id;
-                $guardianStudent->student_id = $student->student_id;
-                $guardianStudent->type = 'primary';
-                $guardianStudent->save();
+                    $guardianStudent->guardian_id = $guardian->guardian_id;
+                    $guardianStudent->student_id = $student->student_id;
+                    $guardianStudent->type = 'primary';
+                    $guardianStudent->save();
+                }
 
                 $sectionStudent = new SectionStudent;
 
@@ -125,6 +129,20 @@ class OClassStudentsFileUpload extends Component
                 $sectionStudent->student_id = $student->student_id;
                 $sectionStudent->status = 'current';
                 $sectionStudent->save();
+
+                /* Create starting pending balance if needed */
+                if ($line[8]) {
+                    $feesInvoice = new FeesInvoice;                
+
+                    $feesInvoice->student_id = $student->student_id;
+                    $feesInvoice->section_id = $this->section_id;
+                    $feesInvoice->type = 'product_live_pending';
+                    $feesInvoice->amount = $line[8];
+                    $feesInvoice->payment_status = 'pending';
+                    $feesInvoice->date = date('Y-m-d');
+
+                    $feesInvoice->save();
+                }
 
                 DB::commit();
             } catch (\Exception $e) {
