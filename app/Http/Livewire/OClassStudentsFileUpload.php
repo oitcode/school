@@ -61,6 +61,9 @@ class OClassStudentsFileUpload extends Component
          */
         array_pop($lines);
 
+        /* Remove the first header row of csv file. */
+        array_shift($lines);
+
         $this->totLines = count($lines);
 
         foreach ($lines as $line) {
@@ -148,6 +151,8 @@ class OClassStudentsFileUpload extends Component
             } catch (\Exception $e) {
                 DB::rollback();
             }
+            
+            $i++;
         }
 
         /* Delete the file */

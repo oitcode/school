@@ -30,9 +30,10 @@
     Total Lines {{ $totLines }}
     <br />
 
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover table-striped">
       <thead>
         <tr class="bg-light table-info">
+          <th>#</th>
           <th>Student</th>
           <th>Email</th>
           <th>Phone</th>
@@ -48,6 +49,9 @@
       <tbody>
         @foreach ($lines as $line)
           <tr>
+            <td>
+              {{ $loop->iteration }}
+            </td>
             @foreach ($line as $value)
               <td>{{ $value }}</td>
             @endforeach

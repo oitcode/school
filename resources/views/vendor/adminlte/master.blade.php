@@ -71,10 +71,11 @@
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
 
+    <!-- TODO: Include these in adminlte plugins -->
     <!-- Charting library -->
-    <script src="https://unpkg.com/chart.js@^2.9.3/dist/Chart.min.js"></script>
+    <script src="{{ asset('chartisan/Chart.min.js') }}"></script>
     <!-- Chartisan -->
-    <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+    <script src="{{ asset('chartisan/chartisan_chartjs.umd.js') }}"></script>
 
 </head>
 
@@ -93,6 +94,7 @@
         @include('adminlte::plugins', ['type' => 'js'])
 
         <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+
     @else
         <script src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
     @endif

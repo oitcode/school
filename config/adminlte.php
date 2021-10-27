@@ -556,6 +556,24 @@ return [
                 ],
             ],
         ],
+
+        /* Added by oDev */
+        /* TODO: Not working. Fix it. */
+        'Chartisan' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'chartisan/Chart.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'chartisan/chartisan_chartjs.umd.js',
+                ],
+            ],
+        ],
     ],
 
     /*
