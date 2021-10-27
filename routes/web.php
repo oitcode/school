@@ -50,6 +50,7 @@ Route::get('/dashboard/vacancy', 'VacancyController@index')->name('dashboard-vac
 Route::get('/dashboard/admission_application', 'AdmissionApplicationController@index')->name('dashboard-admission-application');
 Route::get('/dashboard/fees', 'FeesController@index')->name('dashboard-fees');
 Route::get('/dashboard/expense', 'ExpenseController@index')->name('dashboard-expense');
+Route::get('/dashboard/user', 'UserController@index')->name('dashboard-user');
 
 
 Route::get('/dashboard/memo', 'MemoController@index')->name('dashboard-memo');

@@ -98,6 +98,8 @@
     </div>
   </div>
 
+  @livewire ('user-create')
+
   <div class="card card-outline card-info">
     <div class="card-body">
       <p class="text-secondary">

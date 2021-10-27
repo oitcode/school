@@ -418,6 +418,12 @@ return [
             'icon'    => 'fas fa-fw fa-dollar-sign',
         ],
 
+        [
+            'text'    => 'Users',
+            'url'  => '/dashboard/user',
+            'icon'    => 'fas fa-fw fa-users',
+        ],
+
 
         ['header' => 'account_settings'],
         [
