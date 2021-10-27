@@ -1,6 +1,8 @@
 <x-box-component title="Users">
   <x-slot name="menuItems">
-    <x-menu-item fa-class="fas fa-plus" title="Create user" click-method="enterCreateMode" />
+    @can ('create-user')
+      <x-menu-item fa-class="fas fa-plus" title="Create user" click-method="enterCreateMode" />
+    @endcan
     <x-menu-item fa-class="fas fa-list" title="List users" click-method="enterListMode" />
   </x-slot>
 
