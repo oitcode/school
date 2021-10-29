@@ -15,13 +15,13 @@
   <div class="form-group">
     <label for="">Password</label>
     <input type="password" class="form-control" wire:model.defer="password">
-    @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+    @error('password') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
 
   <div class="form-group">
     <label for="">Confirm Password</label>
     <input type="password" class="form-control" wire:model.defer="password_confirm">
-    @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+    @error('password') <span class="text-danger">{{ $message }}</span> @enderror
   </div>
   
   <button type="submit" class="btn btn-primary" wire:click="store">Submit</button>

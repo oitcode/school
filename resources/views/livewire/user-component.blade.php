@@ -20,6 +20,8 @@
     @livewire ('user-create')
   @elseif ($listMode)
     @livewire ('user-list')
+  @elseif ($updateMode)
+    @livewire ('user-update', ['updatingUser' => $updatingUser,])
   @endif
 
 </x-box-component>

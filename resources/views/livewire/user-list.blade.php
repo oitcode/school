@@ -35,7 +35,7 @@
 
   
           <td>
-            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('updateUser', {{ $user }})">
+            <span class="btn btn-tool btn-sm mr-2" wire:click="$emit('enterUpdateMode', {{ $user }})">
               <i class="fas fa-pencil-alt text-primary"></i>
             </span>
             <span class="btn btn-tool btn-sm" wire:click="$emit('confirmDeleteUser', {{ $user }})">
