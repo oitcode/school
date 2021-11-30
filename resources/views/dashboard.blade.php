@@ -112,6 +112,8 @@
   <div class="row">
     <div class="col-md-8">
 
+      @livewire ('named-sms')
+
       @if (false)
         @livewire ('fees-component')
         @livewire ('contact-message-component')
