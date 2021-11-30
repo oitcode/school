@@ -424,6 +424,12 @@ return [
             'icon'    => 'fas fa-fw fa-users',
         ],
 
+        [
+            'text'    => 'Financial report',
+            'url'  => '/dashboard/finreport',
+            'icon'    => 'fas fa-fw fa-chart-area',
+        ],
+
 
         ['header' => 'account_settings'],
         [
