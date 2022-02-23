@@ -104,11 +104,11 @@
   <div class="row">
     <div class="col-md-6">
       @livewire ('chart-o-class-student')
+      @livewire ('user-create')
     </div>
   </div>
   @endif
 
-  @livewire ('user-create')
 
   <div class="card card-outline card-info">
     <div class="card-body">
