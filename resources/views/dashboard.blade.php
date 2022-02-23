@@ -83,7 +83,11 @@
           </div>
 
           <div class="h3">
-            {{ $academicSession->getTotalStudents() }}
+            @if ($academicSession != null)
+              {{ $academicSession->getTotalStudents() }}
+            @else
+              No data
+            @endif
           </div>
 
           <div>
