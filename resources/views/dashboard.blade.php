@@ -52,7 +52,11 @@
           </div>
 
           <div class="h3">
-            {{ $academicSession->name }}
+            @if ($academicSession != null)
+              {{ $academicSession->name }}
+            @else
+              No data
+            @endif
           </div>
 
           <div>
