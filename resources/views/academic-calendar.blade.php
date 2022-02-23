@@ -36,6 +36,7 @@
   Academic session: <span class="text-secondary"> 2078</span>
 
 
+  @if (false)
   <h3>July</h3>
   <div class="border">
    @php
@@ -68,6 +69,11 @@
         @endfor
       </tbody>
     </table>
+  </div>
+  @endif
+
+  <div class="text-secondary">
+    Please contact administration.
   </div>
 
 
