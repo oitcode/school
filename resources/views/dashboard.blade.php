@@ -25,7 +25,11 @@
           </div>
 
           <div class="h3">
-            {{ $school->name }}
+            @if ($school != null)
+              {{ $school->name }}
+            @else
+              No data
+            @endif
           </div>
 
           <div>
