@@ -92,11 +92,13 @@
 
   </div>
 
+  @if (false)
   <div class="row">
     <div class="col-md-6">
       @livewire ('chart-o-class-student')
     </div>
   </div>
+  @endif
 
   @livewire ('user-create')
 
@@ -112,9 +114,9 @@
   <div class="row">
     <div class="col-md-8">
 
-      @livewire ('named-sms')
-
       @if (false)
+        @livewire ('named-sms')
+
         @livewire ('fees-component')
         @livewire ('contact-message-component')
         @livewire ('notice-component')
